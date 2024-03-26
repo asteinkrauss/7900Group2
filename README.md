@@ -1,11 +1,9 @@
 # ADAN-ADEC7900 Group 2
 dataset of average American household income by capita and fruit and vegetables prices from 2013, 2016, 2020
 
-# Research question
+# Research question & Decision maker
 
 We aim to analyze the affordability of fruits and vegetables based on the average American household income by capita over multiple years. We hope to investigate whether income constraints influence access to fresh produce versus alternative forms (i.e., canned/frozen) and how this impacts adherence to dietary guidelines. The findings could inform policymakers responsible for food pricing regulations and programs like food stamps, helping them understand the challenges individuals and families face in accessing nutritious foods and potentially guiding adjustments to policies or interventions aimed at improving dietary habits, particularly considering potential differences in affordability between fruits and vegetables.
-
-# Define decision maker and the decision to be made
 
 # Data sets included:
 Fruit Prices 2013.csv ------- Fruit Prices 2016.csv   -------   Fruit Prices 2020.csv
