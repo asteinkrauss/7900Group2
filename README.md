@@ -32,6 +32,7 @@ Vegetable Prices 2013.csv ------- Vegetable Prices 2016.csv ------- Vegetable Pr
 **Year:** Categorical (2013,2016,2020)
 
 Annual person income by county.csv
+
 -> *Columns present:*
 
 **GeoFIPS:** increases by 1000 by state (01000 = Alabama)
