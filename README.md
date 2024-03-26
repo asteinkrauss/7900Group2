@@ -1,6 +1,10 @@
 # 7900Group2
 dataset of median income of Americans and fruit and vegetables from 2013, 2016, 2020
 
+#Define the research question
+#Define decision maker and the decision to be made
+#Provide a short description of the nature of the provided data set and explain how these characteristics affect your analysis methodology. 
+
 Fruit Prices 2013.csv ------- Fruit Prices 2016.csv   -------   Fruit Prices 2020.csv
 
 Vegetable Prices 2013.csv ------- Vegetable Prices 2016.csv ------- Vegetable Prices 2020.csv
@@ -25,3 +29,6 @@ Vegetable Prices 2013.csv ------- Vegetable Prices 2016.csv ------- Vegetable Pr
 **CupEquivalentPrice:** in $; price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption)
 
 **Year:** Categorical (2013,2016,2020)
+
+#Briefly propose the tools and methods used to perform the analysis
+
