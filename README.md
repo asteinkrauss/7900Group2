@@ -50,13 +50,13 @@ Annual person income by county.csv
 
 **Unit:** Categorical, (Thousands of dollars, Number of persons, Dollars)
 
-**2013:** in $, persons, $
+**2013:** in $, persons
 
-**2016:** in $, persons, $
+**2016:** in $, persons
 
-**2020:** in $, persons, $
+**2020:** in $, persons
 
-**These two datasets should allow us to investigate our research questions regarding affordability of fruits and vegetables based on the average American household income by capita over multiple years.**
+**These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.**
 
 # Briefly propose the tools and methods used to perform the analysis 
 
