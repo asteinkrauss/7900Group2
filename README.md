@@ -1,4 +1,4 @@
-# 7900Group2
+# ADAN-ADEC7900 Group 2
 dataset of median income of Americans and fruit and vegetables from 2013, 2016, 2020
 
 # Define the research question
@@ -33,5 +33,5 @@ Vegetable Prices 2013.csv ------- Vegetable Prices 2016.csv ------- Vegetable Pr
 
 **Year:** Categorical (2013,2016,2020)
 
-#Briefly propose the tools and methods used to perform the analysis
+# Briefly propose the tools and methods used to perform the analysis
 
