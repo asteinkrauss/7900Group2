@@ -1,5 +1,5 @@
 # ADAN-ADEC7900 Group 2
-dataset of average American household income by capita and fruit and vegetables prices from 2013, 2016, 2020
+Dataset of average American household income by capita and fruit and vegetables prices from 2013, 2016, 2020
 
 # Research Question
 
@@ -52,6 +52,6 @@ We plan to target our research for use by the Congressional Committees on Agricu
 
 # Briefly propose the tools and methods used to perform the analysis 
 
-We aim to conduct our analysis in R. We will use ggplot2 to visualize the data sets and interpret the data. Using available datasets spanning multiple years, we employ a range of data analysis methods including descriptive statistics, correlation analysis, spatial analysis, and data visualization. By examining trends in fruit and vegetable affordability across the country and their relationship with household income, we aim to provide insights that inform policymaking, particularly within the realm of food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
+We will conduct our analyses in R, utilizing the ‘ggplot2’ package to visualize the results. Using publicly available datasets spanning multiple years, we will look at descriptive statistics and run statistical tests (e.g., t-tests, ANOVA) to investigate the affordability of fruits and vegetables by state across time. The ‘ggplot2’ package will be used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
 
-Descriptive statistics will involve calculating summary statistics for fruit and vegetable prices across different forms (fresh, canned, frozen, etc.) and years. This will help outline the trends in food prices an affordability metrics over time. Statistical tests (e.g., t-tests, ANOVA) will also be used to compare affordability metrics between different income brackets, regions, or years. By examining these metrics, we aim to assess the significance of differences in affordability across demographic groups. Correlation analysis will investigate correlations between affordability metrics and per capita income levels across different regions or states, examining the relationship between affordability of fruits/vegetables and adherence to dietary guidelines. We will also conduct spatial analysis, utilizing geographic data to analyze spatial variations in fruit and vegetable affordability across different regions.
+We hope to discover important insights by examining trends in fruit and vegetable affordability by state. These insights will inform policymaking, with a particular focus on enhancing food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
