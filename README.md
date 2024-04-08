@@ -31,9 +31,6 @@ We plan to target our research for use by the Congressional Committees on Agricu
 | CupEquivalentPrice  | price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption) |
 | Year  | Years included (2013, 2016, 2020)  |
 
-
-Annual person income by county.csv
-
 | Data Sets  | 
 | ------------- |
 | county.csv  | 
