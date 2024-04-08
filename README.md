@@ -9,7 +9,7 @@ Are healthy fruits and vegetables affordable to Americans in each state? We aim 
 
 We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
-# Data sets included:
+# Included Data
 | Data Sets  | 
 | ------------- |
 | Fruit Prices 2013.csv  | 
@@ -50,7 +50,7 @@ We plan to target our research for use by the Congressional Committees on Agricu
 
 **These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.**
 
-# Briefly propose the tools and methods used to perform the analysis 
+# Analytical Tools & Methods 
 
 We will conduct our analyses in R, utilizing the ‘ggplot2’ package to visualize the results. Using publicly available datasets spanning multiple years, we will look at descriptive statistics and run statistical tests (e.g., t-tests, ANOVA) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics will investigate the average, minimum, maximum prices of fruits and vegetables by year.  The ‘ggplot2’ package will be used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
 
