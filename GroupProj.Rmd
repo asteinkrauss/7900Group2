@@ -287,13 +287,12 @@ interactive_plot_veggie_form
 #https://www.nidirect.gov.uk/articles/fruit-and-vegetables
 
 ```{r}
-#getting 11% and 4% of income 
-income_by_capita$eleven_percent <- income_by_capita$Value * 0.11
+#getting 4% and 2% of income 
+income_by_capita$four_percent <- income_by_capita$Value * 0.4
 
-income_by_capita$four_percent =  income_by_capita$Value * 0.03
+income_by_capita$two_percent =  income_by_capita$Value * 0.02
 
 
-#
 # Adjust CupEquivalentPrice by multiplying by 365
 fruit_prices$CupEquivalentPrice_yearly <- fruit_prices$CupEquivalentPrice * 365
 veggie_prices$CupEquivalentPrice_yearly <- veggie_prices$CupEquivalentPrice * 365
@@ -308,13 +307,13 @@ merged_veggies_2016 <- merge(subset(income_by_capita, Year == 2016), subset(vegg
 merged_veggies_2020 <- merge(subset(income_by_capita, Year == 2020), subset(veggie_prices, Year == 2020), by = "Year")
 
 # Update meetreq column based on the condition
-merged_fruits_2013$meetreq <- ifelse(merged_fruits_2013$four_percent > merged_fruits_2013$CupEquivalentPrice_yearly, "yes", "no")
-merged_fruits_2016$meetreq <- ifelse(merged_fruits_2016$four_percent > merged_fruits_2016$CupEquivalentPrice_yearly, "yes", "no")
-merged_fruits_2020$meetreq <- ifelse(merged_fruits_2020$four_percent > merged_fruits_2020$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_2013$meetreq <- ifelse(merged_fruits_2013$two_percent > merged_fruits_2013$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_2016$meetreq <- ifelse(merged_fruits_2016$two_percent > merged_fruits_2016$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_2020$meetreq <- ifelse(merged_fruits_2020$two_percent > merged_fruits_2020$CupEquivalentPrice_yearly, "yes", "no")
 
-merged_veggies_2013$meetreq <- ifelse(merged_veggies_2013$four_percent > merged_veggies_2013$CupEquivalentPrice_yearly, "yes", "no")
-merged_veggies_2016$meetreq <- ifelse(merged_veggies_2016$four_percent > merged_veggies_2016$CupEquivalentPrice_yearly, "yes", "no")
-merged_veggies_2020$meetreq <- ifelse(merged_veggies_2020$four_percent > merged_veggies_2020$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_2013$meetreq <- ifelse(merged_veggies_2013$two_percent > merged_veggies_2013$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_2016$meetreq <- ifelse(merged_veggies_2016$two_percent > merged_veggies_2016$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_2020$meetreq <- ifelse(merged_veggies_2020$two_percent > merged_veggies_2020$CupEquivalentPrice_yearly, "yes", "no")
 
 # Create comparison data frames for each year and each category
 comparison_fruits_2013 <- data.frame(Year = merged_fruits_2013$Year,
