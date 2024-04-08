@@ -33,7 +33,7 @@ We plan to target our research for use by the Congressional Committees on Agricu
 
 | Data Sets  | 
 | ------------- |
-| county.csv  | 
+| Annual person income by county.csv  | 
 
 | Columns included  | Description of columns |
 | ------------- | ------------- |
