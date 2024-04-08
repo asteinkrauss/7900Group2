@@ -21,14 +21,14 @@ We plan to target our research for use by the Congressional Committees on Agricu
 
 | Columns included  | Description of columns |
 | ------------- | ------------- |
-| Fruit/Vegetable  | type of food (apple, oranges, broccoli, etc)  |
-| Form  | form of food (fresh, canned, dried, juice, frozen)  |
-| RetailPrice  | price of food (in $)  |
-| RetailPriceUnit  | type of retail price (per pound, per unit, etc)  |
+| Fruit/Vegetable  | Type of food (apple, oranges, broccoli, etc)  |
+| Form  | Form of food (fresh, canned, dried, juice, frozen)  |
+| RetailPrice  | Price of food (in $)  |
+| RetailPriceUnit  | Type of retail price (per pound, per unit, etc)  |
 | Yield  | Preparation yield factor  |
-| CupEquivalentSize  | a 1-cup equivalent equals the weight of enough edible food to fill a measuring cup  |
-| CupEquivalentUnit  | type of unit (pounds, fluid ounces)  |
-| CupEquivalentPrice  | price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption) |
+| CupEquivalentSize  | A 1-cup equivalent equals the weight of enough edible food to fill a measuring cup  |
+| CupEquivalentUnit  | Type of unit (pounds, fluid ounces)  |
+| CupEquivalentPrice  | Price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption) |
 | Year  | Years included (2013, 2016, 2020)  |
 
 | Data Sets  | 
@@ -38,15 +38,15 @@ We plan to target our research for use by the Congressional Committees on Agricu
 | Columns included  | Description of columns |
 | ------------- | ------------- |
 | GeoFIPS  | Geo FIPS of United States states; increases by 1000 by state (01000 = Alabama, etc)  |
-| GeoName  | region and state, if no region present only state is listed  |
-| Description  | type of income; (Personal income (thousands of dollars), Population (persons) 1/, Per capita personal income (dollars) 2/	)  |
+| GeoName  | Region and state, if no region present only state is listed  |
+| Description  | Type of income; (Personal income (thousands of dollars), Population (persons) 1/, Per capita personal income (dollars) 2/	)  |
 | 1Personal income (thousands of dollars)  | Consists of the income that persons receive in return for their provision of labor, land, and capital used in current production as well as other income, such as personal current transfer receipts. In the state and local personal income accounts the personal income of an area represents the income received by or on behalf of the persons residing in that area. It is calculated as the sum of wages and salaries, supplements to wages and salaries, proprietors' income with inventory valuation (IVA) and capital consumption adjustments (CCAdj), rental income of persons with capital consumption adjustment (CCAdj), personal dividend income, personal interest income, and personal current transfer receipts, less contributions for government social insurance plus the adjustment for residence.  |
 | 2Population (persons)  | The number of individuals (both civilian and military) who reside in a given area.  |
 | 3Per capita personal income (dollars)  | The personal income of a given area divided by the resident population of the area. See "personal income."  |
-| Unit  | type of variable; (Thousands of dollars, Number of persons, Dollars)  |
-| 2013  | price of unit type for 2013  |
-| 2016  | price of unit type for 2016  |
-| 2020  | price of unit type for 2020  |
+| Unit  | Type of variable; (Thousands of dollars, Number of persons, Dollars)  |
+| 2013  | Price of unit type for 2013  |
+| 2016  | Price of unit type for 2016  |
+| 2020  | Price of unit type for 2020  |
 
 **These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.**
 
