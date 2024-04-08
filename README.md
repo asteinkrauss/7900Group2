@@ -10,30 +10,27 @@ Are healthy fruits and vegetables affordable to Americans in each state? We aim 
 We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
 # Data sets included:
-Fruit Prices 2013.csv ------- Fruit Prices 2016.csv   -------   Fruit Prices 2020.csv
+| Data Sets  | 
+| ------------- |
+| Fruit Prices 2013.csv  | 
+| Fruit Prices 2016.csv  | 
+| Fruit Prices 2020.csv  | 
+| Vegetable Prices 2013.csv  | 
+| Vegetable Prices 2016.csv  | 
+| Vegetable Prices 2020.csv  | 
 
-Vegetable Prices 2013.csv ------- Vegetable Prices 2016.csv ------- Vegetable Prices 2020.csv
+| Columns included  | Description of columns |
+| ------------- | ------------- |
+| Fruit/Vegetable  | type of food (apple, oranges, broccoli, etc)  |
+| Form  | form of food (fresh, canned, dried, juice, frozen)  |
+| RetailPrice  | price of food (in $)  |
+| RetailPriceUnit  | type of retail price (per pound, per unit, etc)  |
+| Yield  | Preparation yield factor  |
+| CupEquivalentSize  | a 1-cup equivalent equals the weight of enough edible food to fill a measuring cup  |
+| CupEquivalentUnit  | type of unit (pounds, fluid ounces)  |
+| CupEquivalentPrice  | price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption) |
+| Year  | Years included (2013, 2016, 2020)  |
 
--> 
-*Columns present:*
-
-**Fruit/Vegetable:** type of food (apple, oranges, broccoli, etc)
-
-**Form:** Categorical (fresh, canned, dried, juice, frozen)
-
-**RetailPrice:** in $
-
-**RetailPriceUnit:** Categorical (per pound, per unit)
-
-**Yield:** Preparation yield factor
-
-**CupEquivalentSize:** For many fruits and vegetables, a 1-cup equivalent equals the weight of enough edible food to fill a measuring cup
-
-**CupEquivalentUnit:** Categorical (pounds, fluid ounces)
-
-**CupEquivalentPrice:** in $; price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption)
-
-**Year:** Categorical (2013,2016,2020)
 
 Annual person income by county.csv
 
