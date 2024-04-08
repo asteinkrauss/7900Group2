@@ -1,5 +1,5 @@
 # ADAN-ADEC7900 Group 2
-Dataset of average American household income by capita and fruit and vegetables prices from 2013, 2016, 2020
+Dataset of average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020.
 
 # Research Question
 
@@ -52,6 +52,6 @@ We plan to target our research for use by the Congressional Committees on Agricu
 
 # Analytical Tools & Methods 
 
-We will conduct our analyses in R, utilizing the ‘ggplot2’ package to visualize the results. Using publicly available datasets spanning multiple years, we will look at descriptive statistics and run statistical tests (e.g., t-tests, ANOVA) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics will investigate the average, minimum, maximum prices of fruits and vegetables by year.  The ‘ggplot2’ package will be used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
+We will conduct our analyses in R. Using publicly available datasets spanning multiple years, we will look at descriptive statistics and run statistical tests (e.g., t-tests, ANOVA) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics will investigate the average, minimum, maximum prices of fruits and vegetables by year.  The ‘ggplot2’ package will be used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
 
 We hope to discover important insights by examining trends in fruit and vegetable affordability by state. These insights will inform policymaking, with a particular focus on enhancing food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
