@@ -1,0 +1,503 @@
+---
+title: "Group 2 - Checkpoint 1"
+author: "Ashley Steinkrauss, Madeline Sullivan, & Roel Rodriguez"
+date: "2024-04-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+### Clear the workspace
+```{r}
+rm(list = ls()) # Clear environment
+gc()            # Clear memory
+cat("\f")       # Clear console
+
+```
+
+### Install and load in necessary packages
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(devtools)
+library(tidyr)
+library(dplyr)
+library(knitr)
+library(reshape2)
+library(plotly) # Interactive graphs
+
+#install.packages("usmap")
+library(usmap) # Plot geographic data
+library(scales) # Aesthetics for geographic plot
+
+```
+
+### Load in .csv files
+```{r}
+# The following line of code starting with 'experiment_txt' will allow you to
+# select the necessary .csv files from your computer to import (when you un-
+# comment it)
+# experiment_txt <- read.csv(file.choose(), header = T)
+
+# Import .csv files
+#Fruit2013 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Fruit Prices 2013.csv") # Edit to match your directory path
+#Fruit2013 = Fruit2013[, 1:9] # Grabs first 9 columns (Some excels files had empty slots that were being read in weird)
+
+#Fruit2016 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Fruit Prices 2016.csv") # Edit to match your directory path
+#Fruit2016 = Fruit2016[, 1:9]
+
+#Fruit2020 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Fruit Prices 2020.csv") # Edit to match your directory path
+#Fruit2020 = Fruit2020[, 1:9]
+
+#Veg2013 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2013.csv") # Edit to match your directory path
+#Veg2013 = Veg2013[, 1:9]
+
+#Veg2016 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2016.csv") # Edit to match your directory path
+#Veg2016 = Veg2016[, 1:9]
+
+#Veg2020 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2020.csv") # Edit to match your directory path
+#Veg2020 = Veg2020[, 1:9]
+
+
+#Income = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Annual person income by county.csv")
+
+# DELETE THE BELOW CODE FOR CHECK POINT 1 & UN-COMMENT THE PRECEDING LINES
+Fruit2013 = read.csv("Fruit Prices 2013.csv") #edit these to match your directory path
+Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
+Fruit2016 = read.csv("Fruit Prices 2016.csv")
+Fruit2016 = Fruit2016[, 1:9]
+Fruit2020 = read.csv("Fruit Prices 2020.csv")
+Fruit2020 = Fruit2020[, 1:9]
+
+Veg2013 = read.csv("Vegetable Prices 2013.csv")
+Veg2013 = Veg2013[, 1:9]
+Veg2016 = read.csv("Vegetable Prices 2016.csv")
+Veg2016 = Veg2016[, 1:9]
+Veg2020 = read.csv("Vegetable Prices 2020.csv")
+Veg2020 = Veg2020[, 1:9]
+
+
+Income = read.csv("Annual person income by county.csv")
+
+```
+
+### Format data to have 'year' in long format
+```{r}
+Fruits = rbind(Fruit2013, Fruit2016, Fruit2020) # Make long format by combining all repeated columns
+Veggies = rbind(Veg2013, Veg2016, Veg2020)
+
+AnnualIncome <- pivot_longer(Income, cols = c("X2013", "X2016", "X2020"), names_to = "Year", values_to = "Value") # Combine the 3 year columns into 1 column
+
+```
+
+## Questions of interest
+
+### 1. How do the prices of fruits and vegetables of different types/forms change by year?
+```{r}
+# For fruits - Aggregating the cup equivalent price by type of fruit, year, and form of fruit
+fruit_prices <- aggregate(CupEquivalentPrice ~ Fruit + Year + Form, data = Fruits, FUN = mean)
+
+# For vegetables - Aggregating the cup equivalent price by type of fruit, year, and form of fruit
+veggie_prices <- aggregate(CupEquivalentPrice ~ Vegetable + Year + Form, data = Veggies, FUN = mean)
+
+# Converts 'Year' to a factor with specific levels
+fruit_prices$Year <- factor(fruit_prices$Year, levels = c("2013", "2016", "2020"))
+veggie_prices$Year <- factor(veggie_prices$Year, levels = c("2013", "2016", "2020"))
+
+# Creates a summary statistic table for fruits
+fruit_summary <- Fruits %>%
+  group_by(Year) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Creates a summary statistic table for vegetables
+veggie_summary <- Veggies %>%
+  group_by(Year) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Views the fruit summary table
+cat("Fruit Summary:\n")
+kable(fruit_summary, align = "c")
+
+# Views the vegetable summary table
+cat("\nVeggie Summary:\n")
+kable(veggie_summary, align = "c")
+
+
+# Plots the fruit graph with a legend
+ggplot(fruit_prices, aes(x = Year, y = CupEquivalentPrice, group = Fruit, color = Fruit)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Year", y = "Price per edible cup equivalent ",
+       title = "Average Price per Edible Cup Equivalent of Fruits by Year", color = "Fruit Type") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+# Plots the vegetable graph with a legend
+ggplot(veggie_prices, aes(x = Year, y = CupEquivalentPrice, group = Vegetable, color = Vegetable)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Year", y = "Price per edible cup equivalent ",
+       title = "Average Price per Edible Cup Equivalent of Vegetables by Year", color = "Vegetable Type") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+# Converts the fruit ggplot graph to an interactive plotly graph
+interactive_plot_fruit <- ggplotly(ggplot(fruit_prices, aes(x = Year, y = CupEquivalentPrice, group = Fruit, color = Fruit)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Year", y = "Price per edible cup equivalent",
+       title = "Average Price per Edible Cup Equivalent of Fruits by Year", color = "Fruit Type") +
+  theme_minimal() +
+  theme(legend.position = "right"))
+
+# Displays the fruit interactive plot
+interactive_plot_fruit
+
+# Converts the vegetable ggplot graph to interactive plotly graph
+interactive_plot_veggie <- ggplotly(ggplot(veggie_prices, aes(x = Year, y = CupEquivalentPrice, group = Vegetable, color = Vegetable)) +
+                                geom_line() +
+                                geom_point() +
+                                labs(x = "Year", y = "Price per edible cup equivalent",
+                                     title = "Average Price per Edible Cup Equivalent of Vegetables by Year", color = "Vegetable Type") +
+                                theme_minimal() +
+                                theme(legend.position = "right"))
+
+# Displays the vegetable interactive plot
+interactive_plot_veggie
+
+```
+
+
+### 2. How does income per capita differ by state across years?
+```{r}
+# Extracts row values associated with income per capita (The income dataset includes multiple
+# measure of income, but we are only interested in working with income per capita)
+income_by_capita <- subset(AnnualIncome, Description == "Per capita personal income (dollars) 2/")
+
+# Renames 'X2013', 'X2016', and 'X2020' to '2013', '2016' and '2020' in the 'Year' column
+income_by_capita <- income_by_capita %>% 
+  mutate(Year = ifelse(Year == "X2013", "2013", 
+                ifelse(Year == "X2016", "2016",
+                ifelse(Year == "X2020", "2020", Year))))
+
+# Converts 'Year' column to numeric
+income_by_capita$Year <- as.numeric(income_by_capita$Year)
+
+# Convert the 'Value' column to numeric (if needed)
+income_by_capita$Value <- as.numeric(income_by_capita$Value)
+
+# Aggregates the value by year and state
+agg_income <- aggregate(Value ~ Year + GeoFIPS + GeoName, data = income_by_capita, FUN = mean)
+
+# Format the Value column in personal_income -- IS THIS STILL NECESSARY?
+#agg_income$Value <- comma(agg_income$Value)
+
+# Filters data for each year
+income_2013 <- agg_income[agg_income$Year == 2013, ]
+income_2016 <- agg_income[agg_income$Year == 2016, ]
+income_2020 <- agg_income[agg_income$Year == 2020, ]
+
+# Generates the maps for each year & retrieves US state boundaries data
+us_states <- us_map(regions = "states")
+
+# YEAR = 2013, 2016, & 2020
+# Merges data using state abbreviations in us_states and FIPS codes in agg_income
+map_income <- merge(us_states, agg_income, by.x = "full", by.y = "GeoName")
+
+# Creates a plot with ggplot
+g <- ggplot(map_income) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State")
+
+# Displays the ggplot graph
+g
+
+# Converts ggplot to plotly object
+plotly_g <- ggplotly(g)
+
+# Displays the interactive plot
+plotly_g
+
+# YEAR = 2013
+# Merges data using state abbreviations in us_states and FIPS codes in agg_income
+map_income_2013 <- merge(us_states, income_2013, by.x = "full", by.y = "GeoName")
+
+# Creates a plot with ggplot
+g_2013 <- ggplot(map_income_2013) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State in 2013")
+
+# Displays the ggplot graph
+g_2013
+
+# Converts ggplot to plotly object
+plotly_g_2013 <- ggplotly(g_2013)
+
+# Displays the interactive plot
+plotly_g_2013
+
+# YEAR = 2016
+# Merges data using state abbreviations in us_states and FIPS codes in agg_income
+map_income_2016 <- merge(us_states, income_2016, by.x = "full", by.y = "GeoName")
+
+# Creates a plot with ggplot
+g_2016 <- ggplot(map_income_2016) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State in 2016")
+
+# Displays the ggplot graph
+g_2016
+
+# Converts ggplot to plotly object
+plotly_g_2016 <- ggplotly(g_2016)
+
+# Displays the interactive plot
+plotly_g_2016
+
+# YEAR = 2020
+# Merges using state abbreviations in us_states and FIPS codes in agg_income
+map_income_2020 <- merge(us_states, income_2020, by.x = "full", by.y = "GeoName")
+# Create a plot with ggplot
+g_2020 <- ggplot(map_income_2020) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State in 2020")
+
+# Displays the ggplot graph
+g_2020
+
+# Converts ggplot to plotly object
+plotly_g_2020 <- ggplotly(g_2020)
+
+# Displays the interactive plot
+plotly_g_2020
+
+```
+
+### 3. How do the prices of different forms of fruits and vegetables change by year?
+```{r}
+# Hard codes years
+Fruits$Year <- factor(Fruits$Year, levels = c("2013", "2016", "2020"))
+Veggies$Year <- factor(Veggies$Year, levels = c("2013", "2016", "2020"))
+
+# Aggregates the cup equivalent price by year, form of fruit, and type of fruit
+avg_prices_fruit <- aggregate(CupEquivalentPrice ~ Year + Form + Fruit, data = Fruits, FUN = mean)
+avg_prices_veg <- aggregate(CupEquivalentPrice ~ Year + Form + Vegetable, data = Veggies, FUN = mean)
+
+
+# Creates a summary statistic table for fruits
+fruit_summary_form <- Fruits %>%
+  group_by(Year, Form) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Creates a summary statistic table for vegetables
+veggie_summary_form <- Veggies %>%
+  group_by(Year, Form) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Views the fruit summary
+cat("Fruit Summary:\n")
+kable(fruit_summary_form, align = "c")
+
+# Views the vegetable summary
+cat("\nVeggie Summary:\n")
+kable(veggie_summary_form, align = "c")
+
+# Converts ggplot graph to interactive plotly fruit graph
+interactive_plot_fruit_form <- ggplotly(ggplot(avg_prices_fruit, aes(x = Year, y = CupEquivalentPrice, group = Fruit, color = Form)) +
+                                geom_line() +
+                                geom_point() +
+                                labs(x = "Year", y = "Cup Equivalent Price",
+                                     title = "Average Cup Equivalent Price of Fruits by Form Over Years", color = "Fruit Form") +
+                                theme_minimal() +
+                                theme(legend.position = "right"))
+
+# Displays the interactive plot
+interactive_plot_fruit_form
+
+# Converts ggplot graph to interactive plotly vegetable graph
+interactive_plot_veggie_form <- ggplotly(ggplot(avg_prices_veg, aes(x = Year, y = CupEquivalentPrice, group = Vegetable, color = Form)) +
+                                geom_line() +
+                                geom_point() +
+                                labs(x = "Year", y = "Cup Equivalent Price",
+                                     title = "Average Cup Equivalent Price of Fruits by Form Over Years", color = "Fruit Form") +
+                                theme_minimal() +
+                                theme(legend.position = "right"))
+
+# Displays the interactive plot
+interactive_plot_veggie_form
+
+```
+
+#4% of income allocated to fruits & veggies 
+#https://money.usnews.com/money/personal-finance/saving-and-budgeting/articles/how-much-should-i-spend-on-groceries
+#https://www.nidirect.gov.uk/articles/fruit-and-vegetables
+
+### 4. How many people can afford the recommended daily serving of fruits and vegetables across years?
+```{r}
+# Calculates 4% of per capita income
+income_by_capita$eleven_percent <- income_by_capita$Value * 0.04
+
+# Calculates 2% of per capita income
+income_by_capita$four_percent =  income_by_capita$Value * 0.02
+
+# Adjusts 'CupEquivalentPrice' to a yearly value by multiplying by 365
+fruit_prices$CupEquivalentPrice_yearly <- fruit_prices$CupEquivalentPrice * 365
+veggie_prices$CupEquivalentPrice_yearly <- veggie_prices$CupEquivalentPrice * 365
+
+# Merges income_by_capita with fruit_prices by 'Year'
+merged_fruits_2013 <- merge(subset(income_by_capita, Year == 2013), subset(fruit_prices, Year == 2013), by = "Year")
+merged_fruits_2016 <- merge(subset(income_by_capita, Year == 2016), subset(fruit_prices, Year == 2016), by = "Year")
+merged_fruits_2020 <- merge(subset(income_by_capita, Year == 2020), subset(fruit_prices, Year == 2020), by = "Year")
+
+# Merges income_by_capita with veggie_prices by 'Year'
+merged_veggies_2013 <- merge(subset(income_by_capita, Year == 2013), subset(veggie_prices, Year == 2013), by = "Year")
+merged_veggies_2016 <- merge(subset(income_by_capita, Year == 2016), subset(veggie_prices, Year == 2016), by = "Year")
+merged_veggies_2020 <- merge(subset(income_by_capita, Year == 2020), subset(veggie_prices, Year == 2020), by = "Year")
+
+# Updates 'meetreq' column based on the condition for fruits
+merged_fruits_2013$meetreq <- ifelse(merged_fruits_2013$four_percent > merged_fruits_2013$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_2016$meetreq <- ifelse(merged_fruits_2016$four_percent > merged_fruits_2016$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_2020$meetreq <- ifelse(merged_fruits_2020$four_percent > merged_fruits_2020$CupEquivalentPrice_yearly, "yes", "no")
+
+# Updates 'meetreq' column based on the condition for vegetables
+merged_veggies_2013$meetreq <- ifelse(merged_veggies_2013$four_percent > merged_veggies_2013$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_2016$meetreq <- ifelse(merged_veggies_2016$four_percent > merged_veggies_2016$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_2020$meetreq <- ifelse(merged_veggies_2020$four_percent > merged_veggies_2020$CupEquivalentPrice_yearly, "yes", "no")
+
+# Creates comparison data frames for fruit in 2013
+comparison_fruits_2013 <- data.frame(Year = merged_fruits_2013$Year,
+                                     meetreq = merged_fruits_2013$meetreq,
+                                     form = merged_fruits_2013$Form,
+                                     CupEquivalentPrice_yearly = merged_fruits_2013$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for fruit in 2016
+comparison_fruits_2016 <- data.frame(Year = merged_fruits_2016$Year,
+                                     meetreq = merged_fruits_2016$meetreq,
+                                     form = merged_fruits_2016$Form,
+                                     CupEquivalentPrice_yearly = merged_fruits_2016$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for fruit in 2020
+comparison_fruits_2020 <- data.frame(Year = merged_fruits_2020$Year,
+                                     meetreq = merged_fruits_2020$meetreq,
+                                     form = merged_fruits_2020$Form,
+                                     CupEquivalentPrice_yearly = merged_fruits_2020$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for vegetables in 2013
+comparison_veggies_2013 <- data.frame(Year = merged_veggies_2013$Year,
+                                      meetreq = merged_veggies_2013$meetreq,
+                                      form = merged_veggies_2013$Form,
+                                      CupEquivalentPrice_yearly = merged_veggies_2013$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for vegetables in 2016
+comparison_veggies_2016 <- data.frame(Year = merged_veggies_2016$Year,
+                                      meetreq = merged_veggies_2016$meetreq,
+                                      form = merged_veggies_2016$Form,
+                                      CupEquivalentPrice_yearly = merged_veggies_2016$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for vegetables in 2020
+comparison_veggies_2020 <- data.frame(Year = merged_veggies_2020$Year,
+                                      meetreq = merged_veggies_2020$meetreq,
+                                      form = merged_veggies_2020$Form,
+                                      CupEquivalentPrice_yearly = merged_veggies_2020$CupEquivalentPrice_yearly)
+
+
+# Combines all comparison data frames for fruits and vegetables across different years
+all_comparison_fruits <- rbind(comparison_fruits_2013, comparison_fruits_2016, comparison_fruits_2020)
+all_comparison_veggies <- rbind(comparison_veggies_2013, comparison_veggies_2016, comparison_veggies_2020)
+
+# Creates tables for fruits and vegetables
+table_fruits <- table(all_comparison_fruits$meetreq, all_comparison_fruits$Year)
+table_veggies <- table(all_comparison_veggies$meetreq, all_comparison_veggies$Year)
+
+# Views fruit table
+print("Fruits:")
+print(table_fruits)
+
+# Views vegetables table
+print("Veggies:")
+print(table_veggies)
+
+```
+
+### 5. How does the affordability of fruits and vegetables differ amongst their different forms?
+```{r}
+# Creates tables for fruits by form and year
+table_fruits_form_2013 <- table(comparison_fruits_2013$meetreq, comparison_fruits_2013$form)
+table_fruits_form_2016 <- table(comparison_fruits_2016$meetreq, comparison_fruits_2016$form)
+table_fruits_form_2020 <- table(comparison_fruits_2020$meetreq, comparison_fruits_2020$form)
+
+# Creatse tables for vegetables by form
+table_veggies_form_2013 <- table(comparison_veggies_2013$meetreq, comparison_veggies_2013$form)
+table_veggies_form_2016 <- table(comparison_veggies_2016$meetreq, comparison_veggies_2016$form)
+table_veggies_form_2020 <- table(comparison_veggies_2020$meetreq, comparison_veggies_2020$form)
+
+# Views 2013 fruit table
+print("Fruits Summary by Form for 2013:")
+print(table_fruits_form_2013)
+
+# Views 2016 fruit table
+print("Fruits Summary by Form for 2016:")
+print(table_fruits_form_2016)
+# Views 2020 fruit table
+print("Fruits Summary by Form for 2020:")
+print(table_fruits_form_2020)
+
+# Views 2013 vegetable table
+print("Veggies Summary by Form for 2013:")
+print(table_veggies_form_2013)
+
+# Views 2016 vegetable table
+print("Veggies Summary by Form for 2016:")
+print(table_veggies_form_2016)
+
+# Views 2020 vegetable table
+print("Veggies Summary by Form for 2020:")
+print(table_veggies_form_2020)
+
+```
+
+### Further Analysis: Proportions of Affordabiltiy
+```{r}
+# Calculates proportions of yes/no affordability for fruits in 2013
+table_fruits_form_2013_prop <- table_fruits_form_2013 / rowSums(table_fruits_form_2013)
+
+# Calculates proportions of yes/no affordability for fruits in 2016
+table_fruits_form_2016_prop <- table_fruits_form_2016 / rowSums(table_fruits_form_2016)
+
+# Calculates proportions of yes/no affordability for fruits in 2020
+table_fruits_form_2020_prop <- table_fruits_form_2020 / rowSums(table_fruits_form_2020)
+
+# Calculates proportions of yes/no affordability for vegetables in 2013
+table_veggies_form_2013_prop <- table_veggies_form_2013 / rowSums(table_veggies_form_2013)
+
+# Calculates proportions of yes/no affordability for vegetables in 2016
+table_veggies_form_2016_prop <- table_veggies_form_2016 / rowSums(table_veggies_form_2016)
+
+# Calculates proportions of yes/no affordability for vegetables in 2020
+table_veggies_form_2020_prop <- table_veggies_form_2020 / rowSums(table_veggies_form_2020)
+
+```
+
+
+
+
+
