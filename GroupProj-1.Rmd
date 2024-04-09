@@ -61,7 +61,7 @@ Veg2016 = Veg2016[, 1:9]
 Veg2020 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2020.csv") # Edit to match your directory path
 Veg2020 = Veg2020[, 1:9]
 
-Income = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Annual person income by county.csv")
+Income = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Annual person income by county.csv") # Edit to match your directory path
 
 ```
 
