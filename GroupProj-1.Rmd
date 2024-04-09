@@ -347,10 +347,6 @@ interactive_plot_veggie_form
 
 ```
 
-#4% of income allocated to fruits & veggies 
-#https://money.usnews.com/money/personal-finance/saving-and-budgeting/articles/how-much-should-i-spend-on-groceries
-#https://www.nidirect.gov.uk/articles/fruit-and-vegetables
-
 ### 4. How many people can afford the recommended daily serving of fruits and vegetables across years?
 ```{r}
 # Calculates 4% of per capita income
