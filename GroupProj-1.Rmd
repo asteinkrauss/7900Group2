@@ -1,0 +1,736 @@
+---
+title: "Group 2 - Checkpoint 1"
+author: "Ashley Steinkrauss, Madeline Sullivan, & Roel Rodriguez"
+date: "2024-04-10"
+output: html_document
+knitr::opts_chunk:
+  echo: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+### Clear the workspace
+```{r}
+rm(list = ls()) # Clear environment
+gc()            # Clear memory
+cat("\f")       # Clear console
+
+```
+
+### Install and load in necessary packages
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(devtools)
+library(tidyr)
+library(dplyr)
+library(knitr)
+library(reshape2)
+library(plotly) # Interactive graphs
+
+#install.packages("usmap")
+library(usmap) # Plot geographic data
+library(scales) # Aesthetics for geographic plot
+
+```
+
+### Load in .csv files
+```{r}
+# The following line of code starting with 'experiment_txt' will allow you to
+# select the necessary .csv files from your computer to import (when you un-
+# comment it)
+# experiment_txt <- read.csv(file.choose(), header = T)
+
+# Import .csv files
+#Fruit2013 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Fruit Prices 2013.csv") # Edit to match your directory path
+#Fruit2013 = Fruit2013[, 1:9] # Grabs first 9 columns (Some excels files had empty slots that were being read in weird)
+
+#Fruit2016 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Fruit Prices 2016.csv") # Edit to match your directory path
+#Fruit2016 = Fruit2016[, 1:9]
+
+#Fruit2020 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Fruit Prices 2020.csv") # Edit to match your directory path
+#Fruit2020 = Fruit2020[, 1:9]
+
+#Veg2013 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2013.csv") # Edit to match your directory path
+#Veg2013 = Veg2013[, 1:9]
+
+#Veg2016 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2016.csv") # Edit to match your directory path
+#Veg2016 = Veg2016[, 1:9]
+
+#Veg2020 = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Vegetable Prices 2020.csv") # Edit to match your directory path
+#Veg2020 = Veg2020[, 1:9]
+
+
+#Income = read.csv("/Users/ashleysteinkrauss/Desktop/7900/GroupProj/Annual person income by county.csv")
+
+# DELETE THE BELOW CODE FOR CHECK POINT 1 & UN-COMMENT THE PRECEDING LINES
+Fruit2013 = read.csv("Fruit Prices 2013.csv") #edit these to match your directory path
+Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
+Fruit2016 = read.csv("Fruit Prices 2016.csv")
+Fruit2016 = Fruit2016[, 1:9]
+Fruit2020 = read.csv("Fruit Prices 2020.csv")
+Fruit2020 = Fruit2020[, 1:9]
+
+Veg2013 = read.csv("Vegetable Prices 2013.csv")
+Veg2013 = Veg2013[, 1:9]
+Veg2016 = read.csv("Vegetable Prices 2016.csv")
+Veg2016 = Veg2016[, 1:9]
+Veg2020 = read.csv("Vegetable Prices 2020.csv")
+Veg2020 = Veg2020[, 1:9]
+
+
+Income = read.csv("Annual person income by county.csv")
+
+```
+
+### Format data to have 'year' in long format
+```{r}
+Fruits = rbind(Fruit2013, Fruit2016, Fruit2020) # Make long format by combining all repeated columns
+Veggies = rbind(Veg2013, Veg2016, Veg2020)
+
+AnnualIncome <- pivot_longer(Income, cols = c("X2013", "X2016", "X2020"), names_to = "Year", values_to = "Value") # Combine the 3 year columns into 1 column
+
+```
+
+### Descriptive statistics
+```{r}
+# For fruits - Aggregating the cup equivalent price by type of fruit, year, and form of fruit
+fruit_prices <- aggregate(CupEquivalentPrice ~ Fruit + Year + Form, data = Fruits, FUN = mean)
+
+# For vegetables - Aggregating the cup equivalent price by type of fruit, year, and form of fruit
+veggie_prices <- aggregate(CupEquivalentPrice ~ Vegetable + Year + Form, data = Veggies, FUN = mean)
+
+# Converts 'Year' to a factor with specific levels
+fruit_prices$Year <- factor(fruit_prices$Year, levels = c("2013", "2016", "2020"))
+veggie_prices$Year <- factor(veggie_prices$Year, levels = c("2013", "2016", "2020"))
+
+# Creates a summary statistic table for fruits
+fruit_summary <- Fruits %>%
+  group_by(Year) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Creates a summary statistic table for vegetables
+veggie_summary <- Veggies %>%
+  group_by(Year) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Views the fruit summary table
+cat("Fruit Summary:\n")
+kable(fruit_summary, align = "c")
+
+# Views the vegetable summary table
+cat("\nVeggie Summary:\n")
+kable(veggie_summary, align = "c")
+
+```
+
+## Questions of interest
+
+### 1. What are the most and least expensive fruits? How does this change across years?
+```{r}
+# Sort the Fruit2013 data frame by RetailPrice
+sorted_Fruit2013 <- Fruit2013[order(Fruit2013$RetailPrice), ]
+sorted_Fruit2016 <- Fruit2016[order(Fruit2016$RetailPrice), ]
+sorted_Fruit2020 <- Fruit2020[order(Fruit2020$RetailPrice), ]
+
+# Select the top 10 most expensive fruits
+top_10_expensive_Fruit2013 <- tail(sorted_Fruit2013, 10)
+top_10_expensive_Fruit2016 <- tail(sorted_Fruit2016, 10)
+top_10_expensive_Fruit2020 <- tail(sorted_Fruit2020, 10)
+
+# Select the bottom 10 least expensive fruits
+bottom_10_expensive_Fruit2013 <- head(sorted_Fruit2013, 10)
+bottom_10_expensive_Fruit2016 <- head(sorted_Fruit2016, 10)
+bottom_10_expensive_Fruit2020 <- head(sorted_Fruit2020, 10)
+
+# Create bar chart for most expensive fruits (sorted from least to most expensive)
+most_expensive_Fruit2013 <- ggplot(top_10_expensive_Fruit2013, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+  labs(title = "Most Expensive Fruits 2013",
+       x = "Retail Price",
+       y = "Fruit") +
+  theme_minimal()
+
+# Print the first graph
+print(most_expensive_Fruit2013)
+
+# Create bar chart for least expensive fruits (sorted from most to least expensive)
+least_expensive_Fruit2013 <- ggplot(bottom_10_expensive_Fruit2013, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+  labs(title = "Least Expensive Fruits 2013",
+       x = "Retail Price",
+       y = "Fruit") +
+  theme_minimal()
+
+# Print the second graph
+print(least_expensive_Fruit2013)
+
+# Create bar chart for most expensive fruits for 2016 (sorted from least to most expensive)
+least_expensive_Fruit2016 <- ggplot(top_10_expensive_Fruit2016, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+  labs(title = "Most Expensive Fruits 2016",
+       x = "Retail Price",
+       y = "Fruit") +
+  theme_minimal()
+
+# Print the first graph for 2016
+print(least_expensive_Fruit2016)
+
+# Create bar chart for least expensive fruits for 2016 (sorted from most to least expensive)
+least_expensive_Fruit2016 <- ggplot(bottom_10_expensive_Fruit2016, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+  labs(title = "Least Expensive Fruits 2016",
+       x = "Retail Price",
+       y = "Fruit") +
+  theme_minimal()
+
+# Print the second graph for 2016
+print(least_expensive_Fruit2016)
+
+# Create bar chart for most expensive fruits for 2020 (sorted from least to most expensive)
+most_expensive_Fruit2020 <- ggplot(top_10_expensive_Fruit2020, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+  labs(title = "Most Expensive Fruits 2020",
+       x = "Retail Price",
+       y = "Fruit") +
+  theme_minimal()
+
+# Print the first graph for 2020
+print(most_expensive_Fruit2020)
+
+# Create bar chart for least expensive fruits for 2020 (sorted from most to least expensive)
+least_expensive_Fruit2020 <- ggplot(bottom_10_expensive_Fruit2020, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+  labs(title = "Least Expensive Fruits 2020",
+       x = "Retail Price",
+       y = "Fruit") +
+  theme_minimal()
+
+# Print the second graph for 2020
+print(least_expensive_Fruit2020)
+
+```
+```{r}
+# Interactive version of the above graphs
+
+# Create function to generate bar chart
+create_bar_chart <- function(data, title, year, ascending = TRUE) {
+  sorted_data <- data[order(data$RetailPrice, decreasing = !ascending), ]
+  top_10_expensive <- tail(sorted_data, 10)
+  bottom_10_expensive <- head(sorted_data, 10)
+  
+  most_expensive_plot <- ggplot(top_10_expensive, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+    geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+    labs(title = paste("Most Expensive", title, year),
+         x = "Retail Price",
+         y = "Fruit") +
+    theme_minimal()
+  
+  least_expensive_plot <- ggplot(bottom_10_expensive, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+    geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+    labs(title = paste("Least Expensive", title, year),
+         x = "Retail Price",
+         y = "Fruit") +
+    theme_minimal()
+  
+  return(list(most_expensive_plot, least_expensive_plot))
+}
+
+# Create plots for each year
+plots_2013 <- create_bar_chart(Fruit2013, "Fruits", "2013")
+plots_2016 <- create_bar_chart(Fruit2016, "Fruits", "2016")
+plots_2020 <- create_bar_chart(Fruit2020, "Fruits", "2020")
+
+# Create plotly objects for most expensive fruits
+plotly_most_expensive <- subplot(
+  plotly::ggplotly(plots_2013[[1]]), 
+  plotly::ggplotly(plots_2016[[1]]),
+  plotly::ggplotly(plots_2020[[1]]),
+  nrows = 3, 
+  margin = 0.05
+) %>% layout(title = "Most Expensive Fruits")
+
+# Create plotly objects for least expensive fruits
+plotly_least_expensive <- subplot(
+  plotly::ggplotly(plots_2013[[2]]), 
+  plotly::ggplotly(plots_2016[[2]]),
+  plotly::ggplotly(plots_2020[[2]]),
+  nrows = 3, 
+  margin = 0.05
+) %>% layout(title = "Least Expensive Fruits")
+
+# Show the plotly objects
+plotly_most_expensive
+plotly_least_expensive
+
+```
+
+### 2. What are the most and least expensive vegetables? How does this change across years?
+```{r}
+# Sort the Veg2013 data frame by RetailPrice
+sorted_Veg2013 <- Veg2013[order(Veg2013$RetailPrice), ]
+sorted_Veg2016 <- Veg2016[order(Veg2016$RetailPrice), ]
+sorted_Veg2020 <- Veg2020[order(Veg2020$RetailPrice), ]
+
+# Select the top 10 most expensive Vegs
+top_10_expensive_Veg2013 <- tail(sorted_Veg2013, 10)
+top_10_expensive_Veg2016 <- tail(sorted_Veg2016, 10)
+top_10_expensive_Veg2020 <- tail(sorted_Veg2020, 10)
+
+# Select the bottom 10 least expensive Vegs
+bottom_10_expensive_Veg2013 <- head(sorted_Veg2013, 10)
+bottom_10_expensive_Veg2016 <- head(sorted_Veg2016, 10)
+bottom_10_expensive_Veg2020 <- head(sorted_Veg2020, 10)
+
+# Create bar chart for most expensive Vegs (sorted from least to most expensive)
+most_expensive_Veg2013 <- ggplot(top_10_expensive_Veg2013, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+  labs(title = "Most Expensive Vegs 2013",
+       x = "Retail Price",
+       y = "Veg") +
+  theme_minimal()
+
+# Print the first graph
+print(most_expensive_Veg2013)
+
+# Create bar chart for least expensive Vegs (sorted from most to least expensive)
+least_expensive_Veg2013 <- ggplot(bottom_10_expensive_Veg2013, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+  labs(title = "Least Expensive Vegs 2013",
+       x = "Retail Price",
+       y = "Veg") +
+  theme_minimal()
+
+# Print the second graph
+print(least_expensive_Veg2013)
+
+# Create bar chart for most expensive Vegs for 2016 (sorted from least to most expensive)
+least_expensive_Veg2016 <- ggplot(top_10_expensive_Veg2016, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+  labs(title = "Most Expensive Vegs 2016",
+       x = "Retail Price",
+       y = "Veg") +
+  theme_minimal()
+
+# Print the first graph for 2016
+print(least_expensive_Veg2016)
+
+# Create bar chart for least expensive Vegs for 2016 (sorted from most to least expensive)
+least_expensive_Veg2016 <- ggplot(bottom_10_expensive_Veg2016, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+  labs(title = "Least Expensive Vegs 2016",
+       x = "Retail Price",
+       y = "Veg") +
+  theme_minimal()
+
+# Print the second graph for 2016
+print(least_expensive_Veg2016)
+
+# Create bar chart for most expensive Vegs for 2020 (sorted from least to most expensive)
+most_expensive_Veg2020 <- ggplot(top_10_expensive_Veg2020, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+  labs(title = "Most Expensive Vegs 2020",
+       x = "Retail Price",
+       y = "Veg") +
+  theme_minimal()
+
+# Print the first graph for 2020
+print(most_expensive_Veg2020)
+
+# Create bar chart for least expensive Vegs for 2020 (sorted from most to least expensive)
+least_expensive_Veg2020 <- ggplot(bottom_10_expensive_Veg2020, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+  labs(title = "Least Expensive Vegs 2020",
+       x = "Retail Price",
+       y = "Veg") +
+  theme_minimal()
+
+# Print the second graph for 2020
+print(least_expensive_Veg2020)
+
+```
+
+```{r}
+# Interactive version of the above graphs
+
+# Create function to generate bar chart
+create_bar_chart_veg <- function(data, title, year, ascending = TRUE) {
+  sorted_data <- data[order(data$RetailPrice, decreasing = !ascending), ]
+  top_10_expensive <- tail(sorted_data, 10)
+  bottom_10_expensive <- head(sorted_data, 10)
+  
+  most_expensive_plot <- ggplot(top_10_expensive, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
+    geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
+    labs(title = paste("Most Expensive", title, year),
+         x = "Retail Price",
+         y = "Vegetable") +
+    theme_minimal()
+  
+  least_expensive_plot <- ggplot(bottom_10_expensive, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
+    geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
+    labs(title = paste("Least Expensive", title, year),
+         x = "Retail Price",
+         y = "Vegetable") +
+    theme_minimal()
+  
+  return(list(most_expensive_plot, least_expensive_plot))
+}
+
+# Create plots for each year
+plots_2013_veg <- create_bar_chart_veg(Veg2013, "Vegetables", "2013")
+plots_2016_veg <- create_bar_chart_veg(Veg2016, "Vegetables", "2016")
+plots_2020_veg <- create_bar_chart_veg(Veg2020, "Vegetables", "2020")
+
+# Create plotly objects for most expensive vegetables
+plotly_most_expensive_veg <- subplot(
+  plotly::ggplotly(plots_2013_veg[[1]]), 
+  plotly::ggplotly(plots_2016_veg[[1]]),
+  plotly::ggplotly(plots_2020_veg[[1]]),
+  nrows = 3, 
+  margin = 0.05
+) %>% layout(title = "Most Expensive Vegetables")
+
+# Create plotly objects for least expensive vegetables
+plotly_least_expensive_veg <- subplot(
+  plotly::ggplotly(plots_2013_veg[[2]]), 
+  plotly::ggplotly(plots_2016_veg[[2]]),
+  plotly::ggplotly(plots_2020_veg[[2]]),
+  nrows = 3, 
+  margin = 0.05
+) %>% layout(title = "Least Expensive Vegetables")
+
+# Show the plotly objects
+plotly_most_expensive_veg
+plotly_least_expensive_veg
+
+```
+
+### 3. How does income per capita differ by state across years?
+```{r}
+# Extracts row values associated with income per capita (The income dataset includes multiple
+# measure of income, but we are only interested in working with income per capita)
+income_by_capita <- subset(AnnualIncome, Description == "Per capita personal income (dollars) 2/")
+
+# Renames 'X2013', 'X2016', and 'X2020' to '2013', '2016' and '2020' in the 'Year' column
+income_by_capita <- income_by_capita %>% 
+  mutate(Year = ifelse(Year == "X2013", "2013", 
+                ifelse(Year == "X2016", "2016",
+                ifelse(Year == "X2020", "2020", Year))))
+
+# Converts 'Year' column to numeric
+income_by_capita$Year <- as.numeric(income_by_capita$Year)
+
+# Convert the 'Value' column to numeric (if needed)
+income_by_capita$Value <- as.numeric(income_by_capita$Value)
+
+# Aggregates the value by year and state
+agg_income <- aggregate(Value ~ Year + GeoFIPS + GeoName, data = income_by_capita, FUN = mean)
+
+# Format the Value column in personal_income -- IS THIS STILL NECESSARY?
+#agg_income$Value <- comma(agg_income$Value)
+
+# Filters data for each year
+income_2013 <- agg_income[agg_income$Year == 2013, ]
+income_Fruit2016 <- agg_income[agg_income$Year == 2016, ]
+income_Fruit2020 <- agg_income[agg_income$Year == 2020, ]
+
+# Generates the maps for each year & retrieves US state boundaries data
+us_states <- us_map(regions = "states")
+
+# YEAR = 2013, 2016, & 2020
+# Merges data using state abbreviations in us_states and FIPS codes in agg_income
+map_income <- merge(us_states, agg_income, by.x = "full", by.y = "GeoName")
+
+# Creates a plot with ggplot
+g <- ggplot(map_income) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State")
+
+# Displays the ggplot graph
+g
+
+# Converts ggplot to plotly object
+plotly_g <- ggplotly(g)
+
+# Displays the interactive plot
+plotly_g
+
+# YEAR = 2013
+# Merges data using state abbreviations in us_states and FIPS codes in agg_income
+map_income_2013 <- merge(us_states, income_2013, by.x = "full", by.y = "GeoName")
+
+# Creates a plot with ggplot
+g_2013 <- ggplot(map_income_2013) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State in 2013")
+
+# Displays the ggplot graph
+g_2013
+
+# Converts ggplot to plotly object
+plotly_g_2013 <- ggplotly(g_2013)
+
+# Displays the interactive plot
+plotly_g_2013
+
+# YEAR = 2016
+# Merges data using state abbreviations in us_states and FIPS codes in agg_income
+map_income_Fruit2016 <- merge(us_states, income_Fruit2016, by.x = "full", by.y = "GeoName")
+
+# Creates a plot with ggplot
+g_Fruit2016 <- ggplot(map_income_Fruit2016) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State in 2016")
+
+# Displays the ggplot graph
+g_Fruit2016
+
+# Converts ggplot to plotly object
+plotly_g_Fruit2016 <- ggplotly(g_Fruit2016)
+
+# Displays the interactive plot
+plotly_g_Fruit2016
+
+# YEAR = 2020
+# Merges using state abbreviations in us_states and FIPS codes in agg_income
+map_income_Fruit2020 <- merge(us_states, income_Fruit2020, by.x = "full", by.y = "GeoName")
+# Create a plot with ggplot
+g_Fruit2020 <- ggplot(map_income_Fruit2020) +
+  geom_sf(aes(fill = Value)) +
+  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  ggtitle("Personal Income by State in 2020")
+
+# Displays the ggplot graph
+g_Fruit2020
+
+# Converts ggplot to plotly object
+plotly_g_Fruit2020 <- ggplotly(g_Fruit2020)
+
+# Displays the interactive plot
+plotly_g_Fruit2020
+
+```
+
+### 4. How do the prices of different forms of fruits and vegetables change by year?
+```{r}
+# Hard codes years
+Fruits$Year <- factor(Fruits$Year, levels = c("2013", "2016", "2020"))
+Veggies$Year <- factor(Veggies$Year, levels = c("2013", "2016", "2020"))
+
+# Aggregates the cup equivalent price by year, form of fruit, and type of fruit
+avg_prices_fruit <- aggregate(CupEquivalentPrice ~ Year + Form + Fruit, data = Fruits, FUN = mean)
+avg_prices_veg <- aggregate(CupEquivalentPrice ~ Year + Form + Vegetable, data = Veggies, FUN = mean)
+
+
+# Creates a summary statistic table for fruits
+fruit_summary_form <- Fruits %>%
+  group_by(Year, Form) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Creates a summary statistic table for vegetables
+veggie_summary_form <- Veggies %>%
+  group_by(Year, Form) %>%
+  summarise(mean_price = mean(CupEquivalentPrice),
+            median_price = median(CupEquivalentPrice),
+            min_price = min(CupEquivalentPrice),
+            max_price = max(CupEquivalentPrice))
+
+# Views the fruit summary
+cat("Fruit Summary:\n")
+kable(fruit_summary_form, align = "c")
+
+# Views the vegetable summary
+cat("\nVeggie Summary:\n")
+kable(veggie_summary_form, align = "c")
+
+# Converts ggplot graph to interactive plotly fruit graph
+interactive_plot_fruit_form <- ggplotly(ggplot(avg_prices_fruit, aes(x = Year, y = CupEquivalentPrice, group = Fruit, color = Form)) +
+                                geom_line() +
+                                geom_point() +
+                                labs(x = "Year", y = "Cup Equivalent Price",
+                                     title = "Average Cup Equivalent Price of Fruits by Form Over Years", color = "Fruit Form") +
+                                theme_minimal() +
+                                theme(legend.position = "right"))
+
+# Displays the interactive plot
+interactive_plot_fruit_form
+
+# Converts ggplot graph to interactive plotly vegetable graph
+interactive_plot_veggie_form <- ggplotly(ggplot(avg_prices_veg, aes(x = Year, y = CupEquivalentPrice, group = Vegetable, color = Form)) +
+                                geom_line() +
+                                geom_point() +
+                                labs(x = "Year", y = "Cup Equivalent Price",
+                                     title = "Average Cup Equivalent Price of Fruits by Form Over Years", color = "Fruit Form") +
+                                theme_minimal() +
+                                theme(legend.position = "right"))
+
+# Displays the interactive plot
+interactive_plot_veggie_form
+
+```
+
+### 5. How many people can afford the recommended daily serving of fruits and vegetables across years?
+```{r}
+# Calculates 4% of per capita income
+income_by_capita$eleven_percent <- income_by_capita$Value * 0.04
+
+# Calculates 2% of per capita income
+income_by_capita$four_percent =  income_by_capita$Value * 0.02
+
+# Adjusts 'CupEquivalentPrice' to a yearly value by multiplying by 365
+fruit_prices$CupEquivalentPrice_yearly <- fruit_prices$CupEquivalentPrice * 365
+veggie_prices$CupEquivalentPrice_yearly <- veggie_prices$CupEquivalentPrice * 365
+
+# Merges income_by_capita with fruit_prices by 'Year'
+merged_fruits_2013 <- merge(subset(income_by_capita, Year == 2013), subset(fruit_prices, Year == 2013), by = "Year")
+merged_fruits_Fruit2016 <- merge(subset(income_by_capita, Year == 2016), subset(fruit_prices, Year == 2016), by = "Year")
+merged_fruits_Fruit2020 <- merge(subset(income_by_capita, Year == 2020), subset(fruit_prices, Year == 2020), by = "Year")
+
+# Merges income_by_capita with veggie_prices by 'Year'
+merged_veggies_2013 <- merge(subset(income_by_capita, Year == 2013), subset(veggie_prices, Year == 2013), by = "Year")
+merged_veggies_Fruit2016 <- merge(subset(income_by_capita, Year == 2016), subset(veggie_prices, Year == 2016), by = "Year")
+merged_veggies_Fruit2020 <- merge(subset(income_by_capita, Year == 2020), subset(veggie_prices, Year == 2020), by = "Year")
+
+# Updates 'meetreq' column based on the condition for fruits
+merged_fruits_2013$meetreq <- ifelse(merged_fruits_2013$four_percent > merged_fruits_2013$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_Fruit2016$meetreq <- ifelse(merged_fruits_Fruit2016$four_percent > merged_fruits_Fruit2016$CupEquivalentPrice_yearly, "yes", "no")
+merged_fruits_Fruit2020$meetreq <- ifelse(merged_fruits_Fruit2020$four_percent > merged_fruits_Fruit2020$CupEquivalentPrice_yearly, "yes", "no")
+
+# Updates 'meetreq' column based on the condition for vegetables
+merged_veggies_2013$meetreq <- ifelse(merged_veggies_2013$four_percent > merged_veggies_2013$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_Fruit2016$meetreq <- ifelse(merged_veggies_Fruit2016$four_percent > merged_veggies_Fruit2016$CupEquivalentPrice_yearly, "yes", "no")
+merged_veggies_Fruit2020$meetreq <- ifelse(merged_veggies_Fruit2020$four_percent > merged_veggies_Fruit2020$CupEquivalentPrice_yearly, "yes", "no")
+
+# Creates comparison data frames for fruit in 2013
+comparison_fruits_2013 <- data.frame(Year = merged_fruits_2013$Year,
+                                     meetreq = merged_fruits_2013$meetreq,
+                                     form = merged_fruits_2013$Form,
+                                     CupEquivalentPrice_yearly = merged_fruits_2013$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for fruit in 2016
+comparison_fruits_Fruit2016 <- data.frame(Year = merged_fruits_Fruit2016$Year,
+                                     meetreq = merged_fruits_Fruit2016$meetreq,
+                                     form = merged_fruits_Fruit2016$Form,
+                                     CupEquivalentPrice_yearly = merged_fruits_Fruit2016$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for fruit in 2020
+comparison_fruits_Fruit2020 <- data.frame(Year = merged_fruits_Fruit2020$Year,
+                                     meetreq = merged_fruits_Fruit2020$meetreq,
+                                     form = merged_fruits_Fruit2020$Form,
+                                     CupEquivalentPrice_yearly = merged_fruits_Fruit2020$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for vegetables in 2013
+comparison_veggies_2013 <- data.frame(Year = merged_veggies_2013$Year,
+                                      meetreq = merged_veggies_2013$meetreq,
+                                      form = merged_veggies_2013$Form,
+                                      CupEquivalentPrice_yearly = merged_veggies_2013$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for vegetables in 2016
+comparison_veggies_Fruit2016 <- data.frame(Year = merged_veggies_Fruit2016$Year,
+                                      meetreq = merged_veggies_Fruit2016$meetreq,
+                                      form = merged_veggies_Fruit2016$Form,
+                                      CupEquivalentPrice_yearly = merged_veggies_Fruit2016$CupEquivalentPrice_yearly)
+
+# Creates comparison data frames for vegetables in 2020
+comparison_veggies_Fruit2020 <- data.frame(Year = merged_veggies_Fruit2020$Year,
+                                      meetreq = merged_veggies_Fruit2020$meetreq,
+                                      form = merged_veggies_Fruit2020$Form,
+                                      CupEquivalentPrice_yearly = merged_veggies_Fruit2020$CupEquivalentPrice_yearly)
+
+
+# Combines all comparison data frames for fruits and vegetables across different years
+all_comparison_fruits <- rbind(comparison_fruits_2013, comparison_fruits_Fruit2016, comparison_fruits_Fruit2020)
+all_comparison_veggies <- rbind(comparison_veggies_2013, comparison_veggies_Fruit2016, comparison_veggies_Fruit2020)
+
+# Creates tables for fruits and vegetables
+table_fruits <- table(all_comparison_fruits$meetreq, all_comparison_fruits$Year)
+table_veggies <- table(all_comparison_veggies$meetreq, all_comparison_veggies$Year)
+
+# Views fruit table
+print("Fruits:")
+print(table_fruits)
+
+# Views vegetables table
+print("Veggies:")
+print(table_veggies)
+
+```
+
+### 6. How does the affordability of fruits and vegetables differ amongst their different forms?
+```{r}
+# Creates tables for fruits by form and year
+table_fruits_form_2013 <- table(comparison_fruits_2013$meetreq, comparison_fruits_2013$form)
+table_fruits_form_Fruit2016 <- table(comparison_fruits_Fruit2016$meetreq, comparison_fruits_Fruit2016$form)
+table_fruits_form_Fruit2020 <- table(comparison_fruits_Fruit2020$meetreq, comparison_fruits_Fruit2020$form)
+
+# Creatse tables for vegetables by form
+table_veggies_form_2013 <- table(comparison_veggies_2013$meetreq, comparison_veggies_2013$form)
+table_veggies_form_Fruit2016 <- table(comparison_veggies_Fruit2016$meetreq, comparison_veggies_Fruit2016$form)
+table_veggies_form_Fruit2020 <- table(comparison_veggies_Fruit2020$meetreq, comparison_veggies_Fruit2020$form)
+
+# Views 2013 fruit table
+print("Fruits Summary by Form for 2013:")
+print(table_fruits_form_2013)
+
+# Views 2016 fruit table
+print("Fruits Summary by Form for 2016:")
+print(table_fruits_form_Fruit2016)
+# Views 2020 fruit table
+print("Fruits Summary by Form for 2020:")
+print(table_fruits_form_Fruit2020)
+
+# Views 2013 vegetable table
+print("Veggies Summary by Form for 2013:")
+print(table_veggies_form_2013)
+
+# Views 2016 vegetable table
+print("Veggies Summary by Form for 2016:")
+print(table_veggies_form_Fruit2016)
+
+# Views 2020 vegetable table
+print("Veggies Summary by Form for 2020:")
+print(table_veggies_form_Fruit2020)
+
+```
+
+### Further Analysis: Proportions of Affordabiltiy
+```{r}
+# Calculates proportions of yes/no affordability for fruits in 2013
+table_fruits_form_2013_prop <- table_fruits_form_2013 / rowSums(table_fruits_form_2013)
+
+# Calculates proportions of yes/no affordability for fruits in 2016
+table_fruits_form_Fruit2016_prop <- table_fruits_form_Fruit2016 / rowSums(table_fruits_form_Fruit2016)
+
+# Calculates proportions of yes/no affordability for fruits in 2020
+table_fruits_form_Fruit2020_prop <- table_fruits_form_Fruit2020 / rowSums(table_fruits_form_Fruit2020)
+
+# Calculates proportions of yes/no affordability for vegetables in 2013
+table_veggies_form_2013_prop <- table_veggies_form_2013 / rowSums(table_veggies_form_2013)
+
+# Calculates proportions of yes/no affordability for vegetables in 2016
+table_veggies_form_Fruit2016_prop <- table_veggies_form_Fruit2016 / rowSums(table_veggies_form_Fruit2016)
+
+# Calculates proportions of yes/no affordability for vegetables in 2020
+table_veggies_form_Fruit2020_prop <- table_veggies_form_Fruit2020 / rowSums(table_veggies_form_Fruit2020)
+
+```
+
+
+
+
+
