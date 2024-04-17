@@ -19,7 +19,7 @@ library(ggplot2)
 
 ```{r}
 # Set the directory path where the CSV files are located
-#directory_path <- "C:\\Users\\roelr\\OneDrive\\Documents\\ADAN\\7900\\Group\\Data\\"
+#directory_path <- ""
 directory_path <- "Data/"
 
 # Function to read CSV files and extract first 9 columns
