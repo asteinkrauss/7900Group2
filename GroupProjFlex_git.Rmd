@@ -1,0 +1,110 @@
+---
+title: "Market Price Visualization"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(plotly)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+```
+
+
+```{r}
+# Set the directory path where the CSV files are located
+#directory_path <- "C:\\Users\\roelr\\OneDrive\\Documents\\ADAN\\7900\\Group\\Data\\"
+directory_path <- "Data/"
+
+# Function to read CSV files and extract first 9 columns
+read_and_extract <- function(file_path) {
+  data <- read.csv(file_path)
+  return(data[, 1:9])
+}
+
+# List of years
+years <- c(2013, 2016, 2020)
+
+# List to store fruit and vegetable data
+fruits_list <- list()
+veggies_list <- list()
+
+# Loop through years and read CSV files
+for (year in years) {
+  fruits_list[[year]] <- read_and_extract(paste0(directory_path, "Fruit Prices ", year, ".csv"))
+  veggies_list[[year]] <- read_and_extract(paste0(directory_path, "Vegetable Prices ", year, ".csv"))
+}
+
+# Combine fruit and vegetable data
+Fruits <- do.call(rbind, fruits_list)
+Veggies <- do.call(rbind, veggies_list)
+
+# Read income data
+Income <- read.csv(paste0(directory_path, "Annual person income by county.csv"))
+
+# Pivot income data
+AnnualIncome <- pivot_longer(Income, cols = c("X2013", "X2016", "X2020"), names_to = "Year", values_to = "Value")
+
+```
+
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+### Controls
+
+
+```{r}
+selectInput("selected_year", "Select Year:",
+           choices = c(2013, 2016, 2020), selected = 2020)
+numericInput("numItems", "Number of Items:",
+              value = 10, min = 5, max = 20)
+```
+
+
+Column
+-----------------------------------------------------------------------
+
+### Most Expensive Fruits
+```{r}
+output$fruitPlot <- renderPlot({
+  req(input$selected_year, input$numItems)  # Ensure these inputs are ready to use
+  fruit_data <- Fruits %>%
+    filter(Year == as.numeric(input$selected_year)) %>%
+    arrange(desc(RetailPrice)) %>%
+    mutate(Fruit = factor(Fruit, levels = unique(Fruit))) %>%
+    head(input$numItems)
+  
+  ggplot(fruit_data, aes(x = Fruit, y = RetailPrice, fill = Fruit)) +
+    geom_bar(stat = "identity") +
+    labs(title = paste('Top', input$numItems, 'Most Expensive Fruits in', input$selected_year),
+         x = "Fruit", y = "Retail Price") +
+    theme_minimal()
+})
+plotOutput("fruitPlot")
+```
+
+### Most Expensive Veggies
+```{r}
+output$veggiePlot <- renderPlot({
+  req(input$selected_year, input$numItems)  # Ensure these inputs are ready to use
+  veggie_data <- Veggies %>%
+    filter(Year == as.numeric(input$selected_year)) %>%
+    arrange(desc(RetailPrice)) %>%
+    mutate(Vegetable = factor(Vegetable, levels = unique(Vegetable))) %>%
+    head(input$numItems)
+  
+  ggplot(veggie_data, aes(x = Vegetable, y = RetailPrice, fill = Vegetable)) +
+    geom_bar(stat = "identity") +
+    labs(title = paste('Top', input$numItems, 'Most Expensive Vegetables in', input$selected_year),
+         x = "Vegetable", y = "Retail Price") +
+    theme_minimal()
+})
+plotOutput("veggiePlot")
+```
