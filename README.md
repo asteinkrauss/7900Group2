@@ -63,6 +63,8 @@ Annual person income by county.csv
 
 # Briefly propose the tools and methods used to perform the analysis 
 
+![unnamed-chunk-6-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/9245dd7e-960c-44f8-87b8-846e57b35331)
+
 We aim to conduct our analysis in R. We will use ggplot2 to visualize the data sets and interpret the data. Using available datasets spanning multiple years, we employ a range of data analysis methods including descriptive statistics, correlation analysis, spatial analysis, and data visualization. By examining trends in fruit and vegetable affordability across the country and their relationship with household income, we aim to provide insights that inform policymaking, particularly within the realm of food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
 
 Descriptive statistics will involve calculating summary statistics for fruit and vegetable prices across different forms (fresh, canned, frozen, etc.) and years. This will help outline the trends in food prices an affordability metrics over time. Statistical tests (e.g., t-tests, ANOVA) will also be used to compare affordability metrics between different income brackets, regions, or years. By examining these metrics, we aim to assess the significance of differences in affordability across demographic groups. Correlation analysis will investigate correlations between affordability metrics and per capita income levels across different regions or states, examining the relationship between affordability of fruits/vegetables and adherence to dietary guidelines. We will also conduct spatial analysis, utilizing geographic data to analyze spatial variations in fruit and vegetable affordability across different regions.
