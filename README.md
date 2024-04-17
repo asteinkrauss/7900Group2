@@ -56,6 +56,11 @@ The datasets include the average American household income per capita and fruit 
 These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.
 
 ### Descriptive Statistics
+<img width="583" alt="Screenshot 2024-04-17 at 1 04 53 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/00ba954a-9ab7-4e49-a80b-726fe92ad951">
+<img width="616" alt="Screenshot 2024-04-17 at 1 07 24 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/75d2f767-1187-4127-88ed-e3161f36ec1a">
+
+
+
 **Provide a short description of the nature of the provided data set
 and explain how these characteristics affect your analysis methodology. Summarize the
 data set with basic descriptive statistics as applicable.**
