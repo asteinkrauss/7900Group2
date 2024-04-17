@@ -107,6 +107,10 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 ![AffordBar](https://github.com/asteinkrauss/7900Group2/assets/164543699/38fa6bac-2f54-478e-b1af-6683d3ea6323)
 
 **6. EXCURSION ANALYSIS -- How does the affordability of fruits and vegetables differ amongst their different forms?**
+![FruitAff](https://github.com/asteinkrauss/7900Group2/assets/164543699/870ee087-b748-422e-a667-ff55518f3500)
+![VegAff](https://github.com/asteinkrauss/7900Group2/assets/164543699/ced81be9-5a77-45fb-a901-41b82ad15a79)
+
+
 
 # Conclusion
 **Summarize the analytical methodology and provide closure to your
