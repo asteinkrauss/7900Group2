@@ -99,6 +99,11 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 ![unnamed-chunk-10-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/37242604-16fb-4c00-bae5-d2f202f3aec5)
 ![unnamed-chunk-10-7](https://github.com/asteinkrauss/7900Group2/assets/164549275/9e1baa26-667c-4070-9a51-ca859b04c238)
 
+**4. How do the prices of different forms of fruits and vegetables change by year?**
+
+**5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
+
+**6. How does the affordability of fruits and vegetables differ amongst their different forms?**
 
 # Conclusion
 **Summarize the analytical methodology and provide closure to your
