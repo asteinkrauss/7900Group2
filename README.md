@@ -75,7 +75,30 @@ To quantify affordability, we developed an affordability metric based on the U.S
 
 We hope to discover important insights by examining trends in fruit and vegetable affordability by state. These insights will inform policymaking, with a particular focus on enhancing food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
 
-### **ADD FIGURES HERE**
+### Questions of Interest
+
+**1. What are the most and least expensive fruits? How does this change across years?**
+
+![unnamed-chunk-6-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/46a5c31e-2a95-4c5c-9aac-d0d5d5e2ad69)
+![unnamed-chunk-6-2](https://github.com/asteinkrauss/7900Group2/assets/164549275/7d61b66e-fd92-4ec8-aeb8-2b441a551179)
+![unnamed-chunk-6-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/a20e028a-8d18-4813-9796-e16d5c045517)
+![unnamed-chunk-6-4](https://github.com/asteinkrauss/7900Group2/assets/164549275/508edde9-7329-4159-858c-a4e7cf4e279a)
+![unnamed-chunk-6-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/f5afc022-5a34-4861-be03-29d0544ec3c6)
+![unnamed-chunk-6-6](https://github.com/asteinkrauss/7900Group2/assets/164549275/4aefaa91-3f8f-4ba6-99ca-9932c99748d1)
+
+**2. What are the most and least expensive vegetables? How does this change across years?**
+![unnamed-chunk-8-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/2dc2a0e1-4cc9-430a-94f1-ee96097c5b48)
+![unnamed-chunk-8-2](https://github.com/asteinkrauss/7900Group2/assets/164549275/450c0374-e928-4dc3-9824-8885828ee66a)
+![unnamed-chunk-8-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/3454e858-cd28-427b-b65b-fdd2b710ffad)
+![unnamed-chunk-8-4](https://github.com/asteinkrauss/7900Group2/assets/164549275/1548cd63-5e76-40ec-a443-7bc11006b401)
+![unnamed-chunk-8-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/f8b6d5e3-7085-452c-a9a1-160847ebd66a)
+![unnamed-chunk-8-6](https://github.com/asteinkrauss/7900Group2/assets/164549275/1c55e104-0342-473b-a695-3b734c95fb61)
+
+**3. How does income per capita differ by state across years?**
+![unnamed-chunk-10-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/6b56d0e0-323a-409b-8136-1ca72a648cf2)
+![unnamed-chunk-10-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/37242604-16fb-4c00-bae5-d2f202f3aec5)
+![unnamed-chunk-10-7](https://github.com/asteinkrauss/7900Group2/assets/164549275/9e1baa26-667c-4070-9a51-ca859b04c238)
+
 
 # Conclusion
 **Summarize the analytical methodology and provide closure to your
