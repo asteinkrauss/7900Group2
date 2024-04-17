@@ -103,9 +103,8 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 ![FruitForm](https://github.com/asteinkrauss/7900Group2/assets/164543699/8c6d95a4-f311-4f31-a8c1-eef8bb4ff8c8)
 ![VegForm](https://github.com/asteinkrauss/7900Group2/assets/164543699/3f8f1fe3-e8df-4328-88bd-f6507c3fdff9)
 
-
-
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
+![AffordBar](https://github.com/asteinkrauss/7900Group2/assets/164543699/38fa6bac-2f54-478e-b1af-6683d3ea6323)
 
 **6. EXCURSION ANALYSIS -- How does the affordability of fruits and vegetables differ amongst their different forms?**
 
