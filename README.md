@@ -10,8 +10,11 @@ Are healthy fruits and vegetables affordable to Americans in each state? We aim 
 We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
 # Data Summary
+**Provide a short description of the nature of the provided data set
+and explain how these characteristics affect your analysis methodology. Summarize the
+data set with basic descriptive statistics as applicable.**
 
-The datasets include the average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020. See below for a more in-depth explanation of the variables included in each dataset.
+The datasets include the average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020. These datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years. See below for a more in-depth explanation of the variables included in each dataset.
 
 ### Included Data
 
@@ -53,17 +56,9 @@ The datasets include the average American household income per capita and fruit 
 | 2016  | Price of unit type for 2016  |
 | 2020  | Price of unit type for 2020  |
 
-These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.
-
 ### Descriptive Statistics
 <img width="583" alt="Screenshot 2024-04-17 at 1 04 53 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/00ba954a-9ab7-4e49-a80b-726fe92ad951">
 <img width="616" alt="Screenshot 2024-04-17 at 1 07 24 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/75d2f767-1187-4127-88ed-e3161f36ec1a">
-
-
-
-**Provide a short description of the nature of the provided data set
-and explain how these characteristics affect your analysis methodology. Summarize the
-data set with basic descriptive statistics as applicable.**
 
 # Data Analytics
 **Provide data analytics that add clarity to the research question.
