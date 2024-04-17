@@ -100,6 +100,9 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 ![unnamed-chunk-10-7](https://github.com/asteinkrauss/7900Group2/assets/164549275/9e1baa26-667c-4070-9a51-ca859b04c238)
 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
+![VegForm](https://github.com/asteinkrauss/7900Group2/assets/164543699/8a6ac4c2-a477-4d5d-a2c2-594310e7b8d6)
+![FruitForm](https://github.com/asteinkrauss/7900Group2/assets/164543699/dceba788-4c30-4a63-b23e-f9bcf625c1b2)
+
 
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
 
