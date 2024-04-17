@@ -1,15 +1,17 @@
 # ADAN-ADEC7900 Group 2
-dataset of average American household income by capita and fruit and vegetables prices from 2013, 2016, 2020
+Dataset of average American household income by capita and fruit and vegetables prices from 2013, 2016, 2020
 
-# Research Question
+# Introduction
+### Research Question
 
 We aim to analyze the affordability of fruits and vegetables based on the average American household income by capita over multiple years. We hope to investigate whether income constraints influence access to fresh produce versus alternative forms (i.e., canned/frozen) and how this impacts adherence to dietary guidelines. The findings could inform policymakers responsible for food pricing regulations and programs like food stamps, helping them understand the challenges individuals and families face in accessing nutritious foods and potentially guiding adjustments to policies or interventions aimed at improving dietary habits, particularly considering potential differences in affordability between fruits and vegetables.
 
-# Decision Maker
+### Decision Maker
 
 We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
-# Data sets included:
+# Data Summary
+### Data sets included:
 Fruit Prices 2013.csv ------- Fruit Prices 2016.csv   -------   Fruit Prices 2020.csv
 
 Vegetable Prices 2013.csv ------- Vegetable Prices 2016.csv ------- Vegetable Prices 2020.csv
@@ -62,8 +64,6 @@ Annual person income by county.csv
 **These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.**
 
 # Briefly propose the tools and methods used to perform the analysis 
-
-![unnamed-chunk-6-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/9245dd7e-960c-44f8-87b8-846e57b35331)
 
 We aim to conduct our analysis in R. We will use ggplot2 to visualize the data sets and interpret the data. Using available datasets spanning multiple years, we employ a range of data analysis methods including descriptive statistics, correlation analysis, spatial analysis, and data visualization. By examining trends in fruit and vegetable affordability across the country and their relationship with household income, we aim to provide insights that inform policymaking, particularly within the realm of food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
 
