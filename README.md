@@ -1,15 +1,20 @@
 # ADAN-ADEC7900 Group 2
 Dataset of average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020.
 
-# Research Question
+# Introduction
+### Research Question
 
 Are healthy fruits and vegetables affordable to Americans in each state? We aim to analyze the affordability of fruits and vegetables based on the average American household income by capita over multiple years. We hope to investigate whether income constraints influence access to fresh produce versus alternative forms (i.e., canned/frozen) and how this impacts adherence to dietary guidelines. The findings could inform policymakers responsible for food pricing regulations and programs like food stamps, helping them understand the challenges individuals and families face in accessing nutritious foods and potentially guiding adjustments to policies or interventions aimed at improving dietary habits, particularly considering potential differences in affordability between fruits and vegetables.
 
-# Decision Maker
+### Decision Maker
 
 We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
-# Included Data
+# Data Summary
+### Included Data
+**Provide a short description of the nature of the provided data set
+and explain how these characteristics affect your analysis methodology. Summarize the
+data set with basic descriptive statistics as applicable.**
 | Data Sets  | 
 | ------------- |
 | Fruit Prices 2013.csv  | 
@@ -48,12 +53,32 @@ We plan to target our research for use by the Congressional Committees on Agricu
 | 2016  | Price of unit type for 2016  |
 | 2020  | Price of unit type for 2020  |
 
-**These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.**
+These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.
 
-# Analytical Tools & Methods 
+# Data Analytics
+**Provide data analytics that add clarity to the research question.
+Thoroughly discuss insight obtained from your visualizations and analysis of aggregated,
+data. Suggest an excursion, and provide supporting analysis. Plots should be well
+formatted according to best practices learned in class. Discuss the advantages and
+challenges of performing analysis in your chosen software tool.**
+
+### Analytical Tools & Methods 
 
 We will conduct our analyses in R. Using publicly available datasets spanning multiple years, we will look at descriptive statistics and run statistical tests (e.g., t-tests, ANOVA) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics will investigate the average, minimum, and maximum prices of fruits and vegetables by year.  The ‘ggplot2’ package will be used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
 
 To quantify affordability, we developed an affordability metric based on the U.S. Department of Agriculture's recommended grocery budget of 11% of one's income (https://money.usnews.com/money/personal-finance/saving-and-budgeting/articles/how-much-should-i-spend-on-groceries). We then further subdivided the 11% and allocated 4% of one's income specifically for produce (so, 2% for fruits and 2% for vegetables). Since we're interested in affordability in relation to dietary guidelines, we calculated the price of a cup equivalent of fruits and vegetables (recommended daily serving; https://www.nidirect.gov.uk/articles/fruit-and-vegetables) for an entire year by multiplying the cup equivalent price by 365. Finally, to categorize a fruit or vegetable as affordable or unaffordable, we compared the yearly cup equivalent price (for fruit and vegetables separately) to 2% of per capita income by state. If the yearly cup equivalent price was greater than 2%, that fruit or vegetable was deemed unaffordable. If the yearly cup equivalent price was less than 2%, that fruit or vegetable was deemed affordable.
 
 We hope to discover important insights by examining trends in fruit and vegetable affordability by state. These insights will inform policymaking, with a particular focus on enhancing food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
+
+### **ADD FIGURES HERE**
+
+# Conclusion
+**Summarize the analytical methodology and provide closure to your
+analytical story. Succinctly answer the research questions. Highlight the limitations of
+your findings and recommend future work. Do not make policy recommendations here.**
+
+# Policy Recommendation
+**Introduce a specific policy decision that your decision
+maker is facing. Provide a data driven recommendation for their decision. Explain
+probable first and second order effects of the recommendation. Explain the benefits and
+risks of the recommendation.**
