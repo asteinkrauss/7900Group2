@@ -1,5 +1,4 @@
 # ADAN-ADEC7900 Group 2
-Dataset of average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020.
 
 # Introduction
 ### Research Question
@@ -11,10 +10,11 @@ Are healthy fruits and vegetables affordable to Americans in each state? We aim 
 We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
 # Data Summary
+
+The datasets include the average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020. See below for a more in-depth explanation of the variables included in each dataset.
+
 ### Included Data
-**Provide a short description of the nature of the provided data set
-and explain how these characteristics affect your analysis methodology. Summarize the
-data set with basic descriptive statistics as applicable.**
+
 | Data Sets  | 
 | ------------- |
 | Fruit Prices 2013.csv  | 
@@ -54,6 +54,11 @@ data set with basic descriptive statistics as applicable.**
 | 2020  | Price of unit type for 2020  |
 
 These two datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years.
+
+### Descriptive Statistics
+**Provide a short description of the nature of the provided data set
+and explain how these characteristics affect your analysis methodology. Summarize the
+data set with basic descriptive statistics as applicable.**
 
 # Data Analytics
 **Provide data analytics that add clarity to the research question.
