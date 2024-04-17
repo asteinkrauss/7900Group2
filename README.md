@@ -107,7 +107,7 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
 
-**6. How does the affordability of fruits and vegetables differ amongst their different forms?**
+**6. EXCURSION ANALYSIS -- How does the affordability of fruits and vegetables differ amongst their different forms?**
 
 # Conclusion
 **Summarize the analytical methodology and provide closure to your
