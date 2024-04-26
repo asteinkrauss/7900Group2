@@ -81,38 +81,63 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 **1. What are the most and least expensive fruits? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 1.".*
 
-![unnamed-chunk-6-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/46a5c31e-2a95-4c5c-9aac-d0d5d5e2ad69)
-![unnamed-chunk-6-2](https://github.com/asteinkrauss/7900Group2/assets/164549275/7d61b66e-fd92-4ec8-aeb8-2b441a551179)
-![unnamed-chunk-6-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/a20e028a-8d18-4813-9796-e16d5c045517)
-![unnamed-chunk-6-4](https://github.com/asteinkrauss/7900Group2/assets/164549275/508edde9-7329-4159-858c-a4e7cf4e279a)
-![unnamed-chunk-6-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/f5afc022-5a34-4861-be03-29d0544ec3c6)
-![unnamed-chunk-6-6](https://github.com/asteinkrauss/7900Group2/assets/164549275/4aefaa91-3f8f-4ba6-99ca-9932c99748d1)
+-- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2013 HERE --
+<img width="675" alt="Screenshot 2024-04-26 at 6 10 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ab33b48c-2032-4547-9238-76887010d2c5">
+<img width="676" alt="Screenshot 2024-04-26 at 6 11 11 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d8c4dd11-bc33-45e9-bf17-d29ca13de59e">
+
+-- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2016 HERE --
+<img width="673" alt="Screenshot 2024-04-26 at 6 11 23 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/c698f7ff-a47f-4972-9996-3d225c398f81">
+<img width="673" alt="Screenshot 2024-04-26 at 6 11 34 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/1db8ee11-2561-439b-a23f-cbe1f4149d01">
+
+-- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2020 HERE --
+<img width="674" alt="Screenshot 2024-04-26 at 6 11 46 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/3cc7fbef-4fd0-420a-bc13-ddf9c2186096">
+<img width="678" alt="Screenshot 2024-04-26 at 6 11 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/fc6682fd-a262-4318-8121-02d5cd9ac267">
+
+-- INSERT CONCLUSION HERE --
 
 **2. What are the most and least expensive vegetables? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
 
-![unnamed-chunk-8-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/2dc2a0e1-4cc9-430a-94f1-ee96097c5b48)
-![unnamed-chunk-8-2](https://github.com/asteinkrauss/7900Group2/assets/164549275/450c0374-e928-4dc3-9824-8885828ee66a)
-![unnamed-chunk-8-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/3454e858-cd28-427b-b65b-fdd2b710ffad)
-![unnamed-chunk-8-4](https://github.com/asteinkrauss/7900Group2/assets/164549275/1548cd63-5e76-40ec-a443-7bc11006b401)
-![unnamed-chunk-8-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/f8b6d5e3-7085-452c-a9a1-160847ebd66a)
-![unnamed-chunk-8-6](https://github.com/asteinkrauss/7900Group2/assets/164549275/1c55e104-0342-473b-a695-3b734c95fb61)
+-- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2013 HERE --
+<img width="672" alt="Screenshot 2024-04-26 at 6 07 42 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/e7b2dbe1-5358-4a9e-bbdf-006a84134dc1">
+<img width="675" alt="Screenshot 2024-04-26 at 6 08 03 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/0e860175-91f4-471c-8b45-ac6c79c8aa37">
+
+-- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2016 HERE --
+<img width="677" alt="Screenshot 2024-04-26 at 6 08 22 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/13aff076-2c9b-488e-990c-be68510662c3">
+<img width="677" alt="Screenshot 2024-04-26 at 6 08 37 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/84894665-ac5f-44b2-ae6b-31b8fc136ee3">
+
+-- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2020 HERE --
+<img width="673" alt="Screenshot 2024-04-26 at 6 08 55 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/851f5c1a-3379-4e1d-a487-203aa14d6931">
+<img width="673" alt="Screenshot 2024-04-26 at 6 09 08 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d883dda1-0773-4cc6-a349-8b7c14e75bb0">
+
+-- INSERT CONCLUSION HERE --
 
 **3. How does income per capita differ by state across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 3.".*
 
-![unnamed-chunk-10-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/6b56d0e0-323a-409b-8136-1ca72a648cf2)
-![unnamed-chunk-10-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/37242604-16fb-4c00-bae5-d2f202f3aec5)
-![unnamed-chunk-10-7](https://github.com/asteinkrauss/7900Group2/assets/164549275/9e1baa26-667c-4070-9a51-ca859b04c238)
+<img width="658" alt="Screenshot 2024-04-26 at 6 09 35 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/da6c3304-94cd-42e4-b7f3-14c42a906f04">
+<img width="658" alt="Screenshot 2024-04-26 at 6 09 52 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/3b08aad7-7fec-44d6-8ddf-d8ac00517276">
+<img width="657" alt="Screenshot 2024-04-26 at 6 10 06 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/b752a1a2-bda7-4bfc-bf3b-d04ffb854ff9">
+<img width="662" alt="Screenshot 2024-04-26 at 6 10 17 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/576aa2c2-9f42-4a1f-bb9c-a8c935b02218">
+
+-- INSERT CONCLUSION FROM INCOME DATA HERE --
 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 4.".*
 
+-- INSERT DECRIPTION OF FRUIT PRICE BY FORM --
 <img width="666" alt="Screenshot 2024-04-17 at 7 23 30 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/622a70d9-f753-43b5-8594-bbfb4b945933">
+
+-- INSERT DESCRIPTION OF VEGETABLE PRICE BY FORM --
 <img width="667" alt="Screenshot 2024-04-17 at 7 23 45 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/4a886ee0-f322-4120-aa89-05d9a83aed59">
 
+-- INSERT CONCLUSION HERE --
+
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
-![AffordBar](https://github.com/asteinkrauss/7900Group2/assets/164543699/38fa6bac-2f54-478e-b1af-6683d3ea6323)
+
+<img width="666" alt="Screenshot 2024-04-26 at 6 22 42 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ea271b14-911c-46d1-bd23-15b0bf867fac">
+
+-- INSERT CONCLUSION HERE --
 
 **6. EXCURSION ANALYSIS -- How does the affordability of fruits and vegetables differ amongst their different forms?**
 ![FruitAff](https://github.com/asteinkrauss/7900Group2/assets/164543699/870ee087-b748-422e-a667-ff55518f3500)
