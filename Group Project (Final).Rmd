@@ -41,39 +41,22 @@ library(scales) # Aesthetics for geographic plot
 # select the necessary .csv files from your computer to import (when you un-
 # comment it)
 # experiment_txt <- read.csv(file.choose(), header = T)
-#Fruit2013 = read.csv("Data/Fruit Prices 2013.csv") #edit these to match your directory path
-#Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
-#Fruit2016 = read.csv("Data/Fruit Prices 2016.csv")
-#Fruit2016 = Fruit2016[, 1:9]
-#Fruit2020 = read.csv("Data/Fruit Prices 2020.csv")
-#Fruit2020 = Fruit2020[, 1:9]
 
-#Veg2013 = read.csv("Data/Vegetable Prices 2013.csv")
-#Veg2013 = Veg2013[, 1:9]
-#Veg2016 = read.csv("Data/Vegetable Prices 2016.csv")
-#Veg2016 = Veg2016[, 1:9]
-#Veg2020 = read.csv("Data/Vegetable Prices 2020.csv")
-#Veg2020 = Veg2020[, 1:9]
-
-#Income = read.csv("Data/Annual person income by county.csv")
-
-# DELETE THESE & UN-COMMENT ABOVE LINES !!!
-Fruit2013 = read.csv("Fruit Prices 2013.csv") #edit these to match your directory path
+Fruit2013 = read.csv("Data/Fruit Prices 2013.csv") #edit these to match your directory path
 Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
-Fruit2016 = read.csv("Fruit Prices 2016.csv")
+Fruit2016 = read.csv("Data/Fruit Prices 2016.csv")
 Fruit2016 = Fruit2016[, 1:9]
-Fruit2020 = read.csv("Fruit Prices 2020.csv")
+Fruit2020 = read.csv("Data/Fruit Prices 2020.csv")
 Fruit2020 = Fruit2020[, 1:9]
 
-Veg2013 = read.csv("Vegetable Prices 2013.csv")
+Veg2013 = read.csv("Data/Vegetable Prices 2013.csv")
 Veg2013 = Veg2013[, 1:9]
-Veg2016 = read.csv("Vegetable Prices 2016.csv")
+Veg2016 = read.csv("Data/Vegetable Prices 2016.csv")
 Veg2016 = Veg2016[, 1:9]
-Veg2020 = read.csv("Vegetable Prices 2020.csv")
+Veg2020 = read.csv("Data/Vegetable Prices 2020.csv")
 Veg2020 = Veg2020[, 1:9]
 
-
-Income = read.csv("Annual person income by county.csv")
+Income = read.csv("Data/Annual person income by county.csv")
 ```
 
 ### Format data to have 'year' in long format
@@ -752,71 +735,6 @@ ggplot(agg_income_long, aes(x = as.factor(Year), y = `Number of People`, fill = 
 ```
 
 ### 6. EXCURSION - How does the affordability of fruits and vegetables differ amongst their different forms?
-```{r}
-# Creates tables for fruits by form and year
-table_fruits_form_2013 <- table(comparison_fruits_2013$meetreq, comparison_fruits_2013$form)
-table_fruits_form_Fruit2016 <- table(comparison_fruits_Fruit2016$meetreq, comparison_fruits_Fruit2016$form)
-table_fruits_form_Fruit2020 <- table(comparison_fruits_Fruit2020$meetreq, comparison_fruits_Fruit2020$form)
-
-# Views 2013 fruit table
-print("Fruits Summary by Form for 2013:")
-print(table_fruits_form_2013)
-
-# Views 2016 fruit table
-print("Fruits Summary by Form for 2016:")
-print(table_fruits_form_Fruit2016)
-# Views 2020 fruit table
-print("Fruits Summary by Form for 2020:")
-print(table_fruits_form_Fruit2020)
-
-# Visualize Fruit 2013
-barplot(table_fruits_form_2013, main = "Fruit Affordability by Form (2013)",
-        xlab = "Form",
-        ylab = "Count",
-        col = c("skyblue", "coral"),
-        beside = TRUE)
-legend("topright", 
-       legend = c("Affordable", "Not Affordable"),
-       fill = c("skyblue", "coral"))
-
-# Visualize Fruit 2016
-barplot(table_fruits_form_Fruit2016, main = "Fruit Affordability by Form (2016)",
-        xlab = "Form",
-        ylab = "Count",
-        col = c("skyblue", "coral"),
-        beside = TRUE)
-legend("topright", 
-       legend = c("Affordable", "Not Affordable"),
-       fill = c("skyblue", "coral"))
-
-# Visualize Fruit 2020
-barplot(table_fruits_form_Fruit2020, main = "Fruit Affordability by Form (2020)",
-        xlab = "Form",
-        ylab = "Count",
-        col = c("skyblue", "coral"),
-        beside = TRUE)
-legend("topright", 
-       legend = c("Affordable", "Not Affordable"),
-       fill = c("skyblue", "coral"))
-
-
-# Creatse tables for vegetables by form
-table_veggies_form_2013 <- table(comparison_veggies_2013$meetreq, comparison_veggies_2013$form)
-table_veggies_form_Fruit2016 <- table(comparison_veggies_Fruit2016$meetreq, comparison_veggies_Fruit2016$form)
-table_veggies_form_Fruit2020 <- table(comparison_veggies_Fruit2020$meetreq, comparison_veggies_Fruit2020$form)
-
-# Views 2013 vegetable table
-print("Vegetable Summary by Form for 2013:")
-print(table_veggies_form_2013)
-
-# Views 2016 vegetable table
-print("Vegetable Summary by Form for 2016:")
-print(table_veggies_form_Fruit2016)
-
-# Views 2020 vegetable table
-print("Vegetable Summary by Form for 2020:")
-print(table_veggies_form_Fruit2020)
-```
 ```{r}
 # Creates tables for fruits by form and year
 table_fruits_form_2013 <- table(comparison_fruits_2013$meetreq, comparison_fruits_2013$form)
