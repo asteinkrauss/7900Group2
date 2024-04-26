@@ -140,10 +140,18 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 -- INSERT CONCLUSION HERE --
 
 **6. EXCURSION ANALYSIS -- How does the affordability of fruits and vegetables differ amongst their different forms?**
-![FruitAff](https://github.com/asteinkrauss/7900Group2/assets/164543699/870ee087-b748-422e-a667-ff55518f3500)
-![VegAff](https://github.com/asteinkrauss/7900Group2/assets/164543699/ced81be9-5a77-45fb-a901-41b82ad15a79)
 
+-- INSERT DESCRIPTION OF FRUIT AFFORDABILITY BY FORM HERE --
+<img width="666" alt="Screenshot 2024-04-26 at 7 18 17 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/e7bb3746-5076-472b-866c-673748feddd7">
+<img width="665" alt="Screenshot 2024-04-26 at 7 18 31 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/703a239b-2db7-4c5b-9991-d5bac2db13b7">
+<img width="663" alt="Screenshot 2024-04-26 at 7 18 42 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/59709ce4-bf4c-4d5f-8944-32aaac61df82">
 
+-- INSERT DESCRIPTION OF VEGETABLE AFFORDABILITY BY FORM (THE WEIRD DIP IN DRIED VEGETABLE IS JUST AT ZERO) HERE --
+<img width="663" alt="Screenshot 2024-04-26 at 7 19 01 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/f7d26969-ed1a-4212-b0e2-aec1ca084827">
+<img width="663" alt="Screenshot 2024-04-26 at 7 19 11 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/b8801d10-9207-421a-b266-813948ab703c">
+<img width="665" alt="Screenshot 2024-04-26 at 7 19 22 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/bd8d0e61-8637-41da-8e36-df6549921adf">
+
+-- INSET CONCLUSION HERE --
 
 # Conclusion
 **Summarize the analytical methodology and provide closure to your
