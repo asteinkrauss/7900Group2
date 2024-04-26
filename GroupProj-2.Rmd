@@ -1,5 +1,5 @@
 ---
-title: "Group 2 - Checkpoint 2"
+title: "Group 2"
 author: "Ashley Steinkrauss, Madeline Sullivan, & Roel Rodriguez"
 date: "2024-04-17"
 output: html_document
@@ -10,7 +10,6 @@ knitr::opts_chunk:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
 ```
 
 ### Clear the workspace
@@ -18,11 +17,11 @@ knitr::opts_chunk$set(echo = TRUE)
 rm(list = ls()) # Clear environment
 gc()            # Clear memory
 cat("\f")       # Clear console
-
 ```
 
 ### Install and load in necessary packages
 ```{r}
+#install.packages("usmap")
 library(tidyverse)
 library(ggplot2)
 library(devtools)
@@ -32,11 +31,8 @@ library(knitr)
 library(reshape2)
 library(kableExtra)
 library(plotly) # Interactive graphs
-
-#install.packages("usmap")
 library(usmap) # Plot geographic data
 library(scales) # Aesthetics for geographic plot
-
 ```
 
 ### Load in .csv files
@@ -45,33 +41,28 @@ library(scales) # Aesthetics for geographic plot
 # select the necessary .csv files from your computer to import (when you un-
 # comment it)
 # experiment_txt <- read.csv(file.choose(), header = T)
-
-Fruit2013 = read.csv("/Data/Fruit Prices 2013.csv") #edit these to match your directory path
+Fruit2013 = read.csv("Data/Fruit Prices 2013.csv") #edit these to match your directory path
 Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
-Fruit2016 = read.csv("/Data/Fruit Prices 2016.csv")
+Fruit2016 = read.csv("Data/Fruit Prices 2016.csv")
 Fruit2016 = Fruit2016[, 1:9]
-Fruit2020 = read.csv("/Data/Fruit Prices 2020.csv")
+Fruit2020 = read.csv("Data/Fruit Prices 2020.csv")
 Fruit2020 = Fruit2020[, 1:9]
 
-Veg2013 = read.csv("/Data/Vegetable Prices 2013.csv")
+Veg2013 = read.csv("Data/Vegetable Prices 2013.csv")
 Veg2013 = Veg2013[, 1:9]
-Veg2016 = read.csv("/Data/Vegetable Prices 2016.csv")
+Veg2016 = read.csv("Data/Vegetable Prices 2016.csv")
 Veg2016 = Veg2016[, 1:9]
-Veg2020 = read.csv("/Data/Vegetable Prices 2020.csv")
+Veg2020 = read.csv("Data/Vegetable Prices 2020.csv")
 Veg2020 = Veg2020[, 1:9]
 
-
-Income = read.csv("/Data/Annual person income by county.csv")
-
+Income = read.csv("Data/Annual person income by county.csv")
 ```
 
 ### Format data to have 'year' in long format
 ```{r}
 Fruits = rbind(Fruit2013, Fruit2016, Fruit2020) # Make long format by combining all repeated columns
 Veggies = rbind(Veg2013, Veg2016, Veg2020)
-
 AnnualIncome <- pivot_longer(Income, cols = c("X2013", "X2016", "X2020"), names_to = "Year", values_to = "Value") # Combine the 3 year columns into 1 column
-
 ```
 
 ### Descriptive statistics
@@ -109,7 +100,6 @@ kable(fruit_summary, align = "c")
 # Views the vegetable summary table
 cat("\nVeggie Summary:\n")
 kable(veggie_summary, align = "c")
-
 ```
 
 ```{r}
@@ -149,8 +139,6 @@ veggie_table <- veggie_summary %>%
 # View the tables
 fruit_table
 veggie_table
-
-
 ```
 
 ## Questions of interest
@@ -176,7 +164,7 @@ bottom_10_expensive_Fruit2020 <- head(sorted_Fruit2020, 10)
 most_expensive_Fruit2013 <- ggplot(top_10_expensive_Fruit2013, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Fruits 2013",
-       x = "Retail Price",
+       x = "Retail Price (per equivalent cup, $)",
        y = "Fruit") +
   theme_minimal()
 
@@ -187,7 +175,7 @@ print(most_expensive_Fruit2013)
 least_expensive_Fruit2013 <- ggplot(bottom_10_expensive_Fruit2013, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Fruits 2013",
-       x = "Retail Price",
+       x = "Retail Price (per equivalent cup, $)",
        y = "Fruit") +
   theme_minimal()
 
@@ -198,7 +186,7 @@ print(least_expensive_Fruit2013)
 least_expensive_Fruit2016 <- ggplot(top_10_expensive_Fruit2016, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Fruits 2016",
-       x = "Retail Price",
+       x = "Retail Price (per equivalent cup, $)",
        y = "Fruit") +
   theme_minimal()
 
@@ -209,7 +197,7 @@ print(least_expensive_Fruit2016)
 least_expensive_Fruit2016 <- ggplot(bottom_10_expensive_Fruit2016, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Fruits 2016",
-       x = "Retail Price",
+       x = "Retail Price (per equivalent cup, $)",
        y = "Fruit") +
   theme_minimal()
 
@@ -220,7 +208,7 @@ print(least_expensive_Fruit2016)
 most_expensive_Fruit2020 <- ggplot(top_10_expensive_Fruit2020, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Fruits 2020",
-       x = "Retail Price",
+       x = "Retail Price (per equivalent cup, $)",
        y = "Fruit") +
   theme_minimal()
 
@@ -231,7 +219,7 @@ print(most_expensive_Fruit2020)
 least_expensive_Fruit2020 <- ggplot(bottom_10_expensive_Fruit2020, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Fruits 2020",
-       x = "Retail Price",
+       x = "Retail Price (per equivalent cup, $)",
        y = "Fruit") +
   theme_minimal()
 
@@ -251,14 +239,14 @@ create_bar_chart <- function(data, title, year, ascending = TRUE) {
   most_expensive_plot <- ggplot(top_10_expensive, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
     geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
     labs(title = paste("Most Expensive", title, year),
-         x = "Retail Price",
+         x = "Retail Price (per equivalent cup, $)",
          y = "Fruit") +
     theme_minimal()
   
   least_expensive_plot <- ggplot(bottom_10_expensive, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
     geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
     labs(title = paste("Least Expensive", title, year),
-         x = "Retail Price",
+         x = "Retail Price (per equivalent cup, $)",
          y = "Fruit") +
     theme_minimal()
   
@@ -315,8 +303,8 @@ bottom_10_expensive_Veg2020 <- head(sorted_Veg2020, 10)
 most_expensive_Veg2013 <- ggplot(top_10_expensive_Veg2013, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Vegs 2013",
-       x = "Retail Price",
-       y = "Veg") +
+       x = "Retail Price (per equivalent cup, $)",
+       y = "Vegetable") +
   theme_minimal()
 
 # Print the first graph
@@ -326,8 +314,8 @@ print(most_expensive_Veg2013)
 least_expensive_Veg2013 <- ggplot(bottom_10_expensive_Veg2013, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Vegs 2013",
-       x = "Retail Price",
-       y = "Veg") +
+       x = "Retail Price (per equivalent cup, $)",
+       y = "Vegetable") +
   theme_minimal()
 
 # Print the second graph
@@ -337,8 +325,8 @@ print(least_expensive_Veg2013)
 least_expensive_Veg2016 <- ggplot(top_10_expensive_Veg2016, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Vegs 2016",
-       x = "Retail Price",
-       y = "Veg") +
+       x = "Retail Price (per equivalent cup, $)",
+       y = "Vegetable") +
   theme_minimal()
 
 # Print the first graph for 2016
@@ -348,8 +336,8 @@ print(least_expensive_Veg2016)
 least_expensive_Veg2016 <- ggplot(bottom_10_expensive_Veg2016, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Vegs 2016",
-       x = "Retail Price",
-       y = "Veg") +
+       x = "Retail Price (per equivalent cup, $)",
+       y = "Vegetable") +
   theme_minimal()
 
 # Print the second graph for 2016
@@ -359,8 +347,8 @@ print(least_expensive_Veg2016)
 most_expensive_Veg2020 <- ggplot(top_10_expensive_Veg2020, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Vegs 2020",
-       x = "Retail Price",
-       y = "Veg") +
+       x = "Retail Price (per equivalent cup, $)",
+       y = "Vegetable") +
   theme_minimal()
 
 # Print the first graph for 2020
@@ -370,8 +358,8 @@ print(most_expensive_Veg2020)
 least_expensive_Veg2020 <- ggplot(bottom_10_expensive_Veg2020, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Vegs 2020",
-       x = "Retail Price",
-       y = "Veg") +
+       x = "Retail Price (per equivalent cup, $)",
+       y = "Vegetable") +
   theme_minimal()
 
 # Print the second graph for 2020
@@ -391,14 +379,14 @@ create_bar_chart_veg <- function(data, title, year, ascending = TRUE) {
   most_expensive_plot <- ggplot(top_10_expensive, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
     geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
     labs(title = paste("Most Expensive", title, year),
-         x = "Retail Price",
+         x = "Retail Price (per equivalent cup, $)",
          y = "Vegetable") +
     theme_minimal()
   
   least_expensive_plot <- ggplot(bottom_10_expensive, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
     geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
     labs(title = paste("Least Expensive", title, year),
-         x = "Retail Price",
+         x = "Retail Price (per equivalent cup, $)",
          y = "Vegetable") +
     theme_minimal()
   
@@ -473,7 +461,7 @@ map_income <- merge(us_states, agg_income, by.x = "full", by.y = "GeoName")
 # Creates a plot with ggplot
 g <- ggplot(map_income) +
   geom_sf(aes(fill = Value)) +
-  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  scale_fill_distiller(name = "Income ($, by capita)", palette = "Spectral") +
   ggtitle("Personal Income by State")
 
 # Displays the ggplot graph
@@ -492,7 +480,7 @@ map_income_2013 <- merge(us_states, income_2013, by.x = "full", by.y = "GeoName"
 # Creates a plot with ggplot
 g_2013 <- ggplot(map_income_2013) +
   geom_sf(aes(fill = Value)) +
-  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  scale_fill_distiller(name = "Income ($, by capita)", palette = "Spectral") +
   ggtitle("Personal Income by State in 2013")
 
 # Displays the ggplot graph
@@ -511,7 +499,7 @@ map_income_Fruit2016 <- merge(us_states, income_Fruit2016, by.x = "full", by.y =
 # Creates a plot with ggplot
 g_Fruit2016 <- ggplot(map_income_Fruit2016) +
   geom_sf(aes(fill = Value)) +
-  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  scale_fill_distiller(name = "Income ($, by capita)", palette = "Spectral") +
   ggtitle("Personal Income by State in 2016")
 
 # Displays the ggplot graph
@@ -529,7 +517,7 @@ map_income_Fruit2020 <- merge(us_states, income_Fruit2020, by.x = "full", by.y =
 # Create a plot with ggplot
 g_Fruit2020 <- ggplot(map_income_Fruit2020) +
   geom_sf(aes(fill = Value)) +
-  scale_fill_distiller(name = "Income", palette = "Spectral") +
+  scale_fill_distiller(name = "Income ($, by capita)", palette = "Spectral") +
   ggtitle("Personal Income by State in 2020")
 
 # Displays the ggplot graph
@@ -582,7 +570,7 @@ kable(veggie_summary_form, align = "c")
 interactive_plot_fruit_form <- ggplotly(ggplot(avg_prices_fruit, aes(x = Year, y = CupEquivalentPrice, group = Fruit, color = Form)) +
                                 geom_line() +
                                 geom_point() +
-                                labs(x = "Year", y = "Cup Equivalent Price",
+                                labs(x = "Year", y = "Retail Price (per equivalent cup, $)",
                                      title = "Average Cup Equivalent Price of Fruits by Form Over Years", color = "Fruit Form") +
                                 theme_minimal() +
                                 theme(legend.position = "right"))
@@ -594,7 +582,7 @@ interactive_plot_fruit_form
 interactive_plot_veggie_form <- ggplotly(ggplot(avg_prices_veg, aes(x = Year, y = CupEquivalentPrice, group = Vegetable, color = Form)) +
                                 geom_line() +
                                 geom_point() +
-                                labs(x = "Year", y = "Cup Equivalent Price",
+                                labs(x = "Year", y = "Retail Price (per equivalent cup, $)",
                                      title = "Average Cup Equivalent Price of Fruits by Form Over Years", color = "Fruit Form") +
                                 theme_minimal() +
                                 theme(legend.position = "right"))
@@ -612,7 +600,7 @@ plot_average_price_by_form <- function(data, title) {
   p <- ggplot(data, aes(x = Year, y = mean_price, color = Form, group = Form)) +
     geom_line() +
     geom_point() +
-    labs(title = title, x = "Year", y = "Average Price") +
+    labs(title = title, x = "Year", y = "Retail Price (per equivalent cup, $)") +
     theme_minimal()
   
   return(p)
@@ -731,13 +719,13 @@ agg_income_long <- pivot_longer(agg_income, cols = c(people_afford, people_cant_
 
 # Visualize
 ggplot(agg_income_long, aes(x = as.factor(Year), y = `Number of People`, fill = factor(Affordability, levels = c("people_afford", "people_cant_afford")))) +
-  geom_bar(stat = "identity", position = "stack") +
-  labs(title = "People Affording Daily Fruit & Veggie Servings",
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "People Affording Daily Fruit and Vegatable Servings",
        x = "Year", y = "Number of People") +
   scale_y_continuous(labels = scales::comma) +  
   scale_fill_manual(values = c("people_afford" = "skyblue", "people_cant_afford" = "coral"), 
                     labels = c("people_afford" = "Afford", "people_cant_afford" = "Can't Afford"),
-                    name = NULL) +  # Setting legend title to NULL
+                    name = "Affordability of Food Servings") +  # Setting legend title to NULL
   theme_minimal()
 ```
 
@@ -765,17 +753,14 @@ print("Fruits Summary by Form for 2020:")
 print(table_fruits_form_Fruit2020)
 
 # Views 2013 vegetable table
-print("Veggies Summary by Form for 2013:")
+print("Vegetable Summary by Form for 2013:")
 print(table_veggies_form_2013)
 
 # Views 2016 vegetable table
-print("Veggies Summary by Form for 2016:")
+print("Vegetable Summary by Form for 2016:")
 print(table_veggies_form_Fruit2016)
 
 # Views 2020 vegetable table
-print("Veggies Summary by Form for 2020:")
+print("Vegetable Summary by Form for 2020:")
 print(table_veggies_form_Fruit2020)
-
 ```
-
-
