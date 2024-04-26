@@ -1,0 +1,19 @@
+*Required Tasks of the Analytics Story*
+Your successful project will accomplish the following major tasks:
+1. Propose a research topic (Option 1 or Option 2)
+	Are healthy fruits and vegetables affordable to Americans in each state? We aim to analyze the affordability of fruits and vegetables based on the average American household income by capita over multiple years. We hope to investigate whether income constraints influence access to fresh produce versus alternative forms (i.e., canned/frozen) and how this impacts adherence to dietary guidelines. The findings could inform policymakers responsible for food pricing regulations and programs like food stamps, helping them understand the challenges individuals and families face in accessing nutritious foods and potentially guiding adjustments to policies or interventions aimed at improving dietary habits, particularly considering potential differences in affordability between fruits and vegetables.
+2. Create a GitHub repository and establish best practices for team collaboration.
+	https://github.com/asteinkrauss/7900Group2/tree/Team_2Checkpoint_1.0
+3. Demonstrate merging of multiple data sources
+	We used multiple data sets that we marged into one comprehensive dataset. This included fruits and vegetables and income by capita for 3 different years. 
+4. Visualize data using Tableau, R, Python, or a combination
+	We used R to visualize data for fruit and vegetables prices and its relation to income. We plotted top 5 most and least expensive fruits and vegetables, and personal income per capita in the united states. 
+5. Generate meaningful summary statistic (KPIs) of the data
+	We created summary statistics of price per equivalent cup of fruits and vegetables and then broke this down by form of fruits and vegetables (fresh, frozen, etc). We also created summary statistics of how affordable fruits and vegetables are based on a person’s income. 
+6. Submit draft of progress at Checkpoint 1 and Checkpoint 2.
+	Madeline submitted a link to the checkpoint 1 branch of our Github repository before the checkpoint 1 deadline. We will do the same before the checkpoint 2 deadline.
+7. Summarize your findings in a short video presentation.
+	We have not done this yet but will after completion of the project.
+8. Publish a detailed, well formatted markdown report of your analytical story to your
+GitHub repository. Report requirements are outlined below.
+	We have not done this yet but will after completion of the project.
