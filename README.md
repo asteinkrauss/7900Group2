@@ -3,19 +3,19 @@
 # Introduction
 ### Research Question
 
-Are healthy fruits and vegetables affordable to Americans in each state? We aim to analyze the affordability of fruits and vegetables based on the average American household income by capita over multiple years. We hope to investigate whether income constraints influence access to fresh produce versus alternative forms (i.e., canned/frozen) and how this impacts adherence to dietary guidelines. The findings could inform policymakers responsible for food pricing regulations and programs like food stamps, helping them understand the challenges individuals and families face in accessing nutritious foods and potentially guiding adjustments to policies or interventions aimed at improving dietary habits, particularly considering potential differences in affordability between fruits and vegetables. 
+Are healthy fruits and vegetables affordable to Americans in each state? We aimed to analyze the affordability of fruits and vegetables based on the average American household income by capita over multiple years. We hoped to investigate whether income constraints influence access to fresh produce versus alternative forms (i.e., canned/frozen) and how this impacts adherence to dietary guidelines. The findings could inform policymakers responsible for food pricing regulations and programs like food stamps, helping them understand the challenges individuals and families face in accessing nutritious foods and potentially guiding adjustments to policies or interventions aimed at improving dietary habits, particularly considering potential differences in affordability between fruits and vegetables. 
 
 
 ### Decision Maker
 
-We plan to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
+We planed to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
 # Data Summary
 **Provide a short description of the nature of the provided data set
 and explain how these characteristics affect your analysis methodology. Summarize the
 data set with basic descriptive statistics as applicable.**
 
-The datasets include the average American household income per capita and fruit and vegetables prices from 2013, 2016, 2020. These datasets should allow us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years. See below for a more in-depth explanation of the variables included in each dataset.
+The datasets included the average American household income per capita and fruits and vegetables prices from 2013, 2016, and 2020. These datasets allowed us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years. See below for a more in-depth explanation of the variables included in each dataset.
 
 ### Included Data
 
@@ -70,15 +70,16 @@ challenges of performing analysis in your chosen software tool.**
 
 ### Analytical Tools & Methods 
 
-We will conduct our analyses in R. Using publicly available datasets spanning multiple years, we will look at descriptive statistics and run statistical tests (e.g., t-tests, ANOVA) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics will investigate the average, minimum, and maximum prices of fruits and vegetables by year.  The ‘ggplot2’ package will be used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
+We conducted our analyses in R. Using publicly available datasets spanning multiple years, we looked at descriptive statistics and looked at descriptive graphs (eg. bar, line, map graphs) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics investigated the average, minimum, and maximum prices of fruits and vegetables by year. The ‘ggplot2’ package was used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
 
 To quantify affordability, we developed an affordability metric based on the U.S. Department of Agriculture's recommended grocery budget of 11% of one's income (https://money.usnews.com/money/personal-finance/saving-and-budgeting/articles/how-much-should-i-spend-on-groceries). We then further subdivided the 11% and allocated 4% of one's income specifically for produce (so, 2% for fruits and 2% for vegetables). Since we're interested in affordability in relation to dietary guidelines, we calculated the price of a cup equivalent of fruits and vegetables (recommended daily serving; https://www.nidirect.gov.uk/articles/fruit-and-vegetables) for an entire year by multiplying the cup equivalent price by 365. Finally, to categorize a fruit or vegetable as affordable or unaffordable, we compared the yearly cup equivalent price (for fruit and vegetables separately) to 2% of per capita income by state. If the yearly cup equivalent price was greater than 2%, that fruit or vegetable was deemed unaffordable. If the yearly cup equivalent price was less than 2%, that fruit or vegetable was deemed affordable.
 
-We hope to discover important insights by examining trends in fruit and vegetable affordability by state. These insights will inform policymaking, with a particular focus on enhancing food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
+We aimed to discover important insights by examining trends in fruit and vegetable affordability by state. These insights could inform policymaking, with a particular focus on enhancing food assistance programs and regulations overseen by the Congressional Committees on Agriculture.
 
 ### Questions of Interest
 
 **1. What are the most and least expensive fruits? How does this change across years?**
+*Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 1.".*
 
 ![unnamed-chunk-6-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/46a5c31e-2a95-4c5c-9aac-d0d5d5e2ad69)
 ![unnamed-chunk-6-2](https://github.com/asteinkrauss/7900Group2/assets/164549275/7d61b66e-fd92-4ec8-aeb8-2b441a551179)
@@ -88,6 +89,8 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 ![unnamed-chunk-6-6](https://github.com/asteinkrauss/7900Group2/assets/164549275/4aefaa91-3f8f-4ba6-99ca-9932c99748d1)
 
 **2. What are the most and least expensive vegetables? How does this change across years?**
+*Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
+
 ![unnamed-chunk-8-1](https://github.com/asteinkrauss/7900Group2/assets/164549275/2dc2a0e1-4cc9-430a-94f1-ee96097c5b48)
 ![unnamed-chunk-8-2](https://github.com/asteinkrauss/7900Group2/assets/164549275/450c0374-e928-4dc3-9824-8885828ee66a)
 ![unnamed-chunk-8-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/3454e858-cd28-427b-b65b-fdd2b710ffad)
@@ -96,11 +99,15 @@ We hope to discover important insights by examining trends in fruit and vegetabl
 ![unnamed-chunk-8-6](https://github.com/asteinkrauss/7900Group2/assets/164549275/1c55e104-0342-473b-a695-3b734c95fb61)
 
 **3. How does income per capita differ by state across years?**
+*Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 3.".*
+
 ![unnamed-chunk-10-3](https://github.com/asteinkrauss/7900Group2/assets/164549275/6b56d0e0-323a-409b-8136-1ca72a648cf2)
 ![unnamed-chunk-10-5](https://github.com/asteinkrauss/7900Group2/assets/164549275/37242604-16fb-4c00-bae5-d2f202f3aec5)
 ![unnamed-chunk-10-7](https://github.com/asteinkrauss/7900Group2/assets/164549275/9e1baa26-667c-4070-9a51-ca859b04c238)
 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
+*Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 4.".*
+
 <img width="666" alt="Screenshot 2024-04-17 at 7 23 30 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/622a70d9-f753-43b5-8594-bbfb4b945933">
 <img width="667" alt="Screenshot 2024-04-17 at 7 23 45 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/4a886ee0-f322-4120-aa89-05d9a83aed59">
 
