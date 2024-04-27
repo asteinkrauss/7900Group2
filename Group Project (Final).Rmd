@@ -733,7 +733,6 @@ ggplot(agg_income_long, aes(x = as.factor(Year), y = `Number of People`, fill = 
                     name = "Affordability of Food Servings") +  # Setting legend title to NULL
   theme_minimal()
 ```
-
 ### 6. EXCURSION - How does the affordability of fruits and vegetables differ amongst their different forms?
 ```{r}
 # Creates tables for fruits by form and year
@@ -771,8 +770,8 @@ plot_2013 <- ggplot(df_2013, aes(x = Form, y = Count, fill = Affordability)) +
        y = "Count (log scale)",
        fill = "") + # Remove legend title
   scale_y_log10() + # Logarithmic scale for y-axis
-  scale_fill_manual(values = c("skyblue", "coral"),
-                    labels = c("Afford", "Can't Afford")) + # Change legend labels
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
   theme_minimal()
 
 plot_2016 <- ggplot(df_2016, aes(x = Form, y = Count, fill = Affordability)) +
@@ -782,8 +781,8 @@ plot_2016 <- ggplot(df_2016, aes(x = Form, y = Count, fill = Affordability)) +
        y = "Count (log scale)",
        fill = "") + # Remove legend title
   scale_y_log10() + # Logarithmic scale for y-axis
-  scale_fill_manual(values = c("skyblue", "coral"),
-                    labels = c("Afford", "Can't Afford")) + # Change legend labels
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
   theme_minimal()
 
 plot_2020 <- ggplot(df_2020, aes(x = Form, y = Count, fill = Affordability)) +
@@ -793,8 +792,8 @@ plot_2020 <- ggplot(df_2020, aes(x = Form, y = Count, fill = Affordability)) +
        y = "Count (log scale)",
        fill = "") + # Remove legend title
   scale_y_log10() + # Logarithmic scale for y-axis
-  scale_fill_manual(values = c("skyblue", "coral"),
-                    labels = c("Afford", "Can't Afford")) + # Change legend labels
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
   theme_minimal()
 
 # Display plots
@@ -803,7 +802,7 @@ plot_2016
 plot_2020
 ```
 ```{r}
-# Creatse tables for vegetables by form
+# Create tables for vegetables by form
 table_veggies_form_2013 <- table(comparison_veggies_2013$meetreq, comparison_veggies_2013$form)
 table_veggies_form_Fruit2016 <- table(comparison_veggies_Fruit2016$meetreq, comparison_veggies_Fruit2016$form)
 table_veggies_form_Fruit2020 <- table(comparison_veggies_Fruit2020$meetreq, comparison_veggies_Fruit2020$form)
@@ -820,8 +819,6 @@ print(table_veggies_form_Fruit2016)
 print("Vegetable Summary by Form for 2020:")
 print(table_veggies_form_Fruit2020)
 
-library(ggplot2)
-
 # Convert tables to data frames
 df_veggies_2013 <- as.data.frame(table_veggies_form_2013)
 df_veggies_2016 <- as.data.frame(table_veggies_form_Fruit2016)
@@ -837,36 +834,40 @@ plot_veggies_2013 <- ggplot(df_veggies_2013, aes(x = Form, y = Count, fill = Aff
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Vegetable Affordability by Form (2013)",
        x = "Form",
-       y = "Count (log scale)",
+       y = "Count (square root scale)",
        fill = "") + # Remove legend title
-  scale_y_log10() + # Logarithmic scale for y-axis
-  scale_fill_manual(values = c("skyblue", "coral"),
-                    labels = c("Afford", "Can't Afford")) + # Change legend labels
+  scale_y_sqrt(labels = scales::comma_format()) + # Square root scale for y-axis
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
   theme_minimal()
 
 plot_veggies_2016 <- ggplot(df_veggies_2016, aes(x = Form, y = Count, fill = Affordability)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Vegetable Affordability by Form (2016)",
        x = "Form",
-       y = "Count (log scale)",
+       y = "Count (square root scale)",
        fill = "") + # Remove legend title
-  scale_y_log10() + # Logarithmic scale for y-axis
-  scale_fill_manual(values = c("skyblue", "coral"),
-                    labels = c("Afford", "Can't Afford")) + # Change legend labels
+  scale_y_sqrt(labels = scales::comma_format()) + # Square root scale for y-axis
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
   theme_minimal()
 
 plot_veggies_2020 <- ggplot(df_veggies_2020, aes(x = Form, y = Count, fill = Affordability)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Vegetable Affordability by Form (2020)",
        x = "Form",
-       y = "Count (log scale)",
+       y = "Count (square root scale)",
        fill = "") + # Remove legend title
-  scale_y_log10() + # Logarithmic scale for y-axis
-  scale_fill_manual(values = c("skyblue", "coral"),
-                    labels = c("Afford", "Can't Afford")) + # Change legend labels
+  scale_y_sqrt(labels = scales::comma_format()) + # Square root scale for y-axis
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
   theme_minimal()
 
 # Display plots
+plot_veggies_2013
+plot_veggies_2016
+plot_veggies_2020
+```
 plot_veggies_2013
 plot_veggies_2016
 plot_veggies_2020
