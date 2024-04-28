@@ -141,7 +141,13 @@ These rising prices align with broader economic factors, with the COVID-19 pande
 <img width="661" alt="Screenshot 2024-04-28 194417" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/f6312bc1-3cd6-4f3b-8ac1-007f86933c99">
 
 
--- INSERT CONCLUSION FROM INCOME DATA HERE --
+The wage growth and income analysis spanning from 2013 to 2020 reveals a systemic affordability crisis across various states. While nominal wages increased in many regions, a significant portion of states faced challenges in maintaining real wage growth above the inflation rate.
+
+Some states, including Alaska, Iowa, Kansas, Louisiana, North Dakota, and Oklahoma, struggled as their wage growth rates fell below the cumulative inflation rate. This indicates a concerning trend where residents experienced a decline in purchasing power, exacerbating challenges in meeting basic needs, including affording food.
+
+Conversely, another group of states managed to keep pace with or slightly exceed inflation. However, their wage growth still underscores the widespread nature of the affordability crisis, with many residents grappling with increasing living costs, including the cost of putting food on the table.
+
+This systemic issue not only affects individual households but also has broader implications for economic stability and social well-being. Addressing this crisis requires comprehensive solutions that address underlying economic disparities and structural barriers.
 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 4.".*
