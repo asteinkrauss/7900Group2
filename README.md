@@ -97,10 +97,9 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 -->
 <img width="674" alt="Screenshot 2024-04-28 175111" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/767f7317-506f-4377-833f-2ad82e5fd75a">
 <img width="674" alt="Screenshot 2024-04-28 175118" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/38fb10fb-b24c-4d15-9143-54e859a7431a">
-<img width="674" alt="Screenshot 2024-04-28 175240" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/3f3bc9d5-3892-4a64-b6bc-80d236151aff">
-<img width="674" alt="Screenshot 2024-04-28 175247" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/6959c1b6-d947-4a10-9336-4c394984bb73">
 
-The analysis of fruit and vegetable cup equivalent prices spanning from 2013 to 2020 reveals a predominant trend of escalating prices, with some exceptions. Most items, as illustrated by the top 5 most and least expensive food items, exhibited a consistent upward trajectory in prices over the observed period. While occasional stability or even decreases were observed in a few items, they were relatively rare compared to the overall pattern of price increases.
+
+The analysis of fruit cup equivalent prices spanning from 2013 to 2020 reveals a predominant trend of escalating prices, with some exceptions. Most items, as illustrated by the top 5 most and least expensive food items, exhibited a consistent upward trajectory in prices over the observed period. While occasional stability or even decreases were observed in a few items, they were relatively rare compared to the overall pattern of price increases.
 
 This trend of rising prices aligns with broader economic factors and market dynamics. In particular, the onset of the COVID-19 pandemic likely accelerated inflationary pressures in the food market. Supply chain disruptions, labor shortages, and increased production costs associated with pandemic-related measures could have contributed to the accelerated price increases observed during this period.
 
@@ -110,6 +109,10 @@ Understanding these price dynamics is essential for various stakeholders, includ
 **2. What are the most and least expensive vegetables? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
 
+<img width="674" alt="Screenshot 2024-04-28 175240" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/3f3bc9d5-3892-4a64-b6bc-80d236151aff">
+<img width="674" alt="Screenshot 2024-04-28 175247" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/6959c1b6-d947-4a10-9336-4c394984bb73">
+
+<!--
 -- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2013 HERE --
 <img width="672" alt="Screenshot 2024-04-28 154317" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/13ae744e-3e70-402a-87d0-d7d76817ab8e">
 <img width="675" alt="Screenshot 2024-04-26 at 6 08 03 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/0e860175-91f4-471c-8b45-ac6c79c8aa37">
@@ -124,6 +127,8 @@ Understanding these price dynamics is essential for various stakeholders, includ
 <img width="673" alt="Screenshot 2024-04-26 at 6 09 08 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d883dda1-0773-4cc6-a349-8b7c14e75bb0">
 
 -- INSERT CONCLUSION HERE --
+
+-->
 
 **3. How does income per capita differ by state across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 3.".*
