@@ -99,18 +99,19 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 <img width="674" alt="Screenshot 2024-04-28 175118" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/38fb10fb-b24c-4d15-9143-54e859a7431a">
 
 
-The analysis of fruit cup equivalent prices spanning from 2013 to 2020 reveals a predominant trend of escalating prices, with some exceptions. Most items, as illustrated by the top 5 most and least expensive food items, exhibited a consistent upward trajectory in prices over the observed period. While occasional stability or even decreases were observed in a few items, they were relatively rare compared to the overall pattern of price increases.
+The analysis of fruit cup equivalent prices from 2013 to 2020 reveals a consistent upward trend, with some exceptions. Most fruits, as illustrated by the top 5 most and least expensive, experienced price increases, reflecting broader economic factors. While occasional stability or even decreases were observed in a few items, they were relatively rare compared to the overall pattern of price increases. The COVID-19 pandemic likely exacerbated this trend due to supply chain disruptions and increased production costs. 
 
-This trend of rising prices aligns with broader economic factors and market dynamics. In particular, the onset of the COVID-19 pandemic likely accelerated inflationary pressures in the food market. Supply chain disruptions, labor shortages, and increased production costs associated with pandemic-related measures could have contributed to the accelerated price increases observed during this period.
-
-Understanding these price dynamics is essential for various stakeholders, including consumers, producers, and policymakers. Rising food prices can pose challenges to food affordability and accessibility, particularly for vulnerable populations. Moreover, the implications of these trends extend beyond immediate economic concerns, influencing broader issues such as food security and public health.
-
+Understanding these dynamics is crucial for stakeholders, as rising fruit prices can challenge affordability and accessibility, especially for vulnerable populations. Addressing these underlying factors is essential for mitigating the impact on consumers and overall affordability of living.
 
 **2. What are the most and least expensive vegetables? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
 
 <img width="674" alt="Screenshot 2024-04-28 175240" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/3f3bc9d5-3892-4a64-b6bc-80d236151aff">
 <img width="674" alt="Screenshot 2024-04-28 175247" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/6959c1b6-d947-4a10-9336-4c394984bb73">
+
+Vegetable cup equivalent prices from 2013 to 2020 also reveal a consistent upward trend, akin to observations in the fruit market. Most vegetables showed a consistent rise in prices over this period. While occasional stability or decreases were observed, they were rare compared to the overall trend of price increases.
+
+These rising prices align with broader economic factors, with the COVID-19 pandemic likely accelerating inflationary pressures. Supply chain disruptions and increased production costs associated with the pandemic contributed to this trend. Addressing the underlying factors driving these price movements is essential for mitigating their impact and ensuring the affordability of vegetables for all consumers.
 
 <!--
 -- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2013 HERE --
