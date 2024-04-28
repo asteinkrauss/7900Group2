@@ -62,6 +62,7 @@ The datasets included the average American household income per capita and fruit
 <img width="616" alt="Screenshot 2024-04-17 at 1 07 24 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/75d2f767-1187-4127-88ed-e3161f36ec1a">
 <img width="579" alt="MeanPriceTrend" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/cdb27460-1aee-4f48-937d-f0020cf46503">
 
+Figure 1: Food Prices (2013-2020)
 
 # Data Analytics
 **Provide data analytics that add clarity to the research question.
