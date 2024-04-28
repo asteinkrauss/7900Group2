@@ -101,9 +101,9 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
 
 -- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2013 HERE --
-
-<img width="672" alt="Screenshot 2024-04-28 154043" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/c3f58a57-105d-4f58-b809-31db86f499da">
+<img width="672" alt="Screenshot 2024-04-28 154317" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/13ae744e-3e70-402a-87d0-d7d76817ab8e">
 <img width="675" alt="Screenshot 2024-04-26 at 6 08 03 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/0e860175-91f4-471c-8b45-ac6c79c8aa37">
+
 
 -- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2016 HERE --
 <img width="677" alt="Screenshot 2024-04-26 at 6 08 22 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/13aff076-2c9b-488e-990c-be68510662c3">
