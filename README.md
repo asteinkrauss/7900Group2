@@ -60,7 +60,7 @@ The datasets included the average American household income per capita and fruit
 ### Descriptive Statistics
 <img width="583" alt="Screenshot 2024-04-17 at 1 04 53 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/00ba954a-9ab7-4e49-a80b-726fe92ad951">
 <img width="616" alt="Screenshot 2024-04-17 at 1 07 24 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/75d2f767-1187-4127-88ed-e3161f36ec1a">
-![MeanPriceTrend](https://github.com/asteinkrauss/7900Group2/assets/164543699/cdb27460-1aee-4f48-937d-f0020cf46503)
+<img width="625" alt="MeanPriceTrend" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/cdb27460-1aee-4f48-937d-f0020cf46503">
 
 
 # Data Analytics
