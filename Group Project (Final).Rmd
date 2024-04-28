@@ -42,39 +42,21 @@ library(scales) # Aesthetics for geographic plot
 # comment it)
 # experiment_txt <- read.csv(file.choose(), header = T)
 
-#Fruit2013 = read.csv("Data/Fruit Prices 2013.csv") #edit these to match your directory path
-#Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
-#Fruit2016 = read.csv("Data/Fruit Prices 2016.csv")
-#Fruit2016 = Fruit2016[, 1:9]
-#Fruit2020 = read.csv("Data/Fruit Prices 2020.csv")
-#Fruit2020 = Fruit2020[, 1:9]
-
-#Veg2013 = read.csv("Data/Vegetable Prices 2013.csv")
-#Veg2013 = Veg2013[, 1:9]
-#Veg2016 = read.csv("Data/Vegetable Prices 2016.csv")
-#Veg2016 = Veg2016[, 1:9]
-#Veg2020 = read.csv("Data/Vegetable Prices 2020.csv")
-#Veg2020 = Veg2020[, 1:9]
-
-#Income = read.csv("Data/Annual person income by county.csv")
-
-# DELETE THE BELOW CODE FOR CHECK POINT 1 & UN-COMMENT THE PRECEDING LINES
-Fruit2013 = read.csv("Fruit Prices 2013.csv") #edit these to match your directory path
+Fruit2013 = read.csv("Data/Fruit Prices 2013.csv") #edit these to match your directory path
 Fruit2013 = Fruit2013[, 1:9] #grabbing first 9 columns, some excels had empty slots that were being read in weird
-Fruit2016 = read.csv("Fruit Prices 2016.csv")
+Fruit2016 = read.csv("Data/Fruit Prices 2016.csv")
 Fruit2016 = Fruit2016[, 1:9]
-Fruit2020 = read.csv("Fruit Prices 2020.csv")
+Fruit2020 = read.csv("Data/Fruit Prices 2020.csv")
 Fruit2020 = Fruit2020[, 1:9]
 
-Veg2013 = read.csv("Vegetable Prices 2013.csv")
+Veg2013 = read.csv("Data/Vegetable Prices 2013.csv")
 Veg2013 = Veg2013[, 1:9]
-Veg2016 = read.csv("Vegetable Prices 2016.csv")
+Veg2016 = read.csv("Data/Vegetable Prices 2016.csv")
 Veg2016 = Veg2016[, 1:9]
-Veg2020 = read.csv("Vegetable Prices 2020.csv")
+Veg2020 = read.csv("Data/Vegetable Prices 2020.csv")
 Veg2020 = Veg2020[, 1:9]
 
-
-Income = read.csv("Annual person income by county.csv")
+#Income = read.csv("Data/Annual person income by county.csv")
 ```
 
 ### Format data to have 'year' in long format
