@@ -100,8 +100,12 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 <img width="674" alt="Screenshot 2024-04-28 175240" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/3f3bc9d5-3892-4a64-b6bc-80d236151aff">
 <img width="674" alt="Screenshot 2024-04-28 175247" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/6959c1b6-d947-4a10-9336-4c394984bb73">
 
+The analysis of fruit and vegetable cup equivalent prices spanning from 2013 to 2020 reveals a predominant trend of escalating prices, with some exceptions. Most items, as illustrated by the top 5 most and least expensive food items, exhibited a consistent upward trajectory in prices over the observed period. While occasional stability or even decreases were observed in a few items, they were relatively rare compared to the overall pattern of price increases.
 
--- INSERT CONCLUSION HERE --
+This trend of rising prices aligns with broader economic factors and market dynamics. In particular, the onset of the COVID-19 pandemic likely accelerated inflationary pressures in the food market. Supply chain disruptions, labor shortages, and increased production costs associated with pandemic-related measures could have contributed to the accelerated price increases observed during this period.
+
+Understanding these price dynamics is essential for various stakeholders, including consumers, producers, and policymakers. Rising food prices can pose challenges to food affordability and accessibility, particularly for vulnerable populations. Moreover, the implications of these trends extend beyond immediate economic concerns, influencing broader issues such as food security and public health.
+
 
 **2. What are the most and least expensive vegetables? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
