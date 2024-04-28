@@ -82,7 +82,7 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 
 **1. What are the most and least expensive fruits? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 1.".*
-
+<!--
 -- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2013 HERE --
 <img width="675" alt="Screenshot 2024-04-26 at 6 10 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ab33b48c-2032-4547-9238-76887010d2c5">
 <img width="676" alt="Screenshot 2024-04-26 at 6 11 11 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d8c4dd11-bc33-45e9-bf17-d29ca13de59e">
@@ -94,6 +94,12 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 -- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2020 HERE --
 <img width="674" alt="Screenshot 2024-04-26 at 6 11 46 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/3cc7fbef-4fd0-420a-bc13-ddf9c2186096">
 <img width="678" alt="Screenshot 2024-04-26 at 6 11 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/fc6682fd-a262-4318-8121-02d5cd9ac267">
+-->
+<img width="674" alt="Screenshot 2024-04-28 175111" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/767f7317-506f-4377-833f-2ad82e5fd75a">
+<img width="674" alt="Screenshot 2024-04-28 175118" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/38fb10fb-b24c-4d15-9143-54e859a7431a">
+<img width="674" alt="Screenshot 2024-04-28 175240" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/3f3bc9d5-3892-4a64-b6bc-80d236151aff">
+<img width="674" alt="Screenshot 2024-04-28 175247" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/6959c1b6-d947-4a10-9336-4c394984bb73">
+
 
 -- INSERT CONCLUSION HERE --
 
