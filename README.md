@@ -84,14 +84,9 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 **1. What are the most and least expensive fruits? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 1.".*
 
-<img width="675" alt="Screenshot 2024-04-26 at 6 10 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ab33b48c-2032-4547-9238-76887010d2c5">
-<img width="676" alt="Screenshot 2024-04-26 at 6 11 11 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d8c4dd11-bc33-45e9-bf17-d29ca13de59e">
-
-<img width="673" alt="Screenshot 2024-04-26 at 6 11 23 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/c698f7ff-a47f-4972-9996-3d225c398f81">
-<img width="673" alt="Screenshot 2024-04-26 at 6 11 34 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/1db8ee11-2561-439b-a23f-cbe1f4149d01">
-
-<img width="674" alt="Screenshot 2024-04-26 at 6 11 46 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/3cc7fbef-4fd0-420a-bc13-ddf9c2186096">
-<img width="678" alt="Screenshot 2024-04-26 at 6 11 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/fc6682fd-a262-4318-8121-02d5cd9ac267">
+<img width="1028" alt="Screenshot 2024-04-29 at 1 54 12 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/56c55efe-8a60-4f5c-aab8-8af9963d25d0">
+<img width="1025" alt="Screenshot 2024-04-29 at 1 55 57 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/e65999c3-ea87-4e49-ab78-2e92c9ce91cd">
+<img width="1029" alt="Screenshot 2024-04-29 at 1 54 36 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/17b1bc1b-df4f-4a3b-aa44-4d1b05d49f0e">
 
 
 **Figure 1a-f.** Most and least expensive fruits in 2013, 2016, and 2020.
@@ -105,14 +100,9 @@ Though the types of fruits that were found to be most expensive or least expensi
 **2. What are the most and least expensive vegetables? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
 
-<img width="672" alt="Screenshot 2024-04-28 154317" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/13ae744e-3e70-402a-87d0-d7d76817ab8e">
-<img width="675" alt="Screenshot 2024-04-26 at 6 08 03 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/0e860175-91f4-471c-8b45-ac6c79c8aa37">
-
-<img width="677" alt="Screenshot 2024-04-26 at 6 08 22 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/13aff076-2c9b-488e-990c-be68510662c3">
-<img width="677" alt="Screenshot 2024-04-26 at 6 08 37 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/84894665-ac5f-44b2-ae6b-31b8fc136ee3">
-
-<img width="673" alt="Screenshot 2024-04-26 at 6 08 55 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/851f5c1a-3379-4e1d-a487-203aa14d6931">
-<img width="673" alt="Screenshot 2024-04-26 at 6 09 08 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d883dda1-0773-4cc6-a349-8b7c14e75bb0">
+<img width="1032" alt="Screenshot 2024-04-29 at 1 56 39 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/263f5408-d592-4308-9b72-8c68da5df358">
+<img width="1035" alt="Screenshot 2024-04-29 at 1 56 52 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/6cde0356-a5b2-4641-ad66-bc66289bee58">
+<img width="1034" alt="Screenshot 2024-04-29 at 1 57 03 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/6f7f49ce-434f-4bfb-8c44-8bb3ae8e8945">
 
 **Figure 2a-f.** Most and least expensive vegetables in 2013, 2016, and 2020.
 
