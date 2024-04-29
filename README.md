@@ -140,11 +140,11 @@ These rising prices align with broader economic factors, with the COVID-19 pande
 <img width="657" alt="Screenshot 2024-04-26 at 6 10 06 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/b752a1a2-bda7-4bfc-bf3b-d04ffb854ff9">
 <img width="662" alt="Screenshot 2024-04-26 at 6 10 17 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/576aa2c2-9f42-4a1f-bb9c-a8c935b02218">
 <img width="661" alt="Screenshot 2024-04-28 194417" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/f6312bc1-3cd6-4f3b-8ac1-007f86933c99">
-
+Figure 2: Wage-Inflation Map. 
 
 The wage growth and income analysis spanning from 2013 to 2020 reveals a systemic affordability crisis across various states. While nominal wages increased in many regions, a significant portion of states faced challenges in maintaining real wage growth above the inflation rate.
 
-Some states, including Alaska, Iowa, Kansas, Louisiana, North Dakota, and Oklahoma, struggled as their wage growth rates fell below the cumulative inflation rate. This indicates a concerning trend where residents experienced a decline in purchasing power, exacerbating challenges in meeting basic needs, including affording food.
+As shown in figure 2, some states, including Alaska, Iowa, Kansas, Louisiana, North Dakota, and Oklahoma, struggled as their wage growth rates fell below the cumulative inflation rate. This indicates a concerning trend where residents experienced a decline in purchasing power, exacerbating challenges in meeting basic needs, including affording food.
 
 Conversely, another group of states managed to keep pace with or slightly exceed inflation. However, their wage growth still underscores the widespread nature of the affordability crisis, with many residents grappling with increasing living costs, including the cost of putting food on the table.
 
