@@ -125,7 +125,6 @@ Similarly to fruits, the types of vegetables that were found to be most expensiv
 The series of heat maps were used to visually depict the variation in income per capita across the United States in 2013, 2016, and 2020. The maps offer a comprehensive overview of the economic landscape, illustrating how income levels fluctuate regionally and evolve over time. States such as Massachusetts and Connecticut consistently reported high income per capita (> $60,000) while New Mexico, Mississippi, and West Virginia consistently reported low income per capita (< $40,000). The majority of states reported income per capita between $45,000 and $55,000.
 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
-*Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 4.".*
 
 <img width="665" alt="Screenshot 2024-04-29 at 1 39 54 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/514783e1-a7da-421c-8529-0f6f7cc9119c">
 
