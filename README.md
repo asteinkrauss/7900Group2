@@ -60,7 +60,8 @@ The datasets included the average American household income per capita and fruit
 ### Descriptive Statistics
 <img width="583" alt="Screenshot 2024-04-17 at 1 04 53 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/00ba954a-9ab7-4e49-a80b-726fe92ad951">
 <img width="616" alt="Screenshot 2024-04-17 at 1 07 24 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/75d2f767-1187-4127-88ed-e3161f36ec1a">
-<img width="579" alt="MeanPriceTrend" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/cdb27460-1aee-4f48-937d-f0020cf46503">
+<img width="630" alt="Screenshot 2024-04-29 at 2 25 26 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/f3a32399-a94b-49fe-8551-65164cbec8fc">
+
 
 Figure 1: Food Prices (2013-2020). For both fruits and vegetables, the mean cup equivalent price demonstrated a persistent upward trend from 2013 to 2020.
 
