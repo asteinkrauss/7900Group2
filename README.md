@@ -59,8 +59,8 @@ The datasets included the average American household income per capita and fruit
 
 ### Descriptive Statistics
 
-<img width="798" alt="Screenshot 2024-04-29 at 2 46 06 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/34b71cdf-1e32-4598-80b9-d00611c9d8bf">
-<img width="796" alt="Screenshot 2024-04-29 at 2 46 23 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/7baeaba9-539e-488e-87ff-ff4e0b2ebbde">
+<img width="913" alt="Screenshot 2024-04-29 at 3 02 51 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/2f9f4c21-d5fd-43ad-9f64-a08cba2c8a9e">
+<img width="914" alt="Screenshot 2024-04-29 at 3 03 09 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/dbd614e4-3a36-4358-8e8d-2e3677e3c18e">
 <img width="688" alt="Screenshot 2024-04-29 at 2 49 54 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/88dfa60b-9912-43ad-b3cc-4324d29423a0">
 
 **Figure 0.** Average cup equivalent price for fruit and vegetables in 2013, 2016, and 2020.
