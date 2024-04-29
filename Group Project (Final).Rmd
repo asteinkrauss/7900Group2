@@ -27,12 +27,14 @@ library(ggplot2)
 library(devtools)
 library(tidyr)
 library(dplyr)
+library(stats)
 library(knitr)
 library(reshape2)
 library(kableExtra)
 library(plotly) # Interactive graphs
 library(usmap) # Plot geographic data
 library(scales) # Aesthetics for geographic plot
+library(sf)
 ```
 
 ### Load in .csv files
@@ -56,7 +58,7 @@ Veg2016 = Veg2016[, 1:9]
 Veg2020 = read.csv("Data/Vegetable Prices 2020.csv")
 Veg2020 = Veg2020[, 1:9]
 
-#Income = read.csv("Data/Annual person income by county.csv")
+Income = read.csv("Data/Annual person income by county.csv")
 ```
 
 ### Format data to have 'year' in long format
@@ -104,7 +106,39 @@ kable(fruit_summary, align = "c")
 # Views the vegetable summary table
 cat("\nVeggie Summary:\n")
 kable(veggie_summary, align = "c")
+
 ```
+
+```{r}
+fruit_data <- mutate(Fruits, Type = "Fruit")
+veggie_data <- mutate(Veggies, Type = "Vegetable")
+
+common_columns <- intersect(names(fruit_data), names(veggie_data))
+fruit_data <- fruit_data[, common_columns]
+veggie_data <- veggie_data[, common_columns]
+
+# Combine fruit and vegetable data into one dataframe
+data_combined <- rbind(fruit_data, veggie_data)
+
+# Create a summary data frame with necessary statistics
+summary_data <- data_combined %>%
+  group_by(Year, Type) %>%
+  summarise(
+    mean_price = mean(CupEquivalentPrice, na.rm = TRUE)
+  )
+
+# Plotting
+ggplot(summary_data, aes(x = factor(Year), y = mean_price, color = Type, group = Type)) +
+  geom_line(size = 1) +
+  geom_point(size = 3, shape = 21, fill = "white") +  # Adds points to the lines
+  geom_text(aes(label = sprintf("$%.2f", mean_price)), vjust = -0.5, size = 3, color = "black") +
+  labs(title = "Price Trends for Fruits and Vegetables",
+       x = "Year",
+       y = "Mean Cup Equivalent Price") +
+  scale_color_manual(values = c("skyblue", "lightgreen")) +
+  theme_minimal()
+```
+
 
 ```{r}
 # Aggregating the cup equivalent price by type of fruit and year for fruits
@@ -165,7 +199,7 @@ bottom_10_expensive_Fruit2016 <- head(sorted_Fruit2016, 10)
 bottom_10_expensive_Fruit2020 <- head(sorted_Fruit2020, 10)
 
 # Create bar chart for most expensive fruits (sorted from least to most expensive)
-most_expensive_Fruit2013 <- ggplot(top_10_expensive_Fruit2013, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+most_expensive_Fruit2013 <- ggplot(top_10_expensive_Fruit2013, aes(x = CupEquivalentPrice, y = reorder(Fruit, CupEquivalentPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Fruits 2013",
        x = "Retail Price (per equivalent cup, $)",
@@ -176,7 +210,7 @@ most_expensive_Fruit2013 <- ggplot(top_10_expensive_Fruit2013, aes(x = RetailPri
 print(most_expensive_Fruit2013)
 
 # Create bar chart for least expensive fruits (sorted from most to least expensive)
-least_expensive_Fruit2013 <- ggplot(bottom_10_expensive_Fruit2013, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+least_expensive_Fruit2013 <- ggplot(bottom_10_expensive_Fruit2013, aes(x = CupEquivalentPrice, y = reorder(Fruit, -CupEquivalentPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Fruits 2013",
        x = "Retail Price (per equivalent cup, $)",
@@ -187,7 +221,7 @@ least_expensive_Fruit2013 <- ggplot(bottom_10_expensive_Fruit2013, aes(x = Retai
 print(least_expensive_Fruit2013)
 
 # Create bar chart for most expensive fruits for 2016 (sorted from least to most expensive)
-least_expensive_Fruit2016 <- ggplot(top_10_expensive_Fruit2016, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+least_expensive_Fruit2016 <- ggplot(top_10_expensive_Fruit2016, aes(x = CupEquivalentPrice, y = reorder(Fruit, CupEquivalentPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Fruits 2016",
        x = "Retail Price (per equivalent cup, $)",
@@ -198,7 +232,7 @@ least_expensive_Fruit2016 <- ggplot(top_10_expensive_Fruit2016, aes(x = RetailPr
 print(least_expensive_Fruit2016)
 
 # Create bar chart for least expensive fruits for 2016 (sorted from most to least expensive)
-least_expensive_Fruit2016 <- ggplot(bottom_10_expensive_Fruit2016, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+least_expensive_Fruit2016 <- ggplot(bottom_10_expensive_Fruit2016, aes(x = CupEquivalentPrice, y = reorder(Fruit, -CupEquivalentPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Fruits 2016",
        x = "Retail Price (per equivalent cup, $)",
@@ -209,7 +243,7 @@ least_expensive_Fruit2016 <- ggplot(bottom_10_expensive_Fruit2016, aes(x = Retai
 print(least_expensive_Fruit2016)
 
 # Create bar chart for most expensive fruits for 2020 (sorted from least to most expensive)
-most_expensive_Fruit2020 <- ggplot(top_10_expensive_Fruit2020, aes(x = RetailPrice, y = reorder(Fruit, RetailPrice))) +
+most_expensive_Fruit2020 <- ggplot(top_10_expensive_Fruit2020, aes(x = CupEquivalentPrice, y = reorder(Fruit, CupEquivalentPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
   labs(title = "Most Expensive Fruits 2020",
        x = "Retail Price (per equivalent cup, $)",
@@ -220,7 +254,7 @@ most_expensive_Fruit2020 <- ggplot(top_10_expensive_Fruit2020, aes(x = RetailPri
 print(most_expensive_Fruit2020)
 
 # Create bar chart for least expensive fruits for 2020 (sorted from most to least expensive)
-least_expensive_Fruit2020 <- ggplot(bottom_10_expensive_Fruit2020, aes(x = RetailPrice, y = reorder(Fruit, -RetailPrice))) +
+least_expensive_Fruit2020 <- ggplot(bottom_10_expensive_Fruit2020, aes(x = CupEquivalentPrice, y = reorder(Fruit, -CupEquivalentPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
   labs(title = "Least Expensive Fruits 2020",
        x = "Retail Price (per equivalent cup, $)",
@@ -230,6 +264,132 @@ least_expensive_Fruit2020 <- ggplot(bottom_10_expensive_Fruit2020, aes(x = Retai
 # Print the second graph for 2020
 print(least_expensive_Fruit2020)
 
+```
+```{r}
+# Combine the data for different years with an additional 'Year' column
+all_fruits <- bind_rows(
+  mutate(Fruit2013, Year = "2013"),
+  mutate(Fruit2016, Year = "2016"),
+  mutate(Fruit2020, Year = "2020")
+)
+
+# Sort and select the top 7 most and least expensive fruits from 2013
+top_7_2013_fruit <- Fruit2013 %>%
+  arrange(desc(CupEquivalentPrice)) %>%
+  slice(1:7) %>%
+  select(Fruit, Form)
+
+bottom_7_2013_fruit <- Fruit2013 %>%
+  arrange(CupEquivalentPrice) %>%
+  slice(1:7) %>%
+  select(Fruit, Form)
+
+# Create unique identifiers and categories
+top_7_2013_fruit <- mutate(top_7_2013_fruit, ID = paste(Fruit, Form, sep = " - "), Category = "Top 7 Most Expensive")
+bottom_7_2013_fruit <- mutate(bottom_7_2013_fruit, ID = paste(Fruit, Form, sep = " - "), Category = "Top 7 Least Expensive")
+
+# Combine top and bottom for easier tracking
+selected_fruits <- bind_rows(top_7_2013_fruit, bottom_7_2013_fruit)
+
+# Filter and prepare all years' data to include only the selected fruits
+tracked_fruits <- all_fruits %>%
+  mutate(ID = paste(Fruit, Form, sep = " - ")) %>%
+  filter(ID %in% selected_fruits$ID) %>%
+  left_join(selected_fruits, by = "ID") %>%
+  arrange(ID, desc(Year))
+
+# Plotting the top 5 most expensive fruits
+plot_top <- ggplot(filter(tracked_fruits, Category == "Top 7 Most Expensive"), 
+                   aes(y = ID, x = CupEquivalentPrice, fill = as.factor(Year))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7), orientation = "y") +
+  scale_fill_manual(values = c("2013" = "coral", "2016" = "lightgreen", "2020" = "skyblue"),
+                    name = "Year") +
+  labs(title = "Top 7 Most Expensive Fruits (2013-2020)",
+       y = "Fruit - Form",
+       x = "Cup Equivalent Price ($)") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(angle = 0, hjust = 1),
+        legend.position = "bottom")
+
+# Plotting the top 5 least expensive fruits
+plot_bottom <- ggplot(filter(tracked_fruits, Category == "Top 7 Least Expensive"), 
+                      aes(y = ID, x = CupEquivalentPrice, fill = as.factor(Year))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7), orientation = "y") +
+  scale_fill_manual(values = c("2013" = "coral", "2016" = "lightgreen", "2020" = "skyblue"),
+                    name = "Year") +
+  labs(title = "Top 7 Least Expensive Fruits (2013-2020)",
+       y = "Fruit - Form",
+       x = "Cup Equivalent Price ($)") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(angle = 0, hjust = 1),
+        legend.position = "bottom")
+
+# Print the plots
+print(plot_top)
+print(plot_bottom)
+```
+```{r}
+# Combine the data for different years with an additional 'Year' column
+all_vegs <- bind_rows(
+  mutate(Veg2013, Year = "2013"),
+  mutate(Veg2016, Year = "2016"),
+  mutate(Veg2020, Year = "2020")
+)
+
+# Sort and select the top 7 most and least expensive Vegetables from 2013
+top_7_2013_veg <- Veg2013 %>%
+  arrange(desc(CupEquivalentPrice)) %>%
+  slice(1:7) %>%
+  select(Vegetable, Form)
+
+bottom_7_2013_veg <- Veg2013 %>%
+  arrange(CupEquivalentPrice) %>%
+  slice(1:7) %>%
+  select(Vegetable, Form)
+
+# Create unique identifiers and categories
+top_7_2013_veg <- mutate(top_7_2013_veg, ID = paste(Vegetable, Form, sep = " - "), Category = "Top 7 Most Expensive")
+bottom_7_2013_veg <- mutate(bottom_7_2013_veg, ID = paste(Vegetable, Form, sep = " - "), Category = "Top 7 Least Expensive")
+
+# Combine top and bottom for easier tracking
+selected_vegs <- bind_rows(top_7_2013_veg, bottom_7_2013_veg)
+
+# Filter and prepare all years' data to include only the selected vegetables
+tracked_vegs <- all_vegs %>%
+  mutate(ID = paste(Vegetable, Form, sep = " - ")) %>%
+  filter(ID %in% selected_vegs$ID) %>%
+  left_join(selected_vegs, by = "ID") %>%
+  arrange(ID, desc(Year))
+
+# Plotting the top 7 most expensive vegetables
+plot_top <- ggplot(filter(tracked_vegs, Category == "Top 7 Most Expensive"), 
+                   aes(y = ID, x = CupEquivalentPrice, fill = as.factor(Year))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7), orientation = "y") +
+  scale_fill_manual(values = c("2013" = "coral", "2016" = "lightgreen", "2020" = "skyblue"),
+                    name = "Year") +
+  labs(title = "Top 7 Most Expensive Vegetables (2013-2020)",
+       y = "Vegetable - Form",
+       x = "Cup Equivalent Price ($)") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(angle = 0, hjust = 1),
+        legend.position = "bottom")
+
+# Plotting the top 5 least expensive fruits
+plot_bottom <- ggplot(filter(tracked_vegs, Category == "Top 7 Least Expensive"), 
+                      aes(y = ID, x = CupEquivalentPrice, fill = as.factor(Year))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7), orientation = "y") +
+  scale_fill_manual(values = c("2013" = "coral", "2016" = "lightgreen", "2020" = "skyblue"),
+                    name = "Year") +
+  labs(title = "Top 7 Least Expensive Vegetables (2013-2020)",
+       y = "Vegetable - Form",
+       x = "Cup Equivalent Price ($)") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(angle = 0, hjust = 1),
+        legend.position = "bottom")
+
+# Print the plots
+print(plot_top)
+print(plot_bottom)
 ```
 
 ```{r}
@@ -307,7 +467,7 @@ bottom_10_expensive_Veg2020 <- head(sorted_Veg2020, 10)
 # Create bar chart for most expensive Vegs (sorted from least to most expensive)
 most_expensive_Veg2013 <- ggplot(top_10_expensive_Veg2013, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
-  labs(title = "Most Expensive Vegetabless 2013",
+  labs(title = "Most Expensive Vegetables 2013",
        x = "Retail Price (per equivalent cup, $)",
        y = "Vegetable") +
   theme_minimal()
@@ -318,7 +478,7 @@ print(most_expensive_Veg2013)
 # Create bar chart for least expensive Vegs (sorted from most to least expensive)
 least_expensive_Veg2013 <- ggplot(bottom_10_expensive_Veg2013, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
-  labs(title = "Least Expensive Vegetabless 2013",
+  labs(title = "Least Expensive Vegetables 2013",
        x = "Retail Price (per equivalent cup, $)",
        y = "Vegetable") +
   theme_minimal()
@@ -329,7 +489,7 @@ print(least_expensive_Veg2013)
 # Create bar chart for most expensive Vegs for 2016 (sorted from least to most expensive)
 least_expensive_Veg2016 <- ggplot(top_10_expensive_Veg2016, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
-  labs(title = "Most Expensive Vegetabless 2016",
+  labs(title = "Most Expensive Vegetables 2016",
        x = "Retail Price (per equivalent cup, $)",
        y = "Vegetable") +
   theme_minimal()
@@ -340,7 +500,7 @@ print(least_expensive_Veg2016)
 # Create bar chart for least expensive Vegs for 2016 (sorted from most to least expensive)
 least_expensive_Veg2016 <- ggplot(bottom_10_expensive_Veg2016, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
-  labs(title = "Least Expensive Vegetabless 2016",
+  labs(title = "Least Expensive Vegetables 2016",
        x = "Retail Price (per equivalent cup, $)",
        y = "Vegetable") +
   theme_minimal()
@@ -351,7 +511,7 @@ print(least_expensive_Veg2016)
 # Create bar chart for most expensive Vegs for 2020 (sorted from least to most expensive)
 most_expensive_Veg2020 <- ggplot(top_10_expensive_Veg2020, aes(x = RetailPrice, y = reorder(Vegetable, RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "skyblue") +
-  labs(title = "Most Expensive Vegetabless 2020",
+  labs(title = "Most Expensive Vegetables 2020",
        x = "Retail Price (per equivalent cup, $)",
        y = "Vegetable") +
   theme_minimal()
@@ -362,7 +522,7 @@ print(most_expensive_Veg2020)
 # Create bar chart for least expensive Vegs for 2020 (sorted from most to least expensive)
 least_expensive_Veg2020 <- ggplot(bottom_10_expensive_Veg2020, aes(x = RetailPrice, y = reorder(Vegetable, -RetailPrice))) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, fill = "lightgreen") +
-  labs(title = "Least Expensive Vegetabless 2020",
+  labs(title = "Least Expensive Vegetables 2020",
        x = "Retail Price (per equivalent cup, $)",
        y = "Vegetable") +
   theme_minimal()
@@ -453,9 +613,11 @@ agg_income <- aggregate(Value ~ Year + GeoFIPS + GeoName, data = income_by_capit
 
 # Filters data for each year
 income_2013 <- agg_income[agg_income$Year == 2013, ]
-income_Fruit2016 <- agg_income[agg_income$Year == 2016, ]
-income_Fruit2020 <- agg_income[agg_income$Year == 2020, ]
+income_2016 <- agg_income[agg_income$Year == 2016, ]
+income_2020 <- agg_income[agg_income$Year == 2020, ]
 
+```
+```{r}
 # Generates the maps for each year & retrieves US state boundaries data
 us_states <- us_map(regions = "states")
 
@@ -499,42 +661,131 @@ plotly_g_2013
 
 # YEAR = 2016
 # Merges data using state abbreviations in us_states and FIPS codes in agg_income
-map_income_Fruit2016 <- merge(us_states, income_Fruit2016, by.x = "full", by.y = "GeoName")
+map_income_2016 <- merge(us_states, income_2016, by.x = "full", by.y = "GeoName")
 
 # Creates a plot with ggplot
-g_Fruit2016 <- ggplot(map_income_Fruit2016) +
+g_2016 <- ggplot(map_income_2016) +
   geom_sf(aes(fill = Value)) +
   scale_fill_distiller(name = "Income ($, by capita)", palette = "Spectral") +
   ggtitle("Personal Income by State (2016)")
 
 # Displays the ggplot graph
-g_Fruit2016
+g_2016
 
 # Converts ggplot to plotly object
-plotly_g_Fruit2016 <- ggplotly(g_Fruit2016)
+plotly_g_2016 <- ggplotly(g_2016)
 
 # Displays the interactive plot
-plotly_g_Fruit2016
+plotly_g_2016
 
 # YEAR = 2020
 # Merges using state abbreviations in us_states and FIPS codes in agg_income
-map_income_Fruit2020 <- merge(us_states, income_Fruit2020, by.x = "full", by.y = "GeoName")
+map_income_2020 <- merge(us_states, income_2020, by.x = "full", by.y = "GeoName")
 # Create a plot with ggplot
-g_Fruit2020 <- ggplot(map_income_Fruit2020) +
+g_2020 <- ggplot(map_income_2020) +
   geom_sf(aes(fill = Value)) +
   scale_fill_distiller(name = "Income ($, by capita)", palette = "Spectral") +
   ggtitle("Personal Income by State (2020)")
 
 # Displays the ggplot graph
-g_Fruit2020
+g_2020
 
 # Converts ggplot to plotly object
-plotly_g_Fruit2020 <- ggplotly(g_Fruit2020)
+plotly_g_2020 <- ggplotly(g_2020)
 
 # Displays the interactive plot
-plotly_g_Fruit2020
+plotly_g_2020
+```
+```{r}
+# Only include these state names
+state_names <- c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", 
+                 "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", 
+                 "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", 
+                 "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", 
+                 "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", 
+                 "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", 
+                 "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", 
+                 "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", 
+                 "Wyoming")
+# Filter the income data for the specified state names
+filtered_income_2013 <- filter(income_2013, GeoName %in% state_names)
+filtered_income_2016 <- filter(income_2016, GeoName %in% state_names)
+filtered_income_2020 <- filter(income_2020, GeoName %in% state_names)
+
+# Function to calculate wage growth for each state
+calculate_wage_growth <- function(income_2013, income_2020) {
+  wage_growth <- ((income_2020 - income_2013) / income_2013) * 100
+  return(wage_growth)
+}
+
+# Create a dataframe to store the results
+income_state <- data.frame(State = character(),
+                            Average_Income_2013 = numeric(),
+                            Average_Income_2020 = numeric(),
+                            Wage_Growth_2013_2020 = numeric(),
+                            stringsAsFactors = FALSE)
+
+# Iterate over each state to calculate wage growth
+for (state in state_names) {
+  # Get incomes for the current state
+  income_state_2013 <- filter(filtered_income_2013, GeoName == state)$Value
+  income_state_2020 <- filter(filtered_income_2020, GeoName == state)$Value
+  
+  # Calculate wage growth for the current state
+  wage_growth <- calculate_wage_growth(income_state_2013, income_state_2020)
+  
+  # Append results to the dataframe
+  income_state <- rbind(income_state,
+                        data.frame(State = state,
+                                   Average_Income_2013 = income_state_2013,
+                                   Average_Income_2020 = income_state_2020,
+                                   Wage_Growth_2013_2020 = wage_growth,
+                                   stringsAsFactors = FALSE))
+}
+
+# CPI values
+cpi_2013 <- 233.049
+cpi_2020 <- 258.811
+
+# Calculate the nominal wage for each state in 2013 and 2020
+income_state <- mutate(income_state,
+                       Nominal_Wage_2013 = Average_Income_2013 * (cpi_2020 / cpi_2013),
+                       Nominal_Wage_2020 = Average_Income_2020)
+
+# Keep only necessary columns
+income_state <- select(income_state, State, Nominal_Wage_2013, Nominal_Wage_2020)
+
+# Calculate wage growth percentage for each state
+income_state <- mutate(income_state,
+                       Wage_Growth_Percentage = ((Nominal_Wage_2020 - Nominal_Wage_2013) / Nominal_Wage_2013) * 100)
+
+# Display the updated income_state dataframe
+print(income_state)
+```
+```{r}
+# Calculate the percentage change in nominal wage from 2013 to 2020
+income_state <- mutate(income_state,
+                       Wage_Change = ((Nominal_Wage_2020 - Nominal_Wage_2013) / Nominal_Wage_2013) * 100)
+
+# Calculate the difference between each state's wage growth rate and the inflation rate
+income_state <- mutate(income_state,
+                       Wage_Inflation_Difference = Wage_Change - 11.1)
+
+# Merge the classified data with the map data
+map_income_state <- merge(us_states, income_state, by.x = "full", by.y = "State")
+
+# Plotting
+g <- ggplot(map_income_state) +
+  geom_sf(aes(fill = Wage_Inflation_Difference)) +
+  scale_fill_gradient2(low = "red3", mid = "grey", high = "green3", midpoint = 0, 
+                       name = "Wage-Inflation Difference (%)") +
+  ggtitle("Wage Growth vs. Inflation Rate (2013-2020)")
+
+
+print(g)
 
 ```
+
 
 ### 4. How do the prices of different forms of fruits and vegetables change by year?
 ```{r}
