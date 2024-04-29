@@ -1051,6 +1051,25 @@ plot_2020 <- ggplot(df_2020, aes(x = Form, y = Count, fill = Affordability)) +
 plot_2013
 plot_2016
 plot_2020
+
+#*we opted to show this graph collapsing year due to little variation between years()
+# Combine data frames for all years
+df_combined <- rbind(df_2013, df_2016, df_2020)
+
+# Create a plot for all years combined
+plot_combined <- ggplot(df_combined, aes(x = Form, y = Count, fill = Affordability)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Fruit Affordability by Form",
+       x = "Form",
+       y = "Count (square root scale)",
+       fill = "") + # Remove legend title
+  scale_y_sqrt(labels = scales::comma_format()) + # Square root scale for y-axis
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
+  theme_minimal()
+
+# Display the combined plot
+plot_combined
 ```
 ```{r}
 # Create tables for vegetables by form
@@ -1118,4 +1137,23 @@ plot_veggies_2020 <- ggplot(df_veggies_2020, aes(x = Form, y = Count, fill = Aff
 plot_veggies_2013
 plot_veggies_2016
 plot_veggies_2020
+
+#*we opted to show this graph collapsing year due to little variation between years()
+# Combine data frames for all years
+df_combined_veg <- rbind(df_veggies_2013, df_veggies_2016, df_veggies_2020)
+
+# Create a plot for all years combined
+plot_combined_veg <- ggplot(df_combined_veg, aes(x = Form, y = Count, fill = Affordability)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Vegetable Affordability by Form",
+       x = "Form",
+       y = "Count (square root scale)",
+       fill = "") + # Remove legend title
+  scale_y_sqrt(labels = scales::comma_format()) + # Square root scale for y-axis
+  scale_fill_manual(values = c("coral", "skyblue"),
+                    labels = c("Can't Afford", "Afford")) + # Change legend labels
+  theme_minimal()
+
+# Display the combined plot
+plot_combined_veg
 ```
