@@ -155,13 +155,19 @@ This systemic issue not only affects individual households but also has broader 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 4.".*
 
--- INSERT DECRIPTION OF FRUIT PRICE BY FORM --
 <img width="666" alt="Screenshot 2024-04-17 at 7 23 30 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/622a70d9-f753-43b5-8594-bbfb4b945933">
 
--- INSERT DESCRIPTION OF VEGETABLE PRICE BY FORM --
+Figure 3: Fruit Prices by Form.
+
+Figure 3 illustrates the average price (per cup equivalent) of Fruits by Form: canned, dried, fresh, frozen, and juice varieties. Over the period from 2013 to 2020, prices for these different forms generally followed an upward trajectory, indicating a notable trend of increasing fruit prices
+
 <img width="667" alt="Screenshot 2024-04-17 at 7 23 45 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/4a886ee0-f322-4120-aa89-05d9a83aed59">
 
--- INSERT CONCLUSION HERE --
+Figure 4: Vegetable Prices by Form
+
+Figure 4 shows the average price (per cup equivalent) of Vegetables by Form: canned, dried, fresh, and frozen varieties. Across the years 2013 to 2020, prices for most forms of vegetables exhibited an upward trend, indicative of the overall increase in vegetable prices during this timeframe.
+
+In conclusion, the figures presented underscore a concerning trend of declining affordability in food prices from 2013 to 2020. Both fruits and vegetables experienced notable increases in prices across various forms, reflecting broader economic challenges. These findings highlight the growing burden on consumers, emphasizing the need for proactive measures to address affordability issues and ensure equitable access to nutritious food options.
 
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
 
