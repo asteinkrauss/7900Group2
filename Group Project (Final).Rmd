@@ -777,7 +777,7 @@ map_income_state <- merge(us_states, income_state, by.x = "full", by.y = "State"
 # Plotting
 g <- ggplot(map_income_state) +
   geom_sf(aes(fill = Wage_Inflation_Difference)) +
-  scale_fill_gradient2(low = "red3", mid = "grey", high = "green3", midpoint = 0, 
+  scale_fill_gradient2(low = "red3", mid = "white", high = "green3", midpoint = 0, 
                        name = "Wage-Inflation Difference (%)") +
   ggtitle("Wage Growth vs. Inflation Rate (2013-2020)")
 
