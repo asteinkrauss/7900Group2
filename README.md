@@ -83,114 +83,91 @@ We aimed to discover important insights by examining trends in fruit and vegetab
 
 **1. What are the most and least expensive fruits? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 1.".*
-<!--
--- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2013 HERE --
+
 <img width="675" alt="Screenshot 2024-04-26 at 6 10 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ab33b48c-2032-4547-9238-76887010d2c5">
 <img width="676" alt="Screenshot 2024-04-26 at 6 11 11 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d8c4dd11-bc33-45e9-bf17-d29ca13de59e">
 
--- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2016 HERE --
 <img width="673" alt="Screenshot 2024-04-26 at 6 11 23 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/c698f7ff-a47f-4972-9996-3d225c398f81">
 <img width="673" alt="Screenshot 2024-04-26 at 6 11 34 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/1db8ee11-2561-439b-a23f-cbe1f4149d01">
 
--- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE FRUIT 2020 HERE --
 <img width="674" alt="Screenshot 2024-04-26 at 6 11 46 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/3cc7fbef-4fd0-420a-bc13-ddf9c2186096">
 <img width="678" alt="Screenshot 2024-04-26 at 6 11 59 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/fc6682fd-a262-4318-8121-02d5cd9ac267">
--->
-<img width="674" alt="Screenshot 2024-04-28 175111" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/767f7317-506f-4377-833f-2ad82e5fd75a">
-<img width="674" alt="Screenshot 2024-04-28 175118" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/38fb10fb-b24c-4d15-9143-54e859a7431a">
 
 
-The analysis of fruit cup equivalent prices from 2013 to 2020 reveals a consistent upward trend, with some exceptions. Most fruits, as illustrated by the top 5 most and least expensive, experienced price increases, reflecting broader economic factors. While occasional stability or even decreases were observed in a few items, they were relatively rare compared to the overall pattern of price increases. The COVID-19 pandemic likely exacerbated this trend due to supply chain disruptions and increased production costs. 
+**Figure 1a-f.** Most and least expensive fruits in 2013, 2016, and 2020.
 
-Understanding these dynamics is crucial for stakeholders, as rising fruit prices can challenge affordability and accessibility, especially for vulnerable populations. Addressing these underlying factors is essential for mitigating the impact on consumers and overall affordability of living.
+In examining the retail prices of fruits across the years 2013, 2016, and 2020, notable trends emerged in both the highest and lowest ends of the price spectrum. Fruits such as mangoes, figs, raspberries, and apricots consistently ranked amongst the most expensive fruits (when looking at per cup equivalent cost). These prices suggest enduring consumer preferences or supply chain dynamics that contributed to their elevated prices over time.
+
+Conversely, fruits such as watermelon, bananas, and cantaloupe consistently ranked amongst the least expensive fruits (when looking at per cup equivalent cost). Of interest, frozen concentrate versions of fruit typically emerge as the least expensive options due to their cost-efficient production processes and longer shelf life, making them a budget-friendly alternative for consumers.
+
+Though the types of fruits that were found to be most expensive or least expensive tended to remain consistent, the price of all of the fruits seemed to increase from 2013 to 2020.
 
 **2. What are the most and least expensive vegetables? How does this change across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 2.".*
 
-<img width="674" alt="Screenshot 2024-04-28 175240" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/3f3bc9d5-3892-4a64-b6bc-80d236151aff">
-<img width="674" alt="Screenshot 2024-04-28 175247" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/6959c1b6-d947-4a10-9336-4c394984bb73">
-
-Vegetable cup equivalent prices from 2013 to 2020 also reveal a consistent upward trend, akin to observations in the fruit market. Most vegetables showed a consistent rise in prices over this period. While occasional stability or decreases were observed, they were rare compared to the overall trend of price increases.
-
-These rising prices align with broader economic factors, with the COVID-19 pandemic likely accelerating inflationary pressures. Supply chain disruptions and increased production costs associated with the pandemic contributed to this trend. Addressing the underlying factors driving these price movements is essential for mitigating their impact and ensuring the affordability of vegetables for all consumers.
-
-<!--
--- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2013 HERE --
 <img width="672" alt="Screenshot 2024-04-28 154317" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/13ae744e-3e70-402a-87d0-d7d76817ab8e">
 <img width="675" alt="Screenshot 2024-04-26 at 6 08 03 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/0e860175-91f4-471c-8b45-ac6c79c8aa37">
 
-
--- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2016 HERE --
 <img width="677" alt="Screenshot 2024-04-26 at 6 08 22 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/13aff076-2c9b-488e-990c-be68510662c3">
 <img width="677" alt="Screenshot 2024-04-26 at 6 08 37 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/84894665-ac5f-44b2-ae6b-31b8fc136ee3">
 
--- INSERT DESCRIPTION ABOUT MOST/LEAST EXPENSIVE VEGETABLES 2020 HERE --
 <img width="673" alt="Screenshot 2024-04-26 at 6 08 55 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/851f5c1a-3379-4e1d-a487-203aa14d6931">
 <img width="673" alt="Screenshot 2024-04-26 at 6 09 08 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d883dda1-0773-4cc6-a349-8b7c14e75bb0">
 
--- INSERT CONCLUSION HERE --
+**Figure 2a-f.** Most and least expensive vegetables in 2013, 2016, and 2020.
 
--->
+In examining the retail prices of vegetables across the years 2013, 2016, and 2020, notable trends again emerged in both the highest and lowest ends of the price spectrum. Vegetables such as asparagus, olives, spinach, and mushrooms consistently ranked amongst the most expensive vegetables (when looking at per cup equivalent cost), reflecting their specialized cultivation requirements and often limited availability.
+
+Conversely, vegetables such as potatoes, carrots, and various types of beans consistently ranked amongst the least expensive vegetables (when looking at per cup equivalent cost), owing to their widespread cultivation and high yield potential.
+
+Similarly to fruits, the types of vegetables that were found to be most expensive or least expensive tended to remain constant, but the prices of all of the vegetables seemed to increase from 2013 to 2020.
+
 
 **3. How does income per capita differ by state across years?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 3.".*
 
-<img width="658" alt="Screenshot 2024-04-26 at 6 09 35 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/da6c3304-94cd-42e4-b7f3-14c42a906f04">
 <img width="658" alt="Screenshot 2024-04-26 at 6 09 52 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/3b08aad7-7fec-44d6-8ddf-d8ac00517276">
 <img width="657" alt="Screenshot 2024-04-26 at 6 10 06 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/b752a1a2-bda7-4bfc-bf3b-d04ffb854ff9">
 <img width="662" alt="Screenshot 2024-04-26 at 6 10 17 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/576aa2c2-9f42-4a1f-bb9c-a8c935b02218">
-<img width="661" alt="Screenshot 2024-04-28 203550" src="https://github.com/asteinkrauss/7900Group2/assets/164543699/1e1503c9-cb22-4d3a-9ce5-2ac8955923a6">
 
+**Figure 3a-c.** Per capita income in 2013, 2016, 2020.
 
-Figure 2: Wage-Inflation Map. 
-
-
-The wage growth and income analysis spanning from 2013 to 2020 reveals a systemic affordability crisis across various states. While nominal wages increased in many regions, a significant portion of states faced challenges in maintaining real wage growth above the inflation rate.
-
-As shown in figure 2, some states, including Alaska, Iowa, Kansas, Louisiana, North Dakota, and Oklahoma, struggled as their wage growth rates fell below the cumulative inflation rate. This indicates a concerning trend where residents experienced a decline in purchasing power, exacerbating challenges in meeting basic needs, including affording food.
-
-Conversely, another group of states managed to keep pace with or slightly exceed inflation. However, their wage growth still underscores the widespread nature of the affordability crisis, with many residents grappling with increasing living costs, including the cost of putting food on the table.
-
-This systemic issue not only affects individual households but also has broader implications for economic stability and social well-being. Addressing this crisis requires comprehensive solutions that address underlying economic disparities and structural barriers.
+The series of heat maps were used to visually depict the variation in income per capita across the United States in 2013, 2016, and 2020. The maps offer a comprehensive overview of the economic landscape, illustrating how income levels fluctuate regionally and evolve over time. States such as Massachusetts and Connecticut consistently reported high income per capita (> $60,000) while New Mexico, Mississippi, and West Virginia consistently reported low income per capita (< $40,000). The majority of states reported income per capita between $45,000 and $55,000.
 
 **4. How do the prices of different forms of fruits and vegetables change by year?**
 *Note: If you would like to see an interactive graph of the ones shown below, please download the .rmd file and run the appropriate code under "Question 4.".*
 
-<img width="666" alt="Screenshot 2024-04-17 at 7 23 30 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/622a70d9-f753-43b5-8594-bbfb4b945933">
+<img width="665" alt="Screenshot 2024-04-29 at 1 39 54 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/514783e1-a7da-421c-8529-0f6f7cc9119c">
 
-Figure 3: Fruit Prices by Form.
+**Figure 4a.** Fruit prices by form.
 
-Figure 3 illustrates the average price (per cup equivalent) of Fruits by Form: canned, dried, fresh, frozen, and juice varieties. Over the period from 2013 to 2020, prices for these different forms generally followed an upward trajectory, indicating a notable trend of increasing fruit prices
+In examining the average price (per cup equivalent) of fruit by form in 2013, 2016, and 2020, a noticeable upward trend in average price emerged. Of interest, juiced fruit was significantly cheaper than canned, dried, fresh, and frozen fruit.
 
-<img width="667" alt="Screenshot 2024-04-17 at 7 23 45 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/4a886ee0-f322-4120-aa89-05d9a83aed59">
+<img width="664" alt="Screenshot 2024-04-29 at 1 40 11 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/dc990663-c2d4-40f5-881f-4a6722e3b8eb">
 
-Figure 4: Vegetable Prices by Form
+**Figure 4b.** Vegetable prices by form.
 
-Figure 4 shows the average price (per cup equivalent) of Vegetables by Form: canned, dried, fresh, and frozen varieties. Across the years 2013 to 2020, prices for most forms of vegetables exhibited an upward trend, indicative of the overall increase in vegetable prices during this timeframe.
-
-The figures presented underscore a concerning trend of declining affordability in food prices from 2013 to 2020. Both fruits and vegetables experienced notable increases in prices across various forms, reflecting broader economic challenges. These findings highlight the growing burden on consumers, emphasizing the need for proactive measures to address affordability issues and ensure equitable access to nutritious food options.
+In examining the average price (per cup equivalent) of vegetables by form in 2013, 2016, and 2020, a noticeable upward trend in average price emerged. Of interest, dried vegetables were significantly cheaper than canned, fresh, and frozen vegetables.
 
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
 
 <img width="666" alt="Screenshot 2024-04-26 at 6 22 42 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ea271b14-911c-46d1-bd23-15b0bf867fac">
 
-The bar graph illustrates a concerning trend in the accessibility of nutritious food options, particularly fruits and vegetables, over time. The data reveals a notable increase in the number of individuals unable to afford their recommended daily servings of fruits and vegetables, indicating a growing challenge in ensuring access to essential nutrients for all segments of the population. This trend aligns with broader economic shifts and rising food prices, underscoring the need for efforts to address affordability barriers and promote equitable access to healthy food choices. 
+**Figure 5.** Affordability of fruit and vegetable recommended daily serving.
 
-**6. EXCURSION ANALYSIS -- How does the affordability of fruits and vegetables differ amongst their different forms?**
+The bar graph highlights a concerning trend regarding the affordability of meeting daily fruit and vegetable recommendations over time. This analysis is based on allocating 2% of per capita income by state for purchasing produce, with fruits and vegetables considered unaffordable if their yearly cup equivalent price exceeds this threshold, and affordable if it falls below. Regardless of the year, a significant disparity is evident in the proportion of individuals unable to afford the recommended daily servings of fruits and vegetables according to FDA guidelines. Moreover, there is a notable increase in the number of individuals facing affordability challenges for meeting their daily fruit and vegetable intake from 2013 to 2020.
 
--- INSERT DESCRIPTION OF FRUIT AFFORDABILITY BY FORM HERE (HELPFUL TO SAY SOMETHING ABOUT THE UTILITY OF THE SQUARE ROOT SCALE) --
-<img width="664" alt="Screenshot 2024-04-27 at 9 42 57 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/1370beb0-4215-4087-af07-bcb4343eb80e">
-<img width="664" alt="Screenshot 2024-04-27 at 9 43 13 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/097d1684-cd74-4eb8-9a25-e065bb01205e">
-<img width="663" alt="Screenshot 2024-04-27 at 9 43 33 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/b740b2a0-72db-4e5f-b10e-929a18dff6e8">
+**6. How does the affordability of fruits and vegetables differ amongst their different forms (Excursion Analysis)?**
 
+<img width="666" alt="Screenshot 2024-04-29 at 1 42 26 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d8da2103-a4ab-488c-9c30-d217529deb70">
+<img width="667" alt="Screenshot 2024-04-29 at 1 42 43 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/e109e645-da83-4d4e-b580-57c196442953">
 
--- INSERT DESCRIPTION OF VEGETABLE AFFORDABILITY BY FORM HERE (HELPFUL TO SAY SOMETHING ABOUT THE UTILITY OF THE SQUARE ROOT SCALE) --
-<img width="665" alt="Screenshot 2024-04-27 at 9 43 48 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/11dc065c-2494-42ba-aeba-8d9c10898194">
-<img width="667" alt="Screenshot 2024-04-27 at 9 44 00 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/a089fe4e-9c7c-4008-ba0f-9ac170c4552d">
-<img width="666" alt="Screenshot 2024-04-27 at 9 44 17 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/1bee9e67-7ae9-4056-8b87-1e4a602f4d42">
+**Figure 6a.** Affordability of fruits by form of food. 
+**Figure 6b.** Affordability of vegetables by form of food. 
 
+The bar graphs depict the affordability of fruits and vegetables across various forms, aiming to highlight any disparities in accessibility. While the analysis initially examined each year individually (2013, 2016, and 2020), consistent trends emerged across years, leading to the decision to collapse the data for clarity. You can refer to the .rmd to see individual years. Each bar represents the count of affordable and unaffordable fruits or vegetables categorized by forms such as canned, dried, fresh, frozen, and juice. The y-axis scale is transformed using the square root to better visualize the distribution of counts, providing a more balanced representation of the data. This transformation helps mitigate the skewness often observed in count data, allowing for a clearer comparison of affordability among different fruits and vegetable forms. 
 
--- INSET CONCLUSION HERE --
+In Figure 6a, focusing on fruit forms, a notable disparity in affordability emerges, particularly for canned and fresh fruits appearing less accessible compared to dried, frozen, or juice forms. Similarly, in Figure 7a, which examines vegetable forms, fresh vegetables appear less accessible compared to other forms. Surprisingly, our data suggests that almost everyone could afford dried vegetables based on our affordability metric. We will note that looking more closely at our data, the dried form of vegetables include types of beans and lentils. Overall, for fruits and vegetables it seems that fresh forms of food is the least accessible option for individuals to buy. 
 
 # Conclusion
 **Summarize the analytical methodology and provide closure to your
