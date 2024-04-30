@@ -11,9 +11,6 @@ Are healthy fruits and vegetables affordable to Americans in each state? We aime
 We planed to target our research for use by the Congressional Committees on Agriculture because they play a crucial role in shaping legislation and policies related to food and agriculture, including programs like the Supplemental Nutrition Assistance Program (SNAP) and other food assistance initiatives.
 
 # Data Summary
-**Provide a short description of the nature of the provided data set
-and explain how these characteristics affect your analysis methodology. Summarize the
-data set with basic descriptive statistics as applicable.**
 
 The datasets included the average American household income per capita and fruits and vegetables prices from 2013, 2016, and 2020. These datasets allowed us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years. See below for a more in-depth explanation of the variables included in each dataset.
 
