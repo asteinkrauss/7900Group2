@@ -67,15 +67,12 @@ The datasets included the average American household income per capita and fruit
 For both fruits and vegetables, the mean cup equivalent price demonstrated a persistent upward trend from 2013 to 2020.
 
 # Data Analytics
-**Provide data analytics that add clarity to the research question.
-Thoroughly discuss insight obtained from your visualizations and analysis of aggregated,
-data. Suggest an excursion, and provide supporting analysis. Plots should be well
-formatted according to best practices learned in class. Discuss the advantages and
-challenges of performing analysis in your chosen software tool.**
 
 ### Analytical Tools & Methods 
 
 We conducted our analyses in R. Using publicly available datasets spanning multiple years, we looked at descriptive statistics and looked at descriptive graphs (eg. bar, line, map graphs) to investigate the affordability of fruits and vegetables by state across time. Specifically, descriptive statistics investigated the average, minimum, and maximum prices of fruits and vegetables by year. The ‘ggplot2’ package was used to visualize the results, including interactive plots of fruit and vegetable prices, income per capita by state, and affordability of fruits and vegetables by state.
+
+Using 'ggplot2' in R offered flexibility and customization for creating visually appealing plotss. Its integration with the tidyverse package streamlined the analytics, allowing for seamless data manipulation and visualization. However, mastering its syntax and creating complex plots required time and effort. Despite potential challenges, 'ggplot2' provided a wide range of plot types and aesthetic options, making it a powerful tool for data visualization and analysis.
 
 To quantify affordability, we developed an affordability metric based on the U.S. Department of Agriculture's recommended grocery budget of 11% of one's income (https://money.usnews.com/money/personal-finance/saving-and-budgeting/articles/how-much-should-i-spend-on-groceries). We then further subdivided the 11% and allocated 4% of one's income specifically for produce (so, 2% for fruits and 2% for vegetables). Since we're interested in affordability in relation to dietary guidelines, we calculated the price of a cup equivalent of fruits and vegetables (recommended daily serving; https://www.nidirect.gov.uk/articles/fruit-and-vegetables) for an entire year by multiplying the cup equivalent price by 365. Finally, to categorize a fruit or vegetable as affordable or unaffordable, we compared the yearly cup equivalent price (for fruit and vegetables separately) to 2% of per capita income by state. If the yearly cup equivalent price was greater than 2%, that fruit or vegetable was deemed unaffordable. If the yearly cup equivalent price was less than 2%, that fruit or vegetable was deemed affordable.
 
