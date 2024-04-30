@@ -26,8 +26,7 @@ The Statistics of Income (SOI) division collected ZIP code data from individual 
 <img width="914" alt="Screenshot 2024-04-29 at 3 03 09 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/dbd614e4-3a36-4358-8e8d-2e3677e3c18e">
 <img width="688" alt="Screenshot 2024-04-29 at 2 49 54 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/88dfa60b-9912-43ad-b3cc-4324d29423a0">
 
-**Figure 0.** Average cup equivalent price for fruit and vegetables in 2013, 2016, and 2020.
-For both fruits and vegetables, the mean cup equivalent price demonstrated a persistent upward trend from 2013 to 2020.
+**Figure 0a-c.** Descriptive statistics (i.e., mean, median, min, max) and average cup equivalent price for fruit and vegetables in 2013, 2016, and 2020. For both fruits and vegetables, the mean cup equivalent price demonstrated a persistent upward trend from 2013 to 2020.
 
 # Data Analytics
 
