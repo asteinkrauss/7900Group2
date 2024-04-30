@@ -135,10 +135,13 @@ Furthermore, while our excursion analysis revealed disparities in affordability 
 In conclusion, our comprehensive analysis highlights the diverse pricing spectrum of fruits and vegetables, coupled with the concerning reality that a significant portion of the population struggles to afford the recommended daily servings. Our excursion analysis further elucidated disparities in affordability across different forms of fruits and vegetables, underscoring the need for efforts to address affordability barriers and promote equitable access to healthy food choices.
 
 # Policy Recommendation
-**Introduce a specific policy decision that your decision
-maker is facing. Provide a data driven recommendation for their decision. Explain
-probable first and second order effects of the recommendation. Explain the benefits and
-risks of the recommendation.**
+
+The policy decision at hand was to address the affordability of healthy fruits and vegetables for Americans, particularly in states where individuals faced significant challenges in accessing nutritious foods. Based on our data-driven analysis, we recommended implementing targeted interventions aimed at improving affordability and access to fruits and vegetables, especially in regions with lower per capita incomes. This intervention would involve subsidies for fresh produce, expansion of community gardens and farmers' markets, and educational programs on budget-conscious dietary planning.
+
+The probable first-order effects of this recommendation would include an increase in the consumption of fruits and vegetables among populations with limited access due to financial constraints. The educational program would also increase financial literacy, leading to improved budgeting and money decisions. The probable second-order effects would include improving public health outcomes and reduced rates of diet-related diseases. Additionally, initiatives to improve affordability would enhance food security and nutrition equity, promoting overall well-being.
+
+However, there would be potential risks to consider. Implementation costs of such interventions may be substantial, requiring financial resources and logistical support. Furthermore, increased demand for affordable produce could impact supply chains and potentially affect pricing and availability in the long term. Additionally, addressing affordability barriers may not fully alleviate inequalities in access to healthy foods, as other factors such as transportation and food deserts also play significant roles.
+In conclusion, our analysis underscores the need for strategies to address affordability barriers and promote equitable access to healthy food choices. By implementing targeted interventions  policymakers can work towards addressing the pressing challenges individuals face in accessing nutritious foods and promoting health equity for all.
 
 # Appendix
 
