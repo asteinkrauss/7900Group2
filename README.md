@@ -12,47 +12,13 @@ We planed to target our research for use by the Congressional Committees on Agri
 
 # Data Summary
 
-The datasets included the average American household income per capita and fruits and vegetables prices from 2013, 2016, and 2020. These datasets allowed us to investigate our research questions regarding the affordability of fruits and vegetables based on the average American household income by capita over multiple years. See below for a more in-depth explanation of the variables included in each dataset.
+The datasets utilized in this study provide insights into the average American household income per capita and the prices of fruits and vegetables for the years 2013, 2016, and 2020. These datasets facilitate an investigation into the affordability of fruits and vegetables based on the average American household income per capita over multiple years. See the appendix below for a more in-depth explanation of the variables included in each dataset.
 
-### Included Data
+Data sets were collected from two sources, the first from the Economic Research Service (ERS) from the U.S. Department of Agriculture and the second from the Statistics of Income (SOI) division. 
 
-| Data Sets  | 
-| ------------- |
-| Fruit Prices 2013.csv  | 
-| Fruit Prices 2016.csv  | 
-| Fruit Prices 2020.csv  | 
-| Vegetable Prices 2013.csv  | 
-| Vegetable Prices 2016.csv  | 
-| Vegetable Prices 2020.csv  | 
+The Economic Research Service (ERS) of the U.S. Department of Agriculture compiled estimated average prices for over 150 commonly consumed fresh and processed fruits and vegetables for 2013, 2016, and 2020. These estimates include each item's average retail price per pound or pint, as well as the price per edible cup equivalent. In the context of many fruits and vegetables, an edible cup equivalent represents the amount of food that fills a standard measuring cup. The ERS derived these average prices using retail scanner data obtained from Circana, formerly known as Information Resources Inc. (IRI). Circana collects weekly retail sales data, including revenue and quantity, from various retail outlets nationwide, such as grocery stores, supermarkets, supercenters, convenience stores, drug stores, and liquor stores. The data's reliability stems from its direct collection from retail sources, providing a comprehensive overview of actual market prices. ERS is a reputable agency within the U.S. Department of Agriculture (USDA), known for its rigorous research methodologies and data integrity. There are a few limitations to this dataset specifically, the data may not capture prices from all retail outlets nationwide, potentially leading to sampling bias, variability in pricing across different regions and types of retail establishments may not be fully reflected and it may not account for local or seasonal variations in pricing, which could impact the overall accuracy of the average prices reported.
 
-| Columns included  | Description of columns |
-| ------------- | ------------- |
-| Fruit/Vegetable  | Type of food (apple, oranges, broccoli, etc)  |
-| Form  | Form of food (fresh, canned, dried, juice, frozen)  |
-| RetailPrice  | Price of food (in $)  |
-| RetailPriceUnit  | Type of retail price (per pound, per unit, etc)  |
-| Yield  | Preparation yield factor  |
-| CupEquivalentSize  | A 1-cup equivalent equals the weight of enough edible food to fill a measuring cup  |
-| CupEquivalentUnit  | Type of unit (pounds, fluid ounces)  |
-| CupEquivalentPrice  | Price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption) |
-| Year  | Years included (2013, 2016, 2020)  |
-
-| Data Sets  | 
-| ------------- |
-| Annual person income by county.csv  | 
-
-| Columns included  | Description of columns |
-| ------------- | ------------- |
-| GeoFIPS  | Geo FIPS of United States states; increases by 1000 by state (01000 = Alabama, etc)  |
-| GeoName  | Region and state, if no region present only state is listed  |
-| Description  | Type of income; (Personal income (thousands of dollars), Population (persons) 1/, Per capita personal income (dollars) 2/	)  |
-| 1Personal income (thousands of dollars)  | Consists of the income that persons receive in return for their provision of labor, land, and capital used in current production as well as other income, such as personal current transfer receipts. In the state and local personal income accounts the personal income of an area represents the income received by or on behalf of the persons residing in that area. It is calculated as the sum of wages and salaries, supplements to wages and salaries, proprietors' income with inventory valuation (IVA) and capital consumption adjustments (CCAdj), rental income of persons with capital consumption adjustment (CCAdj), personal dividend income, personal interest income, and personal current transfer receipts, less contributions for government social insurance plus the adjustment for residence.  |
-| 2Population (persons)  | The number of individuals (both civilian and military) who reside in a given area.  |
-| 3Per capita personal income (dollars)  | The personal income of a given area divided by the resident population of the area. See "personal income."  |
-| Unit  | Type of variable; (Thousands of dollars, Number of persons, Dollars)  |
-| 2013  | Price of unit type for 2013  |
-| 2016  | Price of unit type for 2016  |
-| 2020  | Price of unit type for 2020  |
+The Statistics of Income (SOI) division collected ZIP code data from individual income tax returns (Forms 1040) filed with the Internal Revenue Service (IRS) Individual Master File (IMF) system for the period spanning January 1 to December 31 for 2013, 2016, and 2020. These data provide insights into income distribution across different geographic areas. While most returns filed during this period relate to Tax Year 2013, 2016, and 2020, a few returns from earlier tax years are also included. The population data used for ZIP code analysis is based on IRS records processed during the respective calendar years. However, it's important to note that the data may not fully represent the entire U.S. population, as not all individuals are required to file tax returns. Additionally, discrepancies may exist between the address shown on the tax return and the taxpayer's actual residence. The data's credibility stems from its direct sourcing from IRS records, providing a comprehensive view of income distribution across different geographic areas. The SOI division is responsible for collecting, processing, and analyzing tax data, ensuring high standards of data accuracy and security. There are some limitations for this dataset including not all individuals are required to file tax returns, leading to potential underrepresentation of certain demographic groups, such as low-income earners or those not legally obligated to file taxes, discrepancies may exist between the address listed on tax returns and actual residence locations, impacting the accuracy of geographic analyses, and the data may not fully capture income disparities within ZIP codes, particularly in areas with high wealth concentration or significant population mobility.
 
 ### Descriptive Statistics
 
@@ -174,3 +140,45 @@ In conclusion, our comprehensive analysis highlights the diverse pricing spectru
 maker is facing. Provide a data driven recommendation for their decision. Explain
 probable first and second order effects of the recommendation. Explain the benefits and
 risks of the recommendation.**
+
+# Appendix
+
+### Included Data
+
+| Data Sets  | 
+| ------------- |
+| Fruit Prices 2013.csv  | 
+| Fruit Prices 2016.csv  | 
+| Fruit Prices 2020.csv  | 
+| Vegetable Prices 2013.csv  | 
+| Vegetable Prices 2016.csv  | 
+| Vegetable Prices 2020.csv  | 
+
+| Columns included  | Description of columns |
+| ------------- | ------------- |
+| Fruit/Vegetable  | Type of food (apple, oranges, broccoli, etc)  |
+| Form  | Form of food (fresh, canned, dried, juice, frozen)  |
+| RetailPrice  | Price of food (in $)  |
+| RetailPriceUnit  | Type of retail price (per pound, per unit, etc)  |
+| Yield  | Preparation yield factor  |
+| CupEquivalentSize  | A 1-cup equivalent equals the weight of enough edible food to fill a measuring cup  |
+| CupEquivalentUnit  | Type of unit (pounds, fluid ounces)  |
+| CupEquivalentPrice  | Price per edible cup equivalent (the unit of measurement for Federal recommendations for fruit and vegetable consumption) |
+| Year  | Years included (2013, 2016, 2020)  |
+
+| Data Sets  | 
+| ------------- |
+| Annual person income by county.csv  | 
+
+| Columns included  | Description of columns |
+| ------------- | ------------- |
+| GeoFIPS  | Geo FIPS of United States states; increases by 1000 by state (01000 = Alabama, etc)  |
+| GeoName  | Region and state, if no region present only state is listed  |
+| Description  | Type of income; (Personal income (thousands of dollars), Population (persons) 1/, Per capita personal income (dollars) 2/	)  |
+| 1Personal income (thousands of dollars)  | Consists of the income that persons receive in return for their provision of labor, land, and capital used in current production as well as other income, such as personal current transfer receipts. In the state and local personal income accounts the personal income of an area represents the income received by or on behalf of the persons residing in that area. It is calculated as the sum of wages and salaries, supplements to wages and salaries, proprietors' income with inventory valuation (IVA) and capital consumption adjustments (CCAdj), rental income of persons with capital consumption adjustment (CCAdj), personal dividend income, personal interest income, and personal current transfer receipts, less contributions for government social insurance plus the adjustment for residence.  |
+| 2Population (persons)  | The number of individuals (both civilian and military) who reside in a given area.  |
+| 3Per capita personal income (dollars)  | The personal income of a given area divided by the resident population of the area. See "personal income."  |
+| Unit  | Type of variable; (Thousands of dollars, Number of persons, Dollars)  |
+| 2013  | Price of unit type for 2013  |
+| 2016  | Price of unit type for 2016  |
+| 2020  | Price of unit type for 2020  |
