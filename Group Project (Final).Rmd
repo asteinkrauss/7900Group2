@@ -746,7 +746,7 @@ agg_income_long <- pivot_longer(agg_income, cols = c(people_afford, people_cant_
 # Visualize
 ggplot(agg_income_long, aes(x = as.factor(Year), y = `Number of People`, fill = factor(Affordability, levels = c("people_afford", "people_cant_afford")))) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "People Affording Daily Fruit and Vegatable Servings",
+  labs(title = "People Affording Daily Fruit and Vegetable Servings",
        x = "Year", y = "Number of People") +
   scale_y_continuous(labels = scales::comma) +  
   scale_fill_manual(values = c("people_afford" = "skyblue", "people_cant_afford" = "coral"), 
