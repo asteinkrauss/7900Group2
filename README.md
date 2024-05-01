@@ -99,7 +99,7 @@ In examining the average price (per cup equivalent) of vegetables by form in 201
 
 **5. How many people can afford the recommended daily serving of fruits and vegetables across years?**
 
-<img width="666" alt="Screenshot 2024-04-26 at 6 22 42 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/ea271b14-911c-46d1-bd23-15b0bf867fac">
+<img width="664" alt="Screenshot 2024-05-01 at 9 48 17 AM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/21a7242a-45b6-4288-a169-847e21370ddf">
 
 **Figure 5.** Affordability of fruit and vegetable recommended daily serving.
 
@@ -110,8 +110,7 @@ The bar graph highlights a concerning trend regarding the affordability of meeti
 <img width="666" alt="Screenshot 2024-04-29 at 1 42 26 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/d8da2103-a4ab-488c-9c30-d217529deb70">
 <img width="667" alt="Screenshot 2024-04-29 at 1 42 43 PM" src="https://github.com/asteinkrauss/7900Group2/assets/164549275/e109e645-da83-4d4e-b580-57c196442953">
 
-**Figure 6a.** Affordability of fruits by form of food. 
-**Figure 6b.** Affordability of vegetables by form of food. 
+**Figure 6a-b.** Affordability of fruits and vegetables by form. 
 
 The bar graphs depict the affordability of fruits and vegetables across various forms, aiming to highlight any disparities in accessibility. While the analysis initially examined each year individually (2013, 2016, and 2020), consistent trends emerged across years, leading to the decision to collapse the data for clarity. You can refer to the .rmd to see individual years. Each bar represents the count of affordable and unaffordable fruits or vegetables categorized by forms such as canned, dried, fresh, frozen, and juice. The y-axis scale is transformed using the square root to better visualize the distribution of counts, providing a more balanced representation of the data. This transformation helps mitigate the skewness often observed in count data, allowing for a clearer comparison of affordability among different fruits and vegetable forms.
 
