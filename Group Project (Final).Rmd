@@ -754,6 +754,7 @@ ggplot(agg_income_long, aes(x = as.factor(Year), y = `Number of People`, fill = 
                     name = "Affordability of Food Servings") +  # Setting legend title to NULL
   theme_minimal()
 ```
+
 ### 6. EXCURSION - How does the affordability of fruits and vegetables differ amongst their different forms?
 ```{r}
 # Creates tables for fruits by form and year
