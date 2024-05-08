@@ -1,5 +1,7 @@
 # ADAN-ADEC7900 Group 2
 
+Video Presentation can be viewed [here](https://drive.google.com/drive/folders/1zP3VOQP5pOYq4MV3O3aJg3GPSZyJYHE4?usp=drive_link).
+
 # Introduction
 ### Research Question
 
